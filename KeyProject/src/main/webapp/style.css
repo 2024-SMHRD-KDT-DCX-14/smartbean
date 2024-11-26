@@ -1,0 +1,56 @@
+@charset "UTF-8";
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: gray;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  z-index: 1002;
+}
+
+body {
+    padding-top: 50px;
+    height: 100vh;
+}
+
+h2 {
+    padding-left: 20px;
+}
+
+#side_nav {
+    position: fixed;
+    left: 0;
+    background: gray;
+    z-index: 1001;
+    width: 225px;
+    height: 100vh;
+}
+
+.sidenav_menu_heading {
+    color: white;
+    padding: 1.75rem 1rem 1.75rem;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+div > a {
+    font-size: 15px;
+    margin-left: 20px;
+    
+}
+
+#logout {
+    margin-right: 20px;
+}
