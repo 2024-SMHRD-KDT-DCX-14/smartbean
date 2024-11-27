@@ -21,14 +21,9 @@ public class Member {
 	private	String memName;
 	
 	private	String memPhone;
-	private	String joinDT;
-	private	String memType;
 	
-//	//생성자
-//	public Member(String email, String pw) {
-//		this.email = email;
-//		this.pw = pw;
-//	}
-	
+	private	String memAddress;
 	
 }
+
+

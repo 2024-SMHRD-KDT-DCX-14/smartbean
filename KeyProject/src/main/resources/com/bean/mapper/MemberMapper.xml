@@ -8,13 +8,19 @@
 		 하나로 묶어서 주어야 하고, 자료형을 명시(parameterType) -->
 		 <!-- 변수명이 DTO의 필드로 선언이 되어있어야함 -->
 	<insert id="join" parameterType="com.bean.entity.Member">
-		insert into TB_Member (MEM_ID, MEM_PW, MEM_NAME, MEM_PHONE, MEM_TYPE)
+		insert into TB_Member(
+	        MEM_ID,
+	        MEM_PW,
+	        MEM_NAME,
+	        MEM_PHONE,
+	        MEM_ADDRESS
+	    )
 		values(
 			#{memID},
 			#{memPW},
 			#{memName},
 			#{memPhone},
-			#{memType}
+			#{memAddress}
 		)
 	</insert>
 	
@@ -22,8 +28,8 @@
 	<!-- ****테이블 컬럼 명 == DTO 선언된 필드 변수명 -->
 	<select id="login" parameterType="com.bean.entity.Member" resultType="com.bean.entity.Member">
 		select * from TB_Member
-		where MEM_ID = #{memID}
-		and MEM_PW = #{memPW}
+		where MEM_ID = ${memID}
+		and MEM_PW = ${memPW}
 	</select>
 
 
