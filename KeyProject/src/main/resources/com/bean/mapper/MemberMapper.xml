@@ -27,9 +27,14 @@
 	<!-- select문의 경우, 결과를 어떤 자료형에 담아서 받을지 결정이 필요 : resultType -->
 	<!-- ****테이블 컬럼 명 == DTO 선언된 필드 변수명 -->
 	<select id="login" parameterType="com.bean.entity.Member" resultType="com.bean.entity.Member">
-		select * from TB_Member
-		where MEM_ID = ${memID}
-		and MEM_PW = ${memPW}
+		select MEM_ID AS memID, 
+		MEM_PW AS memPW,
+		MEM_PHONE AS memPhone,
+		MEM_NAME AS memName,
+		MEM_ADDRESS as memAdress
+		from TB_Member
+		where MEM_ID = #{memID}
+		and MEM_PW = #{memPW}
 	</select>
 
 
