@@ -11,18 +11,18 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor // NonNull이 걸린 필드만 매개변수로 할당(=초기화)해주는 생성자!
 @AllArgsConstructor // 모든 필드를(=멤버 변수들을) 매개변수로 할당(=초기화)해주는 생성자!
 @Data // getter/setter 등 기본메소드 생성(Lombok)
-public class Member {
+public class MemberDTO {
 	// 필드 선언!=맴버 변수들 선언!
 	@NonNull
-	private String memID;
+	private String MEM_ID;
 
-	private	String memPW;
+	private	String MEM_PW;
 	
-	private	String memName;
+	private	String MEM_NAME;
 	
-	private	String memPhone;
+	private	String MEM_PHONE;
 	
-	private	String memAddress;
+	private	String MEM_ADDRESS;
 	
 }
 
