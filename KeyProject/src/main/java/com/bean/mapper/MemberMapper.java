@@ -20,6 +20,6 @@ public interface MemberMapper {
 		
 	public MemberDTO login(MemberDTO member);
 	
-	public MemberDTO check(String MEM_ID); // 만약 select조회결과 여러개 인스턴스면 List<Member>이렇게 리스트로 담아서 return해야한다.
+	public MemberDTO check(String memId); // 만약 select조회결과 여러개 인스턴스면 List<Member>이렇게 리스트로 담아서 return해야한다.
 	
 }

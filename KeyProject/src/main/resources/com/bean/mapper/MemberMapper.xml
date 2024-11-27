@@ -16,25 +16,25 @@
 	        MEM_ADDRESS
 	    )
 		values(
-			#{MEM_ID},
-			#{MEM_PW},
-			#{MEM_NAME},
-			#{MEM_PHONE},
-			#{MEM_ADDRESS}
+			#{memId},
+			#{memPw},
+			#{memName},
+			#{memPhone},
+			#{memAddress}
 		)
 	</insert>
 	
 	<!-- select문의 경우, 결과를 어떤 자료형에 담아서 받을지 결정이 필요 : resultType -->
 	<!-- ****테이블 컬럼 명 == DTO 선언된 필드 변수명 -->
 	<select id="login" parameterType="com.bean.entity.MemberDTO" resultType="com.bean.entity.MemberDTO">
-		select MEM_ID AS MEM_ID, 
-		MEM_PW AS MEM_PW,
-		MEM_PHONE AS MEM_PHONE,
-		MEM_NAME AS MEM_NAME,
-		MEM_ADDRESS as MEM_ADDRESS
+		select MEM_ID AS memId, 
+		MEM_PW AS memPw,
+		MEM_PHONE AS memPhone,
+		MEM_NAME AS memName,
+		MEM_ADDRESS as memAddress
 		from TB_Member
-		where MEM_ID = #{MEM_ID}
-		and MEM_PW = #{MEM_PW}
+		where MEM_ID = #{memId}
+		and MEM_PW = #{memPw}
 	</select>
 
 

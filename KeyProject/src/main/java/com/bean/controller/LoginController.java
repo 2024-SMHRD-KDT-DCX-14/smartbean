@@ -27,8 +27,8 @@ public class LoginController {
 	 @RequestMapping("/loginProcess")
 	   public String loginProcess(MemberDTO member, HttpSession session) {
 	      // 1. 데이터 수집 -> 매개변수에 Member의 객체를 생성한다.
-		  System.out.println("ID: " + member.getMEM_ID());
-		  System.out.println("Password: " + member.getMEM_PW());
+		  System.out.println("ID: " + member.getMemId());
+		  System.out.println("Password: " + member.getMemPw());
 	      System.out.println(member);
 	      // 2. 기능 실행
 	      MemberDTO result = mapper.login(member);

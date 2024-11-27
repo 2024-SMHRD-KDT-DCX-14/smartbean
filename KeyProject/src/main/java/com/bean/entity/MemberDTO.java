@@ -14,15 +14,15 @@ import lombok.RequiredArgsConstructor;
 public class MemberDTO {
 	// 필드 선언!=맴버 변수들 선언!
 	@NonNull
-	private String MEM_ID;
+	private String memId;
 
-	private	String MEM_PW;
+	private	String memPw;
 	
-	private	String MEM_NAME;
+	private	String memName;
 	
-	private	String MEM_PHONE;
+	private	String memPhone;
 	
-	private	String MEM_ADDRESS;
+	private	String memAddress;
 	
 }
 

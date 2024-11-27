@@ -26,12 +26,12 @@
 
                                     <!-- ID -->
                                     <div class="input-group mb-3 w-50 p-3 cen123">
-                                        <span class="input-group-text" id="MEM_ID">
+                                        <span class="input-group-text" id="memId">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
                                             </svg>
                                         </span>
-                                        <input type="text" class="form-control" name="MEM_ID" placeholder="아이디" required>
+                                        <input type="text" class="form-control" name="memId" placeholder="아이디" required>
                                         <div>
                                             <button type="button" class="btn btn-outline-secondary">중복확인</button>
                                         </div>
@@ -39,12 +39,12 @@
 
                                     <!-- PW -->
                                     <div class="input-group mb-3 w-50 p-3 cen123">
-                                        <span class="input-group-text" id="MEM_PW">
+                                        <span class="input-group-text" id="memPw">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
                                                 <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
                                             </svg>
                                         </span>
-                                        <input type="password" class="form-control" name="MEM_PW" placeholder="비밀번호" required>
+                                        <input type="password" class="form-control" name="memPw" placeholder="비밀번호" required>
                                     </div>
 
                                     <!-- NAME -->
@@ -54,7 +54,7 @@
                                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
                                             </svg>
                                         </span>
-                                        <input type="text" class="form-control" name="MEM_NAME" placeholder="이름" required>
+                                        <input type="text" class="form-control" name="memName" placeholder="이름" required>
                                     </div>
 
                                     <!-- PHONE -->
@@ -65,7 +65,7 @@
                                                 <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
                                             </svg>
                                         </span>
-                                        <input type="text" class="form-control" name="MEM_PHONE" placeholder="휴대전화번호" required>
+                                        <input type="text" class="form-control" name="memPhone" placeholder="휴대전화번호" required>
                                     </div>
                                     
                                      <!-- ADDRESS -->
@@ -75,7 +75,7 @@
                                                 <path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
                                             </svg>
                                         </span>
-                                        <input type="text" class="form-control" name="MEM_ADDRESS" placeholder="지점명" required>
+                                        <input type="text" class="form-control" name="memAddress" placeholder="지점명" required>
                                     </div>
 
 
