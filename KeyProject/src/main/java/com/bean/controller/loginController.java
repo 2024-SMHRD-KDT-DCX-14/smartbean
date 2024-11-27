@@ -17,13 +17,13 @@ public class loginController {
 	@Autowired
 	private MemberMapper mapper; 
 	
-	@RequestMapping("/joinLogin") //goMain 요청이 들어오면, goMain()을 실행하라***************
+	@RequestMapping("/join") //goMain 요청이 들어오면, goMain()을 실행하라***************
 	public String go() {
 		// 1. 데이터 수집
 		// 2. 기능 실행
 		// 3. View 이동
 		// forward 이동시, 이동하고 싶은 "jsp파일의 이름"만 return하면된다.
-		return "joinLogin";
+		return "join";
 	}
 
 	@RequestMapping("/join") //해당 요청이 들어오면, 이 메소드를 실행한다는 어노테이션(주석)!
@@ -44,7 +44,7 @@ public class loginController {
 		}
 		
 		// 3. View 이동
-		return "redirect:/joinLogin";
+		return "redirect:/join";
 		
 	}
 	
@@ -60,7 +60,7 @@ public class loginController {
 			session.setAttribute("user", result);
 		}
 		// 3. View 이동
-		return "redirect:/joinLogin";
+		return "redirect:/join";
 	}
 	
 
