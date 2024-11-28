@@ -30,7 +30,10 @@ public class MaterialController {
 //		return "materialView";
 //	}
 	
-	
+	@RequestMapping("/materialregister") 
+	 public String goregister() {
+	    return "materialregister";
+	 	}
 	
 	
 	//조회로직
