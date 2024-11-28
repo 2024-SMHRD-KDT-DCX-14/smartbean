@@ -16,14 +16,14 @@ public class LoginController {
 	@Autowired
 	private MemberMapper mapper;
 	
-	
+	// login.jps로 이동
 	 @RequestMapping("/login") 
 	 public String login() {
 	    return "login";
 	 	}
 	 
 	 
-
+	 // 로그인 로직 구현
 	 @RequestMapping("/loginProcess")
 	   public String loginProcess(MemberDTO member, HttpSession session) {
 	      // 1. 데이터 수집 -> 매개변수에 Member의 객체를 생성한다.

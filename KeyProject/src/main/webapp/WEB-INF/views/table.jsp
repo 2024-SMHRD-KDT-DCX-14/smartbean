@@ -1,4 +1,7 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,7 +12,7 @@
         <meta name="author" content="" />
         <title>재고관리</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href="css/keyProject.css" rel="stylesheet" />
+        <link href="keyProject.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -90,23 +93,18 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <%
-                                        // 더미 데이터 예제 (실제 데이터는 DB에서 가져옴)
-                                        String[][] dummyData = {
-                                            {"ITEM001", "원두", "2024-11-03 16:57:20", "20000", "2024-12-03", "g"},
-                                            {"ITEM002", "원두", "2024-11-23 16:57:20", "10000", "2024-12-23", "g"},
-                                            {"ITEM003", "우유", "2024-11-20 16:57:21", "200000", "2024-12-20", "ml"},
-                                            {"ITEM004", "케이크", "2024-11-21 16:57:21", "50", "2024-12-21", "개"}
-                                        };
+                                <!-- 재고 조회 로직  -->
+                                   	<c:forEach var="MaterialDTO" items="${list}">
+					<tr>
+						<td>${MaterialDTO.mrCode}</td>
+						<td>${MaterialDTO.mrName}</a></td>
+						<td>${MaterialDTO.mrInboundDate}</td>
+						<td>${MaterialDTO.mrExpiredDate}</td>
+						<td>${MaterialDTO.mrStock}</td>
+						<td>${MaterialDTO.mrCodeUnit}</td> 
 
-                                        for (String[] item : dummyData) {
-                                            out.println("<tr>");
-                                            for (String data : item) {
-                                                out.println("<td>" + data + "</td>");
-                                            }
-                                            out.println("</tr>");
-                                        }
-                                    %>
+					</tr>
+				</c:forEach>
                                 </tbody>
                             </table>
                         </div>
