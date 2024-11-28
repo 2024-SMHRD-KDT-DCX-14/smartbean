@@ -12,7 +12,7 @@ import com.bean.entity.MaterialDTO;
 @Mapper
 public interface MaterialMapper {
 
-	public List<MaterialDTO> list();
+	public List<MaterialDTO> list(); // 원자재 조회 메소드때 사용한다
 	 
 	
 }

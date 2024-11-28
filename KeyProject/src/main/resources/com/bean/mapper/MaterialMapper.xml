@@ -2,6 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bean.mapper.MaterialMapper">
 
+
+
+
+<!-- 원자재 조회 쿼리문 -->
 <select id="list" resultType="com.bean.entity.MaterialDTO">
 	select Mr_Code as mrCode,
 	Mr_Name as mrName,
@@ -12,8 +16,6 @@
 	Mem_Id as memId
 	 from TB_MATERIAL
 </select>
-
-
 
 
 
