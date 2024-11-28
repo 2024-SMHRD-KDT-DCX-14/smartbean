@@ -17,6 +17,33 @@
 	 from TB_MATERIAL
 </select>
 
+<!-- 원자재 등록 쿼리문 -->
+<insert id="insert" parameterType="com.bean.entity.MaterialDTO">
+    INSERT INTO TB_MATERIAL (
+        Mr_Code,
+        Mr_Name,
+        Mr_Stock,
+        MR_CODE_UNIT,
+        Mem_Id
+    )
+    VALUES (
+        #{mrCode},
+        #{mrName},
+        #{mrStock},
+        #{mrCodeUnit},
+        #{memId}
+    )
+</insert>
+
+<!--재고 수정 쿼리문-->
+	<update id="update" parameterType="com.bean.entity.MaterialDTO">
+		update TB_MATERIAL
+		set 
+		Mr_Name = #{mrName},
+		Mr_Stock = #{mrStock},
+		MR_CODE_UNIT=#{mrCodeUnit}
+		where Mr_Code = #{mrCode}
+	</update>
 
 
 

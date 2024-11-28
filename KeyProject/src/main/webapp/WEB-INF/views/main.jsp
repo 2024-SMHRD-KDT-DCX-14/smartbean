@@ -9,10 +9,24 @@
         <meta name="author" content="" />
         <title>Dashboard - SmartCoffeeBean</title>
         <link href="assets/css/styles.css" rel="stylesheet" />
+
         <!-- 필요한 외부 CSS/JS 주석 -->
+        <style>
+		body {
+   				margin-left: 225px;
+   				height: 100vh;
+		}
+		</style>
+        
+        
+        
     </head>
     <body class="sb-nav-fixed">
+    	<%@ include file="index.jsp"%>
+    
+    
         <div id="layoutSidenav_content">
+        ${user}
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">SmartCoffeeBean</h1>

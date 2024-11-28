@@ -15,6 +15,7 @@
     <main class="flex-grow-1 d-flex justify-content-center align-items-center">
         <div class="card shadow-lg border-2 rounded-lg" style="width: 400px;">
             <div class="card-body">
+           
                 <form action="/joinProcess" method="post">
                     <h3 class="text-center text-secondary mb-4">회원가입</h3>
 

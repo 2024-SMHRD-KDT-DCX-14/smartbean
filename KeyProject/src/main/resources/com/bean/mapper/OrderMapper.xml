@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bean.mapper.OrderMapper">
+
+<!-- 주문 마스터 내역 넣기 -->
+<insert id="orderlist" parameterType="com.bean.entity.OrderMasterDTO">
+	INSERT INTO TB_ORDER_D
+	VALUES(
+		#{ORDER_M_NUMBER},
+		#{ORDER_M_TOTAL},
+		#{ORDER_M_TOTAL_AMT},
+		#{ORDER_M_DATE},
+		#{MEM_ID},
+	)
+</insert>
+
+
+
+
+
+
+
+
+</mapper>

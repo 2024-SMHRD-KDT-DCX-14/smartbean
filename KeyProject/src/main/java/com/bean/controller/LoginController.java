@@ -35,12 +35,14 @@ public class LoginController {
 	      System.out.println(result);
 	      if(result== null) {
 	         System.out.println("login f");
+	         return "redirect:/login";
 	      }else {
 	         System.out.println("login t");
 	         session.setAttribute("user", result);
+	         return "redirect:/main";
+//	         return "redirect:/index";
 	      }
-	      // 3. View 이동
-	      return "redirect:/join";
+	      
 	   }
 	   
 
