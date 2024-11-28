@@ -7,7 +7,7 @@
     <title>로그인</title>
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="css/keyProject.css" rel="stylesheet">
+    <link href="assets/css/keyProject.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="d-flex flex-column vh-100">

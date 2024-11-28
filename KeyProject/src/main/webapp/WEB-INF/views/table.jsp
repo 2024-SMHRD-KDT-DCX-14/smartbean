@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>재고관리</title>
-        <link href="keyProject.css" rel="stylesheet">
+        <link href="assets/css/keyProject.css" rel="stylesheet">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 		<link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"></script>
