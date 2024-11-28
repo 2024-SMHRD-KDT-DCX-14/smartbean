@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
         <title>재고관리</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-        <link href="css/keyProject.css" rel="stylesheet" />
+        <link href="keyProject.css" rel="stylesheet">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
+		<link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"></script>
+	</head>
     <body class="sb-nav-fixed">
         <header id="upper_nav">
             <a href="realindex.jsp"><h2>Coffee Lounge</h2></a>
@@ -19,6 +21,41 @@
                 <a id="logout" href="logout.jsp">Logout</a>
             </nav>
         </header>
+		
+		<body>
+		    <div class="container mt-5">
+		        <h1>Bootstrap + Simple DataTables 예제</h1>
+		        <table id="exampleTable" class="table">
+		            <thead>
+		                <tr>
+		                    <th>이름</th>
+		                    <th>직업</th>
+		                    <th>연령</th>
+		                    <th>국가</th>
+		                </tr>
+		            </thead>
+		            <tbody>
+		                <tr>
+		                    <td>김철수</td>
+		                    <td>개발자</td>
+		                    <td>28</td>
+		                    <td>한국</td>
+		                </tr>
+		                <tr>
+		                    <td>이영희</td>
+		                    <td>디자이너</td>
+		                    <td>31</td>
+		                    <td>일본</td>
+		                </tr>
+		                <tr>
+		                    <td>John Doe</td>
+		                    <td>Manager</td>
+		                    <td>45</td>
+		                    <td>USA</td>
+		                </tr>
+		            </tbody>
+		        </table>
+		    </div>
         <div id="side_nav">
             <nav>
                 <div class="side_nav_list">
@@ -51,8 +88,10 @@
             </nav>
         </div>
 
-        <main>
+		
+
             <div id="layoutSidenav_content">
+				<main>
                 <div class="container-fluid px-20">
                     <br>
                     <h2 class="mt-4">재고관리</h2>
@@ -63,10 +102,18 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <div class="btn-group cen1" role="group" aria-label="Basic outlined example">
-                                <button type="button" class="btn btn-outline-primary"><a href="itemInsert.jsp">등록</a></button>
-                                <button type="button" class="btn btn-outline-primary"><a href="itemUpdateDelete.jsp">수정 및 삭제</a></button>
+								<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#registermodal">
+								    등록
+								</button>
+                                <button type="button" class="btn btn-outline-primary"><a href="materialregister">등록</a></button>
+                                <button type="button" class="btn btn-outline-primary"><a href="">수정</a></button>
                             </div>
                         </div>
+						
+						
+				<div class="card mb-4">
+					<div class="card-header">
+						<i class="fas fa-table me-1"></i>
                         <div class="card-body">
                             <table id="datatablesSimple">
                                 <thead>
@@ -90,29 +137,24 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <%
-                                        // 더미 데이터 예제 (실제 데이터는 DB에서 가져옴)
-                                        String[][] dummyData = {
-                                            {"ITEM001", "원두", "2024-11-03 16:57:20", "20000", "2024-12-03", "g"},
-                                            {"ITEM002", "원두", "2024-11-23 16:57:20", "10000", "2024-12-23", "g"},
-                                            {"ITEM003", "우유", "2024-11-20 16:57:21", "200000", "2024-12-20", "ml"},
-                                            {"ITEM004", "케이크", "2024-11-21 16:57:21", "50", "2024-12-21", "개"}
-                                        };
-
-                                        for (String[] item : dummyData) {
-                                            out.println("<tr>");
-                                            for (String data : item) {
-                                                out.println("<td>" + data + "</td>");
-                                            }
-                                            out.println("</tr>");
-                                        }
-                                    %>
+                                <!-- 재고 조회 로직  -->
+                                   	<c:forEach var="MaterialDTO" items="${list}">
+										<tr>
+											<td>${MaterialDTO.mrCode}</td>
+											<td>${MaterialDTO.mrName}</a></td>
+											<td>${MaterialDTO.mrInboundDate}</td>
+											<td>${MaterialDTO.mrExpiredDate}</td>
+											<td>${MaterialDTO.mrStock}</td>
+											<td>${MaterialDTO.mrCodeUnit}</td> 
+					
+										</tr>
+									</c:forEach>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-            </div>
+            
         </main>
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
@@ -121,8 +163,73 @@
                 </div>
             </div>
         </footer>
+		
+		
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="registermodal" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <h5 class="modal-title" id="exampleModalLabel">재고 추가</h5>
+						
+						<!-- 원자재코드 -->
+						<div class="input-group mb-3">
+						  <input type="text" class="form-control" placeholder="원자재코드" aria-label="mrCode" aria-describedby="button-addon2">
+						</div>
+
+
+						<!-- 원자재명 -->
+						<div class="input-group mb-3">
+						  <input type="text" class="form-control" placeholder="원자재명" aria-label="mrName" aria-describedby="button-addon2">
+						</div>
+
+
+						<!-- 입고일자 -->
+						<div class="input-group mb-3">
+						  <input type="text" class="form-control" placeholder="입고일자" aria-label="mrInboundDate" aria-describedby="button-addon2">
+						</div>		
+
+								
+						<!-- 만료일자 -->
+						<div class="input-group mb-3">
+						  <input type="text" class="form-control" placeholder="유통기한" aria-label="mrExpiredDate" aria-describedby="button-addon2">
+						</div>
+
+
+						<!-- 수량 추가 -->
+						<div class="input-group mb-3">
+						  <input type="text" class="form-control" placeholder="수량" aria-label="Recipient's username" aria-describedby="button-addon2">
+						</div>
+
+
+						<!--단위 -->
+						<div class="input-group">
+						  <select class="form-select" id="mrCodeUnit" aria-label="Example select with button addon">
+						    <option selected>단위</option>
+						    <option value="1">One</option>
+						    <option value="2">Two</option>
+						    <option value="3">Three</option>
+						  </select>
+						  
+						<button class="btn btn-outline-secondary" type="button">등록하기</button>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">닫기</button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
-    </body>
+
+	<!-- Custom Script -->
+	<script>
+	    const myModal = document.getElementById('myModal')
+	    const myInput = document.getElementById('myInput')
+
+	    myModal.addEventListener('shown.bs.modal', () => {
+	        myInput.focus()
+	    })
+	</script>
+	</body>
 </html>

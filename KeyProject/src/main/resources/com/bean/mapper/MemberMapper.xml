@@ -2,11 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bean.mapper.MemberMapper">
 
-	<!-- 태그이름 == SQL문의 키워드 -->
-	<!-- #{변수이름} 방식으로 변수값을 sql문 사이에 넣을 수 있음 -->
-	<!-- 여러개의 변수값을 넣는경우, 
-		 하나로 묶어서 주어야 하고, 자료형을 명시(parameterType) -->
-		 <!-- 변수명이 DTO의 필드로 선언이 되어있어야함 -->
+	<!--회원 가입 join 쿼리문-->
 	<insert id="join" parameterType="com.bean.entity.MemberDTO">
 		insert into TB_Member(
 	        MEM_ID,
@@ -16,28 +12,27 @@
 	        MEM_ADDRESS
 	    )
 		values(
-			#{MEM_ID},
-			#{MEM_PW},
-			#{MEM_NAME},
-			#{MEM_PHONE},
-			#{MEM_ADDRESS}
+			#{memId},
+			#{memPw},
+			#{memName},
+			#{memPhone},
+			#{memAddress}
 		)
 	</insert>
 	
-	<!-- select문의 경우, 결과를 어떤 자료형에 담아서 받을지 결정이 필요 : resultType -->
-	<!-- ****테이블 컬럼 명 == DTO 선언된 필드 변수명 -->
+	<!--로그인 쿼리문 -->
 	<select id="login" parameterType="com.bean.entity.MemberDTO" resultType="com.bean.entity.MemberDTO">
-		select MEM_ID AS MEM_ID, 
-		MEM_PW AS MEM_PW,
-		MEM_PHONE AS MEM_PHONE,
-		MEM_NAME AS MEM_NAME,
-		MEM_ADDRESS as MEM_ADDRESS
+		select MEM_ID AS memId, 
+		MEM_PW AS memPw,
+		MEM_PHONE AS memPhone,
+		MEM_NAME AS memName,
+		MEM_ADDRESS as memAddress
 		from TB_Member
-		where MEM_ID = #{MEM_ID}
-		and MEM_PW = #{MEM_PW}
+		where MEM_ID = #{memId}
+		and MEM_PW = #{memPw}
 	</select>
 
-
+	<!--아이디 중복 체크 쿼리문-->
 	<select id="check" resultType="com.bean.entity.MemberDTO">
 		select * from TB_Member
 		where MEM_ID = #{MEM_ID}

@@ -16,13 +16,22 @@ public class JoinController {
 	@Autowired
 	private MemberMapper mapper;
 	
+
 	
+	@RequestMapping("/main") 
+	 public String gomain() {
+	    return "main";
+	 	}
+	
+
+	// join.jsp로 이동
 	 @RequestMapping("/join") 
 	 public String join() {
 	    return "join";
 	 	}
 
 	
+	 // 회원가입 로직
 	 @PostMapping("/joinProcess")
 		public String joinProcess(MemberDTO member) {
 

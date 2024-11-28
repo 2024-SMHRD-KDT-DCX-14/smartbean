@@ -16,13 +16,15 @@ public class MemberRestController {
 	@Autowired
 	private MemberMapper mapper;
 	
+	
+	// 회원 아이디 중복 체크 로직
 	@ResponseBody
 	@RequestMapping("/check")
-	public String check( String ID ) {
+	public String check( String memId ) {
 		//DB에서 email이 똑같은 게 있는지 
 		
 		// 기능 실행
-		MemberDTO member = mapper.check(ID);
+		MemberDTO member = mapper.check(memId);
 		
 		//데이터 응답
 		//: null인지 아닌지 체크해줘야함

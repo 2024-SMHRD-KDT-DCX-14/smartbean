@@ -23,11 +23,11 @@
 							<li><h5>회원가입</h5></li>
 								<%-- Ex01 회원가입 기능을 만들어 봅시다. --%>
 								<form action="join" method="post">
-									<li><input id="MEM_ID" name="MEM_ID" type="text" placeholder="ID를 입력하세요"></li>
+									<li><input id="memId" name="memId" type="text" placeholder="ID를 입력하세요"></li>
 									<!-- <li> <p id="result"> </p> </li> -->
-									<li><input name="MEM_PW" type="password" placeholder="PW를 입력하세요"></li>
-									<li><input name="MEM_NAME" type="text" placeholder="이름을 입력하세요"></li>
-									<li><input name="MEM_PHONE" type="text" placeholder="전화번호를 입력하세요"></li>
+									<li><input name="memPw" type="password" placeholder="PW를 입력하세요"></li>
+									<li><input name="memName" type="text" placeholder="이름을 입력하세요"></li>
+									<li><input name="memPhone" type="text" placeholder="전화번호를 입력하세요"></li>
 									<li>
 										본사 <input name="memType" type="radio" value="admin">
 										사장님 <input name="memType" type="radio" value="operator">
