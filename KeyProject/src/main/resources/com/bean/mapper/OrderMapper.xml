@@ -10,15 +10,19 @@
 		#{ORDER_M_TOTAL},
 		#{ORDER_M_TOTAL_AMT},
 		#{ORDER_M_DATE},
-		#{MEM_ID},
+		#{MEM_ID}
 	)
 </insert>
 
 
-
-
-
-
-
-
+<!-- 원자재 조회 쿼리문 -->
+<select id="list" resultType="com.bean.entity.OrderMasterDTO">
+       SELECT 
+       ORDER_M_NUMBER,
+       ORDER_M_TOTAL,
+       ORDER_M_TOTAL_AMT,
+       ORDER_M_DATE
+       MEM_ID
+       FROM TB_ORDER_M
+    </select>
 </mapper>
