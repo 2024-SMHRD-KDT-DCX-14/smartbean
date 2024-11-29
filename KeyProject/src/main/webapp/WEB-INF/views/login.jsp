@@ -45,7 +45,7 @@
                 </form>
             </div>
             <div class="card-footer text-center py-3">
-                <a href="password" class="small">비밀번호를 잃어버렸습니까? 비밀번호 찾기</a>
+                <a href="join" class="small">회원정보가 없습니까? 회원가입 하기</a>
             </div>
         </div>
     </main>
