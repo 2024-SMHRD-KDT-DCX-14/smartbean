@@ -26,7 +26,7 @@
     
     
         <div id="layoutSidenav_content">
-        ${user}
+        
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">SmartCoffeeBean</h1>

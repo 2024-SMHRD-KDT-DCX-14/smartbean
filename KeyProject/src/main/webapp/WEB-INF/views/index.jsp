@@ -14,7 +14,7 @@
 	<header id="upper_nav">
 		<a href="main"><h2>Coffee Lounge</h2></a>
 		<nav>
-			<a id="logout" href="#">Logout</a>
+			<a id="logout" href="/login">Logout</a>
 		</nav>
 	</header>
 	<div id="side_nav">
