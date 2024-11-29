@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bean.mapper.DashBoardMapper">
+
+<select id="drinkchart" resultType="com.bean.entity.OrderDetailDTO">
+	SELECT M.MENU_NAME AS orderDetailCode, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
+	FROM TB_MENU M
+	INNER JOIN TB_ORDER_D D
+	ON M.MENU_CODE = D.ORDER_D_CODE
+	WHERE M.MENU_TYPE = '음료'
+	GROUP BY M.MENU_NAME
+	ORDER BY MENU_NAME
+</select>
+
+<select id="dessertchart" resultType="com.bean.entity.OrderDetailDTO">
+	SELECT M.MENU_NAME AS orderDetailCode, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
+	FROM TB_MENU M
+	INNER JOIN TB_ORDER_D D
+	ON M.MENU_CODE = D.ORDER_D_CODE
+	WHERE M.MENU_TYPE = '디저트'
+	GROUP BY M.MENU_NAME
+	ORDER BY MENU_NAME
+</select>
+
+<select id="timechart" resultType="com.bean.entity.OrderMasterDTO">
+	SELECT 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD HH24') AS orderMasterDate, 
+    SUM(M.ORDER_M_TOTAL) AS orderMasterTotal
+	FROM 
+    TB_ORDER_M M
+	WHERE 
+    TRUNC(M.ORDER_M_DATE) = TRUNC(SYSDATE)
+	GROUP BY 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD HH24')
+	ORDER BY 
+    orderMasterDate
+</select>
+
+<select id="daychart" resultType="com.bean.entity.OrderMasterDTO">
+	SELECT 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD') AS orderMasterDate, 
+    SUM(M.ORDER_M_TOTAL) AS orderMasterTotal
+	FROM 
+    TB_ORDER_M M
+	WHERE 
+    M.ORDER_M_DATE >= SYSDATE - 7
+	GROUP BY 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD')
+	ORDER BY 
+    orderMasterDate
+</select>
+
+<select id="monthchart" resultType="com.bean.entity.OrderMasterDTO">
+	SELECT 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM') AS orderMasterDate, 
+    SUM(M.ORDER_M_TOTAL) AS orderMasterTotal
+	FROM 
+    TB_ORDER_M M
+	WHERE 
+    M.ORDER_M_DATE >= SYSDATE - 365
+	GROUP BY 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM')
+	ORDER BY 
+    orderMasterDate
+</select>
+
+<select id="quaterchart" resultType="com.bean.entity.OrderMasterDTO">
+	SELECT 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY') || '-Q' || 
+    CEIL(TO_NUMBER(TO_CHAR(M.ORDER_M_DATE, 'MM')) / 3) AS orderMasterDate,
+    SUM(M.ORDER_M_TOTAL) AS orderMasterTotal
+	FROM 
+    TB_ORDER_M M
+	WHERE 
+    M.ORDER_M_DATE >= SYSDATE - 365
+	GROUP BY 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY'), 
+    CEIL(TO_NUMBER(TO_CHAR(M.ORDER_M_DATE, 'MM')) / 3)
+	ORDER BY 
+    orderMasterDate
+</select>
+
+</mapper>
