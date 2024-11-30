@@ -103,8 +103,8 @@
 </head>
 <body>
 	<%@ include file="index.jsp"%>	
-	
-    
+	${user }
+
 	<div class="container mt-5">
         <h2>재고조회</h2>
 		
@@ -153,7 +153,7 @@
 						<br>
 						<!-- 회원명 -->
 						<div class="input-group mb-3">
-							<input name="memId" type="text" class="form-control" readonly value="${user.memId}" aria-label="mrCode" aria-describedby="button-addon2">
+							<input name="memId" type="text" class="form-control" readonly value="회원명 : ${user.memId}" aria-label="mrCode" aria-describedby="button-addon2">
 						</div>
 						
 						<!-- 원자재코드 -->
@@ -162,11 +162,17 @@
 						</div>
 
 
-						<!-- 원자재명 -->
+						<!-- 원자재 종류 -->
 						<div class="input-group mb-3">
-							<input name="mrName" type="text" class="form-control" placeholder="원자재명" aria-label="mrName" aria-describedby="button-addon2">
+						<select name="mrName" class="form-select" id="mrName" >
+								<option selected>종류</option>
+								<option value="원두">원두</option>
+								<option value="우유">우유</option>
+								<option value="케이크">케이크</option>
+								<option value="빨대">빨대</option>
+								<option value="컵">컵</option>
+						</select>
 						</div>
-
 
 						<!-- 입고일자 -->
 					<!-- 	<div class="input-group mb-3">
@@ -224,9 +230,16 @@
 										</div>
 										
 										
-										<!-- 수정할 원자재명 -->
+										<!-- 원자재 종류 -->
 										<div class="input-group mb-3">
-											<input name="mrName" type="text" class="form-control" placeholder="원자재명" aria-label="mrName" aria-describedby="button-addon2">
+										<select name="mrName" class="form-select" id="mrName" >
+												<option selected>종류</option>
+												<option value="원두">원두</option>
+												<option value="우유">우유</option>
+												<option value="케이크">케이크</option>
+												<option value="빨대">빨대</option>
+												<option value="컵">컵</option>
+										</select>
 										</div>
 										
 										
