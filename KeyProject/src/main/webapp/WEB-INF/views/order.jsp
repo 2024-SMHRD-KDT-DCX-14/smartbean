@@ -224,7 +224,11 @@ body {
 
 				// 주문 메뉴, 가격이 배열에 담김
 				orderItemsArray.push(itemname);
-				orderPriceArray.push(itemprice);
+				orderPriceArray.push(Number(itemprice));
+				
+				console.log(itemprice);
+				console.log(orderPriceArray);
+				
 				itemCodeArray.push(itemcode);
 				orderItemQuantity.push(1); // 메뉴를 선택하면 최초 수량 1로 들어감
 
@@ -327,7 +331,7 @@ body {
 
 		/* 전체 비용 담기 */
 		function costitems() {
-
+			// 전체 수량 x 가격을 담기위한 임시 배열생성
 			const totalTempArray = [];
 			// 콜백함수 arr.map(function(element, index, array){  }, this);
 			orderItemQuantity.map(function(quantity, index) {
@@ -447,13 +451,15 @@ body {
 				
 				console.log(dataToSend);
 				
- /* 				 $.ajax({
-			        url: 'DDDD',  // Replace with your server endpoint
-			        method: 'GET',
-			        data: dataToSend,
+ 				 $.ajax({
+ 					url: "/orderstore",
+ 				    method: 'POST',
+ 				    contentType: 'application/json', // JSON 형식 지정
+ 				    data: JSON.stringify(dataToSend),
 			        success: function(response) {
 			            // Handle success response here
 			            alert('Checkout successful!');
+			            orderbasketClear(); // 전송하고 주문내역 초기화
 			            console.log(response);  // Log the server response for debugging
 			        },
 			        error: function(xhr, status, error) {
@@ -461,8 +467,8 @@ body {
 			            alert('Error processing checkout. Please try again.');
 			            console.error('Error: ' + error);
 			        }  
-				 })  */
-				
+				 })  
+				 
 				
 			});
 
