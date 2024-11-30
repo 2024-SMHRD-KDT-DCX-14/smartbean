@@ -120,8 +120,8 @@
                 </tr>
             </thead>
 			  <tbody>
-				<!-- 주문 조회 로직  -->
-				<c:forEach var="OrderMasterDTO" items="${list}">
+				<!-- 주문 조회 로직 라는 이름에 조회 리스트 담음  -->
+				<c:forEach var="OrderMasterDTO" items="${viewOrderList}">
 					<tr>
 						<td>${OrderMasterDTO.orderMasterNumber}</td>
 						<td>${OrderMasterDTO.orderMasterTotal}</a></td>
@@ -185,7 +185,7 @@
                 </tr>
             </thead>
 			  <tbody>
-							       <c:forEach var="OrderMasterDTO" items="${list}">
+							       <c:forEach var="OrderMasterDTO" items="${orderList}">
 									<tr>
 										<td>${OrderMasterDTO.orderMasterNumber}</td>
 										<td>${OrderMasterDTO.orderMasterTotal}</a></td>
@@ -270,6 +270,7 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 	<script src="js/scripts.js"></script>
+	
 </body>
 
 </html>

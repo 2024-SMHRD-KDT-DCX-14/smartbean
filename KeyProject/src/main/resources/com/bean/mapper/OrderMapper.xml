@@ -2,27 +2,65 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bean.mapper.OrderMapper">
 
-<!-- 주문 마스터 내역 넣기 -->
-<insert id="orderlist" parameterType="com.bean.entity.OrderMasterDTO">
-	INSERT INTO TB_ORDER_D
-	VALUES(
-		#{ORDER_M_NUMBER},
-		#{ORDER_M_TOTAL},
-		#{ORDER_M_TOTAL_AMT},
-		#{ORDER_M_DATE},
-		#{MEM_ID}
-	)
-</insert>
+	<!-- 주문번호 받아오기 -->
+	<select id="sequenceNumber"
+		resultType="com.bean.entity.OrderMasterDTO">
+		SELECT TB_ORDER_M_SEQ.NEXTVAL AS orderMasterNumber FROM
+		DUAL
+	</select>
 
 
-<!-- 원자재 조회 쿼리문 -->
-<select id="list" resultType="com.bean.entity.OrderMasterDTO">
-       SELECT 
-       ORDER_M_NUMBER,
-       ORDER_M_TOTAL,
-       ORDER_M_TOTAL_AMT,
-       ORDER_M_DATE
-       MEM_ID
-       FROM TB_ORDER_M
-    </select>
+	<!-- 주문 마스터 내역 넣기 -->
+	<insert id="orderListMaster"
+		parameterType="com.bean.entity.OrderMasterDTO">
+		INSERT INTO TB_ORDER_M (
+		ORDER_M_NUMBER,
+		ORDER_M_TOTAL,
+		ORDER_M_TOTAL_AMT,
+		MEM_ID
+		)
+		VALUES (
+		#{orderMasterNumber},
+		#{orderMasterTotal},
+		#{orderMasterTotalAmount},
+		#{memId}
+		)
+	</insert>
+
+	<!-- 주문 디테일 테이블 넣기 -->
+	<insert id="orderListDetail"
+		parameterType="com.bean.entity.OrderDetailDTO">
+		INSERT INTO TB_ORDER_D(
+		ORDER_D_NUMBER,
+		ORDER_D_CODE,
+		ORDER_D_AMT,
+		ORDER_D_PRICE
+		)
+		VALUES(
+		#{orderDetailNumber},
+		#{orderDetailCode},
+		#{orderDetailAmt},
+		#{orderDetailPrice}
+		)
+	</insert>
+
+	<!-- 주문 마스터 조회 쿼리문 -->
+	<select id="orderList_1"
+		resultType="com.bean.entity.OrderMasterDTO">
+		SELECT
+		ORDER_M_NUMBER as orderMasterNumber,
+		ORDER_M_TOTAL as orderMasterTotal,
+		ORDER_M_TOTAL_AMT as orderMasterTotalAmount,
+		ORDER_M_DATE as orderMasterDate,
+		MEM_ID as memId
+		FROM TB_ORDER_M
+	</select>
+
+	<!-- 재고 차감 -->
+	<!-- (1) 원두 조회 -->
+	<!-- (2) 우유 -->
+	<!-- (3) 케익 -->
+	<!-- (4) 컵 -->
+	<!-- (5) 빨대 -->
+
 </mapper>
