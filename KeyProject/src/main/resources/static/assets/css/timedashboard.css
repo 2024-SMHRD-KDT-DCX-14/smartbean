@@ -1,7 +1,7 @@
 @charset "UTF-8";
     body { /* 인덱스때문에 줘야함 */
      margin-left: 225px !important;
-     height: 100vh !important;
+     height: 90vh !important;
     }
 
     /* 전체 컨테이너 */
@@ -10,7 +10,7 @@
       grid-template-rows: 1fr 1fr; /* 위 2개 영역과 아래 2개 영역 */
       grid-template-columns: 1fr 1fr; /* 각 행을 2개로 나눔 */
       gap: 10px; /* 구역 간 간격 */
-      padding: 20px;
+      padding: 7px;
       height: 90vh;
       background-color: #f5f5f5; /* 배경색 */
     }
