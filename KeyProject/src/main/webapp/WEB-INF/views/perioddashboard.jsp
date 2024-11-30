@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="assets/css/timedashboard.css">
 </head>
 <body>
+<%@ include file="index.jsp"%>
   <div class="inner_container">
     <!-- 상단 두 구역 -->
     <div class="top_section">

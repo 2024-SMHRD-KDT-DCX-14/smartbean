@@ -1,7 +1,6 @@
 @charset "UTF-8";
     body { /* 인덱스때문에 줘야함 */
      margin-left: 225px !important;
-     margin-top: 60px !important;
      height: 100vh !important;
     }
 

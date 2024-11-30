@@ -9,10 +9,10 @@ import com.bean.entity.OrderMasterDTO;
 
 @Mapper
 public interface DashBoardMapper {
-	public List<OrderDetailDTO> drinkchart();
-	public List<OrderDetailDTO> dessertchart();
-	public List<OrderMasterDTO> timechart();
-	public List<OrderMasterDTO> daychart();
-	public List<OrderMasterDTO> monthchart();
-	public List<OrderMasterDTO> quaterchart();
+	public List<OrderDetailDTO> drinkchart(String memId);
+	public List<OrderDetailDTO> dessertchart(String memId);
+	public List<OrderMasterDTO> timechart(String memId);
+	public List<OrderMasterDTO> daychart(String memId);
+	public List<OrderMasterDTO> monthchart(String memId);
+	public List<OrderMasterDTO> quaterchart(String memId);
 }

@@ -9,6 +9,7 @@
 <link href="assets/css/menudashboard.css" rel="stylesheet">
 </head>
 <body>
+	<%@ include file="index.jsp"%>
 	<div class="inner_container">
 		<div class="section">
 			<div> <%-- 음료 차트 --%>
