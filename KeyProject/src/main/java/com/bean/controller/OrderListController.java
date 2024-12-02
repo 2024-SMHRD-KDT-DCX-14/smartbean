@@ -25,6 +25,13 @@ public class OrderListController {
 	public String goOrder() {
 		return "order";
 	}
+	
+	// 오더페이지 열기
+	@RequestMapping("/testtest")
+	public String gotest() {
+		return "testtest";
+	}
+	
 
 	@RequestMapping("/orderlist")
 	public String orderlist() {
@@ -52,8 +59,13 @@ public class OrderListController {
 		List<OrderDetailDTO> viewOrderDetail = mapper.viewOrderDetail(memId);
 		model.addAttribute("viewOrderDetail", viewOrderDetail);
 		
+		// 주문 내역 상세 조회 로직
+		List<OrderDetailDTO> viewDetail = mapper.viewDetail(memId);
+		model.addAttribute("viewDetail", viewDetail);
+		
 		session.setAttribute("user", member);
 		return "orderhistory"; // 다시 내역 페이지로 이동
+		
 	}
 
 }

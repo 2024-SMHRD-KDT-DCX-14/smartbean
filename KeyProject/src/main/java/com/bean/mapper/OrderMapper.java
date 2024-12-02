@@ -3,6 +3,7 @@ package com.bean.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.bean.entity.OrderDetailDTO;
 import com.bean.entity.OrderMasterDTO;
@@ -30,5 +31,8 @@ public interface OrderMapper {
 
 	// 상태 업데이트 준비중 -> 완료로
 	public int statusUpdate(String memId, int orderMasterNumber);
+	
+	// 주문내역 상세조회 (전체 주문 내역을 자세히 보여줌)
+	public List<OrderDetailDTO> viewDetail(String memId);
 	
 }

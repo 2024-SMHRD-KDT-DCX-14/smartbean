@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <link rel="stylesheet" href="assets/css/timedashboard.css">
+
 </head>
-<body>
-<%@ include file="index.jsp"%>
+<body class="sb-nav-fixed">
+   	<%@ include file="index.jsp"%>
 
         <br><<h4>기간별 매출 조회</h4>
   <div class="inner_container">

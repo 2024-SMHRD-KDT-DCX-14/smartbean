@@ -27,7 +27,7 @@
 				<div class="side_nav_in_list">
 					<a href="/goOrder">주문/결제</a> <br>
 					<a href="/orderhistory">주문내역 조회</a> <br> 
-					<a href="productTable">상품관리</a> <br>
+					<a href="/productTable">상품관리</a> <br>
 				</div>
 			</div>
 			<div class="side_nav_list">

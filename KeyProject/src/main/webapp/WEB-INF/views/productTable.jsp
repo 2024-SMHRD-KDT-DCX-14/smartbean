@@ -54,7 +54,8 @@ body {
 <body>
 	<%@ include file="index.jsp"%>
 	<div class="container mt-5">
-		<h2>상품관리</h2>
+	<br><br>
+		<h4>상품관리</h4>
 		<table id="datatablesSimple" class="table table-striped table-hover">
 			<thead>
 				<tr>

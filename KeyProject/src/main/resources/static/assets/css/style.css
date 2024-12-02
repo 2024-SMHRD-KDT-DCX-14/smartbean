@@ -44,6 +44,15 @@ header h2 {
 }
 
 
+h1 {
+  
+  font-family: 'GmarketSansMedium';
+  font-size: 40px;
+  letter-spacing: 0.5px;
+    font-weight: bold;
+    color: #1d1d1f; /* 애플 텍스트 기본 색상 */
+}
+
 body {
     padding-top: 50px;
     height: 100vh;
@@ -78,6 +87,12 @@ h2 {
 /* 공통 링크 스타일 */
 a {
   text-decoration: none;
+}
+
+body {
+ 
+  font-family:'GmarketSansMedium';
+ 
 }
 
 /* 로그아웃 버튼 */

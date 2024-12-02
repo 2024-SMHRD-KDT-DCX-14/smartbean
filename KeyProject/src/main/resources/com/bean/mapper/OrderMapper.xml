@@ -92,7 +92,27 @@
 		  AND B.STATUS = '준비중'
 	</select>
 
-
+<!-- 주문내역 상세조회 -->
+<select id="viewDetail" resultType="com.bean.entity.OrderDetailDTO">
+    SELECT 
+        A.ORDER_D_NUMBER AS orderDetailNumber, 
+        A.ORDER_D_CODE AS orderDetailCode, 
+        A.ORDER_D_AMT AS orderDetailAmt,
+        A.ORDER_D_PRICE AS orderDetailPrice,
+        C.MENU_NAME AS menuName
+    FROM 
+        TB_ORDER_D A 
+    INNER JOIN 
+        TB_ORDER_M B 
+        ON A.ORDER_D_NUMBER = B.ORDER_M_NUMBER
+    INNER JOIN 
+        TB_MENU C 
+        ON A.ORDER_D_CODE = C.MENU_CODE
+    WHERE 
+        B.STATUS = '완료'
+</select>
+ 
+ 
 <!-- 재고 차감 -->
 	
 	<!-- 상태 업데이트 -->
@@ -180,5 +200,7 @@
 		AND MR_STOCK > 0
 		)
 	</update>
+	
+	
 
 </mapper>
