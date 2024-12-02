@@ -12,4 +12,6 @@ public class OrderDetailDTO {
 	private String orderDetailCode; // 상품코드
 	private int orderDetailAmt; // 해당상품 총 양
 	private int orderDetailPrice; // 해당 상품 총 금액
+	
+    private String menuName;     // 메뉴이름 받아오기
 }
