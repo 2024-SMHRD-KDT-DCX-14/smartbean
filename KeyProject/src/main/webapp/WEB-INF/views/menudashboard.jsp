@@ -13,19 +13,11 @@
 	
 	        <br><<h4>메뉴별 매출 조회</h4>
 	<div class="inner_container">
-		<div class="section">
-			<div> <%-- 음료 차트 --%>
-		  		<canvas id="drinkChart" width="100%" height="75%"></canvas>
-			</div>
-		</div>
-		<div class="section">
-			<div> <%-- 디저트 차트--%>
-				<canvas id="dessertChart" width="100%" height="100%"></canvas>
-			</div>
+		<div> <%-- 음료 차트 --%>
+		  	<canvas id="menuChart" width="100%" height="50%"></canvas>
 		</div>
 	</div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="assets/js/drinkDashBoard.js"></script>
-  <script src="assets/js/dessertDashBoard.js"></script>
+  <script src="assets/js/menuDashBoard.js"></script>
 </body>
 </html>

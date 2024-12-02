@@ -40,31 +40,38 @@
                     <div class="row"> <!-- 최고 매출 카드 -->
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">일주일 간 최고 매출<h2 align="right">324543원(가데이터)</h2></div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                <div class="card-body">일주일 간 최고 매출</div>
+									 <h3 align="center">${maxSales.orderMasterTotal}원</h3>
+                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="/perioddashboard">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
-                        </div> <!-- 최저 매출 카드 -->
+                        </div> 
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">일주일 간 최저 매출<h2 align="right">324643원(가데이터)</h2></div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                <div class="card-body">일주일 간 최저 매출</div>
+									<h3 align="center">${minSales.orderMasterTotal}원</h3>
+                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="/perioddashboard">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
-                        </div> <!-- 인기 메뉴 카드 -->
+                        </div> 
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-success text-white mb-4">
                                 <div class="card-body">인기 메뉴</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
+									<h3 align="center">${maxMenu.menuName}</h3>
+                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="/menudashboard">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
-                        </div> <!-- 재고 현황 카드 -->
+                        </div> 
+                                
+                                
+                                
+                        
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-danger text-white mb-4">
                                 <div class="card-body" id="tableCheck">재고 현황</div>
@@ -148,7 +155,7 @@
                                 </div>
                                 <div class="card-body">
                                     <!-- 데이터 바인딩 -->
-                                    <canvas id="myAreaChart" width="100%" height="40"></canvas>
+                                    <canvas id="mainTimeChart" width="100%" height="40"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -160,7 +167,7 @@
                                 </div>
                                 <div class="card-body">
                                     <!-- 데이터 바인딩 -->
-                                    <canvas id="myBarChart" width="100%" height="40"></canvas>
+                                    <canvas id="mainMenuChart" width="100%" height="40"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -171,7 +178,7 @@
         <!-- Chart.js 라이브러리 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <!-- Chart 데이터 관련 스크립트 -->
-        <script src="assets/js/mainDayChart.js"></script>
+        <script src="assets/js/mainTimeChart.js"></script>
         <script src="assets/js/mainMenuChart.js"></script>
     </body>
 </html>

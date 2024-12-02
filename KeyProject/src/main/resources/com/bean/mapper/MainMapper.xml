@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bean.mapper.MainMapper">
+
+<select id="maxsales" resultType="com.bean.entity.OrderMasterDTO">
+	SELECT 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD') AS orderMasterDate, 
+    SUM(M.ORDER_M_TOTAL) AS orderMasterTotal
+	FROM 
+    TB_ORDER_M M
+	WHERE 
+    M.ORDER_M_DATE >= SYSDATE - 7 AND M.MEM_ID = #{memId}
+	GROUP BY 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD')
+	HAVING 
+    SUM(M.ORDER_M_TOTAL) = (
+        SELECT MAX(SUM_M)
+        FROM (
+            SELECT SUM(TB_ORDER_M.ORDER_M_TOTAL) AS SUM_M
+            FROM TB_ORDER_M
+            WHERE TB_ORDER_M.ORDER_M_DATE >= SYSDATE - 7 AND TB_ORDER_M.MEM_ID = #{memId}
+            GROUP BY TO_CHAR(TB_ORDER_M.ORDER_M_DATE, 'YYYY-MM-DD')
+        )
+    )
+</select>
+
+<select id="minsales" resultType="com.bean.entity.OrderMasterDTO">
+	SELECT 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD') AS orderMasterDate, 
+    SUM(M.ORDER_M_TOTAL) AS orderMasterTotal
+	FROM 
+    TB_ORDER_M M
+	WHERE 
+    M.ORDER_M_DATE >= SYSDATE - 7 AND M.MEM_ID = #{memId}
+	GROUP BY 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD')
+	HAVING 
+    SUM(M.ORDER_M_TOTAL) = (
+        SELECT MIN(SUM_M)
+        FROM (
+            SELECT SUM(TB_ORDER_M.ORDER_M_TOTAL) AS SUM_M
+            FROM TB_ORDER_M
+            WHERE TB_ORDER_M.ORDER_M_DATE >= SYSDATE - 7 AND TB_ORDER_M.MEM_ID = #{memId}
+            GROUP BY TO_CHAR(TB_ORDER_M.ORDER_M_DATE, 'YYYY-MM-DD')
+        )
+    )
+</select>
+<select id="maxmenu" resultType="com.bean.entity.OrderDetailDTO">
+	SELECT MENU.MENU_NAME AS menuName,
+	SUM(D.ORDER_D_PRICE) AS orderDetailPrice
+  	FROM TB_MENU MENU INNER JOIN TB_ORDER_D D
+  	ON MENU.MENU_CODE = D.ORDER_D_CODE
+    INNER JOIN TB_ORDER_M M
+    ON D.ORDER_D_NUMBER = M.ORDER_M_NUMBER
+    WHERE M.MEM_ID = #{memId}
+	GROUP BY MENU.MENU_NAME
+ 	HAVING SUM(D.ORDER_D_PRICE) = (
+        SELECT MAX(SUM_D)
+        FROM (
+            SELECT SUM(D.ORDER_D_PRICE) AS SUM_D
+            FROM TB_MENU MENU INNER JOIN TB_ORDER_D D
+            ON MENU.MENU_CODE = D.ORDER_D_CODE
+            INNER JOIN TB_ORDER_M M
+            ON D.ORDER_D_NUMBER = M.ORDER_M_NUMBER
+            WHERE M.MEM_ID = #{memId}
+            GROUP BY MENU.MENU_NAME
+            )
+        )
+</select>
+
+
+</mapper>

@@ -18,6 +18,15 @@ public class DashBoardRestController {
 	@Autowired
 	private DashBoardMapper mapper;
 	
+	// 메뉴별 차트
+	@RequestMapping("/menuchart")
+	public List<OrderDetailDTO> menuchart(HttpSession session) {
+		MemberDTO member = (MemberDTO) session.getAttribute("user");
+		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
+		List<OrderDetailDTO> list = mapper.menuchart(memId); // mapper에 있는 menuchart() 실행시킨걸 list에 넣음
+		
+		return list;
+	}
 	
 	@RequestMapping("/drinkchart")
 	public List<OrderDetailDTO> drinkchart(HttpSession session) {

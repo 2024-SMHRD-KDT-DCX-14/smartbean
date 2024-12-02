@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bean.entity.MaterialDTO;
 import com.bean.entity.MemberDTO;
+import com.bean.entity.OrderDetailDTO;
+import com.bean.entity.OrderMasterDTO;
+import com.bean.mapper.MainMapper;
 import com.bean.mapper.MaterialMapper;
 import com.bean.mapper.MemberMapper;
 
@@ -21,6 +24,8 @@ public class LoginController {
 	private MemberMapper mapper;
 	@Autowired	
 	private MaterialMapper materialMapper;
+	@Autowired
+	private MainMapper mainMapper;
 	
 	
 	// main.jsp로 이동(메인페이지로 이동)
@@ -41,6 +46,9 @@ public class LoginController {
 		List<MaterialDTO> count = materialMapper.count(memId);
 		System.out.println("count : "+count); // 출력되는지 이클립스 콘솔창에서 확인
 		session.setAttribute("count",count);
+		
+
+		
 	    return "main";}
 	    }
 	
@@ -69,7 +77,23 @@ public class LoginController {
 	      }else {
 	         System.out.println("login t");
 	         session.setAttribute("user", result);
-	         return "redirect:/main";
+	         
+	         // memberdto의 mem에 유저 세션정보를 넣고 memId만 String값으로 memId에 넣음 
+		 		MemberDTO mem = (MemberDTO) session.getAttribute("user");
+				String memId = mem.getMemId();
+	 		// mainMapper의 maxSales에 mainMapper
+	 		OrderMasterDTO maxSales = mainMapper.maxsales(memId);
+	 		session.setAttribute("maxSales", maxSales);
+	         System.out.println("maxsales : "+maxSales);
+	         OrderMasterDTO minSales = mainMapper.minsales(memId);
+	 		session.setAttribute("minSales", minSales);
+	 		System.out.println("minsales : "+minSales);
+
+	 		OrderDetailDTO maxMenu = mainMapper.maxmenu(memId);
+	 		session.setAttribute("maxMenu", maxMenu);
+	 		System.out.println("maxmenu : "+maxMenu);
+
+	        return "redirect:/main";
 	      }
 	      
 	   }

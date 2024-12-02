@@ -39,4 +39,24 @@ SELECT B.ORDER_D_NUMBER AS orderDNumber,
 		    AND B.STATUS = '완료';
 
  
+		    
+		    	SELECT 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD') AS orderMasterDate, 
+    SUM(M.ORDER_M_TOTAL) AS orderMasterTotal
+	FROM 
+    TB_ORDER_M M
+	WHERE 
+    M.ORDER_M_DATE >= SYSDATE - 7 AND M.MEM_ID = 'MEM001'
+	GROUP BY 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD')
+	HAVING 
+    SUM(M.ORDER_M_TOTAL) = (
+        SELECT MAX(SUM_M)
+        FROM (
+            SELECT SUM(TB_ORDER_M.ORDER_M_TOTAL) AS SUM_M
+            FROM TB_ORDER_M
+            WHERE TB_ORDER_M.ORDER_M_DATE >= SYSDATE - 7 AND TB_ORDER_M.MEM_ID = 'MEM001'
+            GROUP BY TO_CHAR(TB_ORDER_M.ORDER_M_DATE, 'YYYY-MM-DD')
+        )
+    );
 

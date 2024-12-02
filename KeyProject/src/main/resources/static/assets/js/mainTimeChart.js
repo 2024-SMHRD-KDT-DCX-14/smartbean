@@ -18,14 +18,14 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
                 timeOrderTotal.push(res.data[i].orderMasterTotal);
             }
 
-var ctx = document.getElementById("myAreaChart");
+var mainTimeCtx = document.getElementById("mainTimeChart");
 
-var myLineChart = new Chart(ctx, {
+var myLineChart = new Chart(mainTimeCtx, {
   type: 'line',
   data: {
     labels: timeOrderDate,
     datasets: [{
-      label: "Sessions",
+      label: "매출",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
@@ -42,15 +42,9 @@ var myLineChart = new Chart(ctx, {
   options: {
     scales: {
       xAxes: [{
-        time: {
-          unit: 'date'
-        },
         gridLines: {
-          display: false
+          display: true
         },
-        ticks: {
-          maxTicksLimit: 7
-        }
       }],
       yAxes: [{
         gridLines: {
