@@ -17,11 +17,7 @@ public class JoinController {
 	private MemberMapper mapper;
 	
 
-	
-	@RequestMapping("/main") 
-	 public String gomain() {
-	    return "main";
-	 	}
+
 	
 
 	// join.jsp로 이동

@@ -8,16 +8,14 @@
 	<!-- 원자재 조회 쿼리문 -->
 	<select id="list" resultType="com.bean.entity.MaterialDTO">
 		select Mr_Code as mrCode,
-		Mr_Name as
-		mrName,
+		Mr_Name as mrName,
 		Mr_Inbound_Date as mrInboundDate,
-		Mr_Expired_Date as
-		mrExpiredDate,
+		Mr_Expired_Date as mrExpiredDate,
 		Mr_Stock as mrStock,
 		Mr_Code_Unit as mrCodeUnit,
-		Mem_Id as
-		memId
+		Mem_Id as memId
 		from TB_MATERIAL
+		where MEM_ID=#{memId}
 	</select>
 
 	<!-- 원자재 등록 쿼리문 -->
@@ -58,5 +56,19 @@
 		from
 		TB_MENU
 	</select>
+
+	<!-- 원자재 총수량 조회 쿼리문 -->
+<select id="count" resultType="com.bean.entity.MaterialDTO">
+	select
+	Mr_Name as mrName,
+	SUM(Mr_Stock) as mrStock,
+	Mr_Code_Unit as mrCodeUnit
+	from TB_MATERIAL
+	where MEM_ID=#{memId}
+	group by Mr_Name,Mr_Code_Unit
+	ORDER BY Mr_Name, Mr_Code_Unit
+</select>
+
+
 
 </mapper>

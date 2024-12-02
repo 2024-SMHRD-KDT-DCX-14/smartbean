@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple DataTables Example</title>
+    <title>재고 관리</title>
 	<link href="assets/css/styles.css" rel="stylesheet">
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script><!-- Simple-DataTables CSS -->
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet">
@@ -103,7 +103,7 @@
 </head>
 <body>
 	<%@ include file="index.jsp"%>	
-	${user }
+
 
 	<div class="container mt-5">
         <h2>재고조회</h2>
@@ -158,7 +158,7 @@
 						
 						<!-- 원자재코드 -->
 						<div class="input-group mb-3">
-							<input name="mrCode" type="text" class="form-control" placeholder="원자재코드" aria-label="mrCode" aria-describedby="button-addon2">
+							<input name="mrCode" type="text" class="form-control" placeholder="원자재코드" aria-label="mrCode" aria-describedby="button-addon2" required>
 						</div>
 
 
@@ -226,7 +226,7 @@
 										
 										<!-- 원자재코드 -->
 										<div class="input-group mb-3">
-											<input name="mrCode" type="text" class="form-control" placeholder="원자재코드" aria-label="mrCode" aria-describedby="button-addon2">
+											<input name="mrCode" type="text" class="form-control" placeholder="원자재코드" aria-label="mrCode" aria-describedby="button-addon2" required>
 										</div>
 										
 										
