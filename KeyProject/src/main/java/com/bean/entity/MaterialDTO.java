@@ -15,6 +15,7 @@ public class MaterialDTO {
 	private int mrStock; // 수량
 	private String mrCodeUnit; // 단위
 	private String memId; // 회원 아이디
-
+	private String menuPrice; // 상품 가격
+	private String menuName; // 상품 이름
 
 }

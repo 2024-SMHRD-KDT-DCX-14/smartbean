@@ -40,7 +40,6 @@ public class LoginController {
 	         System.out.println("login t");
 	         session.setAttribute("user", result);
 	         return "redirect:/main";
-//	         return "redirect:/index";
 	      }
 	      
 	   }

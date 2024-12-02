@@ -13,16 +13,22 @@ public interface OrderMapper {
 	// 주문 번호 가져오기
 	public OrderMasterDTO sequenceNumber();
 	
-	
 	// 주문 마스터 담기
 	public int orderListMaster(OrderMasterDTO orderMaster); 
 	
 	// 주문 디테일 담기
 	public int orderListDetail(OrderDetailDTO orderDetail);
 	
-	// 주문 마스터 조회
-	public List<OrderMasterDTO> orderList_1();
+	// 주문 마스터 조회 (status가 완료인 것)
+	public List<OrderMasterDTO> viewOrderList();
 	   
-	  
+	// 주문 마스터 조회 (status가 준비중 인것만)
+	public List<OrderMasterDTO> statusOrderList();
+	
+	// 주문 상세내역 조회 (status가 준비중인 것을 누르면 해당 번호에 맞는 상세내역을 출력)
+	public List<OrderDetailDTO> viewOrderDetail(String memId);
+
+	// 상태 업데이트 준비중 -> 완료로
+	public int statusUpdate(String memId, int orderMasterNumber);
 	
 }

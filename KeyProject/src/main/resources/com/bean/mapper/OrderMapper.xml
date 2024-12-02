@@ -5,8 +5,8 @@
 	<!-- 주문번호 받아오기 -->
 	<select id="sequenceNumber"
 		resultType="com.bean.entity.OrderMasterDTO">
-		SELECT TB_ORDER_M_SEQ.NEXTVAL AS orderMasterNumber FROM
-		DUAL
+		SELECT TB_ORDER_M_SEQ.NEXTVAL AS orderMasterNumber
+		FROM DUAL
 	</select>
 
 
@@ -44,23 +44,141 @@
 		)
 	</insert>
 
-	<!-- 주문 마스터 조회 쿼리문 -->
-	<select id="orderList_1"
+	<!-- 주문 마스터 조회 쿼리문, 상태가 완료인 것만 -->
+	<select id="viewOrderList"
 		resultType="com.bean.entity.OrderMasterDTO">
 		SELECT
 		ORDER_M_NUMBER as orderMasterNumber,
-		ORDER_M_TOTAL as orderMasterTotal,
+		ORDER_M_TOTAL as
+		orderMasterTotal,
 		ORDER_M_TOTAL_AMT as orderMasterTotalAmount,
 		ORDER_M_DATE as orderMasterDate,
+		STATUS as status,
 		MEM_ID as memId
-		FROM TB_ORDER_M
+		FROM
+		TB_ORDER_M
+		WHERE STATUS = '완료'
 	</select>
 
-	<!-- 재고 차감 -->
+	<!-- 주문 마스터 조회 쿼리문, 상태가 준비중인 것만 -->
+	<select id="statusOrderList"
+		resultType="com.bean.entity.OrderMasterDTO">
+		SELECT
+		ORDER_M_NUMBER as orderMasterNumber,
+		ORDER_M_TOTAL as
+		orderMasterTotal,
+		ORDER_M_TOTAL_AMT as orderMasterTotalAmount,
+		ORDER_M_DATE as orderMasterDate,
+		STATUS as status,
+		MEM_ID as memId
+		FROM
+		TB_ORDER_M
+		WHERE STATUS = '준비중'
+	</select>
+
+	<!-- 상태 눌렀을 때, 주문상세 조회 로직 주문번호, 코드, 메뉴이름, 수량 -->
+	<select id="viewOrderDetail"
+		resultType="com.bean.entity.OrderDetailDTO">
+		SELECT A.ORDER_D_NUMBER AS orderDetailNumber, 
+			   C.MENU_NAME AS menuName, 
+			   A.ORDER_D_CODE AS orderDetailCode, 
+			   A.ORDER_D_AMT AS orderDetailAmt,
+			   A.ORDER_D_PRICE AS orderDetailPrice
+		FROM TB_ORDER_D A INNER JOIN TB_ORDER_M B
+		ON A.ORDER_D_NUMBER = B.ORDER_M_NUMBER
+		INNER JOIN TB_MENU C
+		ON A.ORDER_D_CODE = C.MENU_CODE
+		WHERE B.MEM_ID = #{memId}
+		  AND B.STATUS = '준비중'
+	</select>
+
+
+<!-- 재고 차감 -->
+	
+	<!-- 상태 업데이트 -->
+	<update id="statusUpdate" parameterType="com.bean.entity.OrderMasterDTO">
+	<!-- UPDATE [테이블] SET [열] = '변경할값' WHERE [조건] -->
+		UPDATE TB_ORDER_M
+		   SET STATUS = '완료'
+		 WHERE ORDER_M_NUMBER = #{orderMasterNumber}
+		   AND MEM_ID = #{memId}
+	</update>
+	
 	<!-- (1) 원두 조회 -->
 	<!-- (2) 우유 -->
-	<!-- (3) 케익 -->
-	<!-- (4) 컵 -->
-	<!-- (5) 빨대 -->
+	<!-- (3) 치즈 케익 -->
+	<update id="cheese" parameterType="com.bean.entity.MaterialDTO">
+		UPDATE TB_MATERIAL
+		SET MR_STOCK
+		= CASE
+		WHEN MR_STOCK >= 1 THEN MR_STOCK - 1
+		ELSE 0
+		END
+		WHERE MR_NAME
+		='치즈케익'
+		AND MR_EXPIRED_DATE= (
+		SELECT MIN(MR_EXPIRED_DATE)
+		FROM
+		TB_MATERIAL
+		WHERE MR_NAME = '치즈케익'
+		AND MR_STOCK > 0
+		)
+	</update>
+
+	<!--(4) 티라미수 -->
+	<update id="tiramisu"
+		parameterType="com.bean.entity.MaterialDTO">
+		UPDATE TB_MATERIAL
+		SET MR_STOCK = CASE
+		WHEN MR_STOCK >= 1
+		THEN MR_STOCK - 1
+		ELSE 0
+		END
+		WHERE MR_NAME = '티라미수'
+		AND MR_EXPIRED_DATE= (
+		SELECT MIN(MR_EXPIRED_DATE)
+		FROM TB_MATERIAL
+		WHERE MR_NAME = '티라미수'
+		AND
+		MR_STOCK > 0
+		)
+	</update>
+	<!-- (5) 컵 -->
+	<update id="cup">
+		UPDATE TB_MATERIAL
+		SET MR_STOCK = CASE
+		WHEN MR_STOCK >=
+		1 THEN MR_STOCK - 1
+		ELSE 0
+		END
+		WHERE MR_NAME = '컵'
+		AND MR_EXPIRED_DATE
+		= (
+		SELECT MIN(MR_EXPIRED_DATE)
+		FROM TB_MATERIAL
+		WHERE MR_NAME = '컵'
+		AND
+		MR_STOCK > 0
+		)
+	</update>
+
+	<!-- (6) 빨대 -->
+	<update id="straw" parameterType="com.bean.entity.MaterialDTO">
+		UPDATE TB_MATERIAL
+		SET MR_STOCK
+		= CASE
+		WHEN MR_STOCK >=
+		1 THEN MR_STOCK - 1
+		ELSE 0
+		END
+		WHERE MR_NAME = '빨대'
+		AND MR_EXPIRED_DATE
+		= (
+		SELECT MIN(MR_EXPIRED_DATE)
+		FROM TB_MATERIAL
+		WHERE MR_NAME = '빨대'
+		AND MR_STOCK > 0
+		)
+	</update>
 
 </mapper>

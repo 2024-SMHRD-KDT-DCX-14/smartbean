@@ -8,7 +8,7 @@ body { /* 인덱스때문에 줘야함 */
       grid-template-columns: 2fr 1fr; /* 각 행을 2개로 나눔 */
       gap: 10px; /* 구역 간 간격 */
       padding: 10px;
-      height: 90vh;
+      height: 80vh;
       background-color: #f5f5f5; /* 배경색 */
     }   
     
@@ -19,6 +19,7 @@ body { /* 인덱스때문에 줘야함 */
     
     
 #dessertChart{
+<<<<<<< HEAD
 	height: 70vh !important;
 	}
 	
@@ -81,3 +82,7 @@ samp {
       border-radius: 8px;
       font-family: 'GmarketSansMedium';
     }
+=======
+	height: 80vh !important;
+	}
+>>>>>>> branch 'master' of https://github.com/2024-SMHRD-KDT-DCX-14/smartbean.git

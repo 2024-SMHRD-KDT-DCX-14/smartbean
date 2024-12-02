@@ -5,46 +5,58 @@
 
 
 
-<!-- 원자재 조회 쿼리문 -->
-<select id="list" resultType="com.bean.entity.MaterialDTO">
-	select Mr_Code as mrCode,
-	Mr_Name as mrName,
-	Mr_Inbound_Date as mrInboundDate,
-	Mr_Expired_Date as mrExpiredDate,
-	Mr_Stock as mrStock,
-	Mr_Code_Unit as mrCodeUnit,
-	Mem_Id as memId
-	 from TB_MATERIAL
-</select>
+	<!-- 원자재 조회 쿼리문 -->
+	<select id="list" resultType="com.bean.entity.MaterialDTO">
+		select Mr_Code as mrCode,
+		Mr_Name as
+		mrName,
+		Mr_Inbound_Date as mrInboundDate,
+		Mr_Expired_Date as
+		mrExpiredDate,
+		Mr_Stock as mrStock,
+		Mr_Code_Unit as mrCodeUnit,
+		Mem_Id as
+		memId
+		from TB_MATERIAL
+	</select>
 
-<!-- 원자재 등록 쿼리문 -->
-<insert id="insert" parameterType="com.bean.entity.MaterialDTO">
-    INSERT INTO TB_MATERIAL (
-        Mr_Code,
-        Mr_Name,
-        Mr_Stock,
-        MR_CODE_UNIT,
-        Mem_Id
-    )
-    VALUES (
-        #{mrCode},
-        #{mrName},
-        #{mrStock},
-        #{mrCodeUnit},
-        #{memId}
-    )
-</insert>
+	<!-- 원자재 등록 쿼리문 -->
+	<insert id="insert" parameterType="com.bean.entity.MaterialDTO">
+		INSERT INTO TB_MATERIAL (
+		Mr_Code,
+		Mr_Name,
+		Mr_Stock,
+		MR_CODE_UNIT,
+		Mem_Id
+		)
+		VALUES (
+		#{mrCode},
+		#{mrName},
+		#{mrStock},
+		#{mrCodeUnit},
+		#{memId}
+		)
+	</insert>
 
-<!--재고 수정 쿼리문-->
+	<!--재고 수정 쿼리문 -->
 	<update id="update" parameterType="com.bean.entity.MaterialDTO">
 		update TB_MATERIAL
-		set 
-		Mr_Name = #{mrName},
+		set
+		Mr_Name =
+		#{mrName},
 		Mr_Stock = #{mrStock},
 		MR_CODE_UNIT=#{mrCodeUnit}
-		where Mr_Code = #{mrCode}
+		where
+		Mr_Code = #{mrCode}
 	</update>
 
-
+	<!-- 상품 조회 쿼리문 -->
+	<select id="productlist"
+		resultType="com.bean.entity.MaterialDTO">
+		select MENU_NAME as menuName
+		,MENU_PRICE as menuPrice
+		from
+		TB_MENU
+	</select>
 
 </mapper>
