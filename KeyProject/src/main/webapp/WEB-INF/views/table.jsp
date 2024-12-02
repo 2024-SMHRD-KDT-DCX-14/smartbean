@@ -117,8 +117,8 @@
 					<th>원자재코드</th>
 					<th>원자재명</th>
 					<th>입고일자</th>
-					<th>재고수량</th>
 					<th>만료일자</th>
+					<th>재고수량</th>
 					<th>단위</th>
 					<th>삭제</th>
                 </tr>
@@ -154,7 +154,7 @@
 						<br>
 						<!-- 회원명 -->
 						<div class="input-group mb-3">
-							<input name="memId" type="text" class="form-control" readonly value="회원명 : ${user.memId}" aria-label="mrCode" aria-describedby="button-addon2">
+							<input name="memId" type="text" class="form-control" readonly value="${user.memId}" aria-label="mrCode" aria-describedby="button-addon2">
 						</div>
 						
 						<!-- 원자재코드 -->
