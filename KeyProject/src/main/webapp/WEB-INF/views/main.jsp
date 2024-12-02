@@ -14,7 +14,7 @@
         <style>
 		body {
    				margin-left: 225px;
-   				height: 100vh;
+   				height: 150vh;
 		}
 		</style>
         
@@ -29,7 +29,8 @@
         
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">SmartCoffeeBean</h1>
+                <br><br>
+                    <h3 class="mt-4">메인화면</h3>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>

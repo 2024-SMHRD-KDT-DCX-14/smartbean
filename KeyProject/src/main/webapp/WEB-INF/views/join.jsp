@@ -25,7 +25,6 @@
                             <i class="fas fa-user"></i>
                         </span>
                         <input type="text" class="form-control" name="memId" placeholder="아이디" required>
-                        <button type="button" class="btn btn-outline-secondary" onclick="checkId()">중복확인</button>
                     </div>
 					
 					<!-- 중복검사 결과 -->

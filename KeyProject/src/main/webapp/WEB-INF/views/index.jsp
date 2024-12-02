@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	
+
+	
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Index</title>
-	<link href="assets/css/style.css" rel="stylesheet" />
+	<link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 	<header id="upper_nav">
-		<a href="/main"><h2>Coffee Lounge</h2></a>
+		<br><a href="/main"><h1>COFFEE LOUNGE</h1></a>
 		<nav>
 			<a id="logout" href="/login">Logout</a>
 		</nav>
@@ -20,6 +22,7 @@
 	<div id="side_nav">
 		<nav>
 			<div class="side_nav_list">
+			<br><br>
 				<div class="sidenav_menu_heading">주문내역</div>
 				<div class="side_nav_in_list">
 					<a href="/goOrder">주문/결제</a> <br>
@@ -28,8 +31,9 @@
 				</div>
 			</div>
 			<div class="side_nav_list">
-				<div class="sidenav_menu_heading">
-					<a href="table">재고관리</a>
+				<div class="sidenav_menu_heading">재고관리</div>
+				<div class="side_nav_in_list">
+					<a href="table">재고조회</a>
 				</div>
 			</div>
 			<div class="side_nav_list">

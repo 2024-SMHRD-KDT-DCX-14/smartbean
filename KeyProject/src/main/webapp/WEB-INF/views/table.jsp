@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple DataTables Example</title>
 	<link href="assets/css/styles.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
 	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script><!-- Simple-DataTables CSS -->
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet">
 
@@ -106,7 +107,7 @@
 	${user }
 
 	<div class="container mt-5">
-        <h2>재고조회</h2>
+        <br><h4>주문조회</h4>
 		
 		<button class="btn-open-modal_1 btn btn-outline-secondary">등록</button>
 		
