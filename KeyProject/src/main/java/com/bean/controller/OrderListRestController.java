@@ -35,19 +35,28 @@ public class OrderListRestController {
 		String totalCost = (String) paramMap.get("totalCost"); // totalCost(key값) : totalCost, 총 비용
 
 		// itemCode(key값) : itemCodeArray, 담긴 메뉴 코드 String
+		@SuppressWarnings("unchecked")
 		List<String> itemCode = (List<String>) paramMap.get("itemCode");
 
 		// orderItems(key값) : orderItemsArray, 담긴 메뉴 이름 String
+		@SuppressWarnings({ "unchecked", "unused" })
 		List<String> orderItems = (List<String>) paramMap.get("orderItems");
 
 		// orderPrices(key값) : orderPriceArray, 담긴 메뉴 가격 String
+		@SuppressWarnings("unchecked")
 		List<Integer> orderPrices = (List<Integer>) paramMap.get("orderPrices");
 
 		// orderQuantities(key값) : orderItemQuantity 담긴 메뉴 수량 Integer
+		@SuppressWarnings("unchecked")
 		List<Integer> orderQuantities = (List<Integer>) paramMap.get("orderQuantities");
 
 		OrderMasterDTO orderMaster = mapper.sequenceNumber(); // 현재 주문번호가져오기.
-
+		
+		int number = orderMaster.getOrderMasterNumber();
+		System.out.println(number);
+		
+		// 주문번호 넣어주기
+		orderMaster.setOrderMasterNumber(number);
 		// 가져온 세션아이디 넣어주기
 		orderMaster.setMemId(memId);
 		// 총 가격 대입
@@ -59,49 +68,31 @@ public class OrderListRestController {
 		int result = mapper.orderListMaster(orderMaster);
 
 		// 디테일테이블 저장 로직
-		
-		OrderDetailDTO orderDetail = new OrderDetailDTO();
 
-		int number = orderMaster.getOrderMasterNumber();
-		System.out.println(number);
+		OrderDetailDTO orderDetail = new OrderDetailDTO();
 
 		if (result > 0) {
 
 			for (int i = 0; i < itemCode.size(); i++) {
 
-				orderDetail.setOrderDetailNumber(number + 1);
+				orderDetail.setOrderDetailNumber(number);
 				orderDetail.setOrderDetailCode(itemCode.get(i));
 				orderDetail.setOrderDetailAmt(orderQuantities.get(i));
 				orderDetail.setOrderDetailPrice(orderPrices.get(i) * orderQuantities.get(i));
 				mapper.orderListDetail(orderDetail);
-
 			}
-			
-			
-			for(int j=0; j < itemCode.size(); j++) {
-				
-				
-			}
-			
-			
-			
 		}
-		
-		
-		
-		
+
 		session.setAttribute("user", member);
 
-		// 재고 빼기 로직
-		
-		
-		
-		
-		
-		
-		
-		
 		return paramMap;
 	}
 
+
+	
+	
+	
+	
+	
+	
 }

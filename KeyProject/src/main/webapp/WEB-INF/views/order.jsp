@@ -458,7 +458,7 @@ body {
  				    data: JSON.stringify(dataToSend),
 			        success: function(response) {
 			            // Handle success response here
-			            alert('Checkout successful!');
+			            alert('주문 접수 완료되었습니다.');
 			            orderbasketClear(); // 전송하고 주문내역 초기화
 			            console.log(response);  // Log the server response for debugging
 			        },

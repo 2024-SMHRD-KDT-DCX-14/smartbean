@@ -8,6 +8,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SmartCoffeeBean</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link href="assets/css/styles.css" rel="stylesheet" />
 
         <!-- 필요한 외부 CSS/JS 주석 -->
@@ -36,18 +37,18 @@
                     <div class="row"> <!-- 최고 매출 카드 -->
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">최고 매출</div>
+                                <div class="card-body">일주일 간 최고 매출<h2 align="right">324543원(가데이터)</h2></div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">상세보기</a>
+                                    <a class="small text-white stretched-link" href="/perioddashboard">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div> <!-- 최저 매출 카드 -->
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">최저 매출</div>
+                                <div class="card-body">일주일 간 최저 매출<h2 align="right">324643원(가데이터)</h2></div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">상세보기</a>
+                                    <a class="small text-white stretched-link" href="/perioddashboard">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -56,16 +57,16 @@
                             <div class="card bg-success text-white mb-4">
                                 <div class="card-body">인기 메뉴</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">상세보기</a>
+                                    <a class="small text-white stretched-link" href="/menudashboard">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div> <!-- 재고 부족 카드 -->
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-danger text-white mb-4">
-                                <div class="card-body">재고 부족</div>
+                                <div class="card-body">재고 부족 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">상세보기</a>
+                                    <a class="small text-white stretched-link" href="/table">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -103,7 +104,7 @@
         <!-- Chart.js 라이브러리 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <!-- Chart 데이터 관련 스크립트 -->
-        <script src="assets/js/chart-area-demo.js"></script>
-        <script src="assets/js/chart-bar-demo.js"></script>
+        <script src="assets/js/mainDayChart.js"></script>
+        <script src="assets/js/mainMenuChart.js"></script>
     </body>
 </html>
