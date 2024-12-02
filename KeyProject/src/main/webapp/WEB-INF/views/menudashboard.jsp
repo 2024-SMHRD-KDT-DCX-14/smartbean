@@ -10,6 +10,8 @@
 </head>
 <body>
 	<%@ include file="index.jsp"%>
+	
+	        <br><<h4>메뉴별 매출 조회</h4>
 	<div class="inner_container">
 		<div class="section">
 			<div> <%-- 음료 차트 --%>

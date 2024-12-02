@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SmartCoffeeBean</title>
+        <title>메인화면</title>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link href="assets/css/styles.css" rel="stylesheet" />
 
@@ -17,7 +17,7 @@
         <style>
 		body {
    				margin-left: 225px;
-   				height: 100vh;
+   				height: 150vh;
 		}
 		</style>
         
@@ -32,7 +32,8 @@
         
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">SmartCoffeeBean</h1>
+                <br><br>
+                    <h3 class="mt-4">메인화면</h3>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>

@@ -15,3 +15,4 @@ public class OrderDetailDTO {
 	
     private String menuName;     // 메뉴이름 받아오기
 }
+
