@@ -406,7 +406,7 @@ body {
 				orderItemsArray.splice(indexnum, 1); // 해당 인덱스번호 아이템 수량 1 감소 (요소 1개 삭제)
 				orderPriceArray.splice(indexnum, 1); // 해당 인덱스번호 가격 감소 (요소 1개 삭제)
 				orderItemQuantity.splice(indexnum, 1); // 마이너스 1이하면 아이템 수량도 사라지게!
-				itemCodeArray.slpice(indexnum, 1); // 해당 아이템 코드 삭제
+				itemCodeArray.splice(indexnum, 1); // 해당 아이템 코드 삭제
 				
 				orderlist.removeChild(minus.parentElement);
 
