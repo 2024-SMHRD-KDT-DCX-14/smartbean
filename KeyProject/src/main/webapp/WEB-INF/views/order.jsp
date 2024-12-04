@@ -23,7 +23,8 @@ body {
 </head>
 <body>
 	<%@ include file="index.jsp"%>
-
+	<br><br><br>
+	<h4>주문/결제</h4>
 	<div class="h-100 p-1">
 		<div class="row bg-light">
 
@@ -34,15 +35,15 @@ body {
 						<!-- 메뉴 선택 버튼 커피/디저트 -->
 						<h5>메뉴</h5>
 						<hr>
-						<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+						<ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
 							<li class="nav-item" role="presentation">
-								<button class="nav-link active" id="pills-drink-tab"
+								<button class="btn btn-outline-secondary" id="pills-drink-tab"
 									data-bs-toggle="pill" data-bs-target="#pills-drink"
 									type="button" role="tab" aria-controls="pills-drink"
 									aria-selected="true">음료</button>
 							</li>
 							<li class="nav-item" role="presentation">
-								<button class="nav-link" id="pills-dessert-tab"
+								<button class="btn btn-outline-secondary" id="pills-dessert-tab"
 									data-bs-toggle="pill" data-bs-target="#pills-dessert"
 									type="button" role="tab" aria-controls="pills-dessert"
 									aria-selected="false">디저트</button>
@@ -164,7 +165,7 @@ body {
 						<!-- 주문 내역 담기 -->
 						<h5 class="d-flex justify-content-between align-items-center">
 							<span>주문내역</span>
-							<button onclick="orderbasketClear();">Clear</button>
+							<button onclick="orderbasketClear();" class="btn btn-outline-secondary">Clear</button>
 						</h5>
 						<hr>
 						<h5 class="d-flex justify-content-between align-items-center">
@@ -406,7 +407,7 @@ body {
 				orderItemsArray.splice(indexnum, 1); // 해당 인덱스번호 아이템 수량 1 감소 (요소 1개 삭제)
 				orderPriceArray.splice(indexnum, 1); // 해당 인덱스번호 가격 감소 (요소 1개 삭제)
 				orderItemQuantity.splice(indexnum, 1); // 마이너스 1이하면 아이템 수량도 사라지게!
-				itemCodeArray.splice(indexnum, 1); // 해당 아이템 코드 삭제
+				itemCodeArray.slpice(indexnum, 1); // 해당 아이템 코드 삭제
 				
 				orderlist.removeChild(minus.parentElement);
 

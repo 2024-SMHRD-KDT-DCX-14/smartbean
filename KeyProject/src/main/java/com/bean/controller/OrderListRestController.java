@@ -68,7 +68,6 @@ public class OrderListRestController {
 		int result = mapper.orderListMaster(orderMaster);
 
 		// 디테일테이블 저장 로직
-
 		OrderDetailDTO orderDetail = new OrderDetailDTO();
 
 		if (result > 0) {

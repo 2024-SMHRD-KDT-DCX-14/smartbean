@@ -57,8 +57,9 @@ public class OrderListController {
 	    // 주문 내역 상세 조회 로직 -- 완료인 상태만
 	    List<OrderDetailDTO> completeViewDetail = mapper.CompleteOrderDetail(member.getMemId());
 	    model.addAttribute("completeViewDetail", completeViewDetail);
-	    
 
+	    
+	    
 		session.setAttribute("user", member);
 		return "orderhistory"; // 다시 내역 페이지로 이동
 		

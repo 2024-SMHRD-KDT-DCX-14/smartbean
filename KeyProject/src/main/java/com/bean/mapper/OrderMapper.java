@@ -45,8 +45,8 @@ public interface OrderMapper {
 	// 재고 차감하기 전 수량과 아이템 코드 불러오기 (주문 디테일 테이블)
 	public List<OrderDetailDTO> orderDetailCheck(String memId, int orderDetailNumber);
 	
-	// 재고 조회해서 가져오기
-	public List<MaterialDTO> stockCheck(String memId, String mrName);
+	// 재고 조회해서 가져오기(실패)
+	// public List<MaterialDTO> stockCheck(String memId, String mrName);
 	
 	
 	

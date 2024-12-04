@@ -107,7 +107,7 @@
 
 
 	<div class="container mt-5">
-        <br><h4>주문조회</h4>
+        <br><h4>재고조회</h4>
 		
 		<button class="btn-open-modal_1 btn btn-outline-secondary">등록</button>
 		
