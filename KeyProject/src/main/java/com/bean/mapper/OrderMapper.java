@@ -47,11 +47,21 @@ public interface OrderMapper {
 	// 재고 조회해서 가져오기
 	public List<MaterialDTO> stockCheck(String memId, String mrName);
 
-	// ----------------페이징
+	// ---------------- 페이징
 	// 전체 행 갯수 가져오기
 	public int allCount(String memId);
 
 	// 10개씩 데이터 가져오기
 	public List<OrderMasterDTO> pagingOrderList(String memId, int pageNumber);
 
+	// ---------------- 재고 차감
+	// 준비중에서 완료로 눌린 주문번호의 주문상세테이블 인스턴스 조회
+	public List<OrderDetailDTO> detailNumber(String orderDetailNumber);
+	// 재고 차감 update 기능
+	public int bean();
+	public int milk();
+	public int cheese();
+	public int tiramisu();
+	public int cup();
+	public int straw();
 }
