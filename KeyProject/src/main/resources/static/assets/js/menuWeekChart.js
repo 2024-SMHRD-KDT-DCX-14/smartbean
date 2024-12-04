@@ -1,5 +1,5 @@
 (function () {
-    const menuUrl = "/menuchart";
+    const menuUrl = "/menuweekchart";
 
     axios.get(menuUrl)
         .then(function (res) {
@@ -13,14 +13,14 @@
                 price.push(res.data[i].orderDetailPrice);
             }
 
-            const menuCtx = document.getElementById('menuChart').getContext('2d');
+            const menuCtx = document.getElementById('menuWeekChart').getContext('2d');
 
             new Chart(menuCtx, {
                 type: 'bar',
                 data: {
                     labels: menu,
                     datasets: [{
-                        label: '메뉴별 매출',
+                        label: '메뉴별 7일간 매출',
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         data: price,

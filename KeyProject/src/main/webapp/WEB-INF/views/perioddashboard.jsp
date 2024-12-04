@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<link rel="stylesheet" href="assets/css/timedashboard.css">
+<link rel="stylesheet" href="assets/css/dashboard.css">
 
 </head>
 <body class="sb-nav-fixed">

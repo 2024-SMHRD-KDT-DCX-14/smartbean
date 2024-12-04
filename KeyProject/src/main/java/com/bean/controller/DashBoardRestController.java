@@ -27,6 +27,34 @@ public class DashBoardRestController {
 		
 		return list;
 	}
+
+	@RequestMapping("/menudaychart")
+	public List<OrderDetailDTO> menudaychart(HttpSession session) {
+		MemberDTO member = (MemberDTO) session.getAttribute("user");
+		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
+		List<OrderDetailDTO> list = mapper.menudaychart(memId); // mapper에 있는 menuchart() 실행시킨걸 list에 넣음
+		
+		return list;
+	}
+	
+	@RequestMapping("/menuweekchart")
+	public List<OrderDetailDTO> menuweekchart(HttpSession session) {
+		MemberDTO member = (MemberDTO) session.getAttribute("user");
+		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
+		List<OrderDetailDTO> list = mapper.menuweekchart(memId); // mapper에 있는 menuchart() 실행시킨걸 list에 넣음
+		
+		return list;
+	}
+	
+	@RequestMapping("/menumonthchart")
+	public List<OrderDetailDTO> menumonthchart(HttpSession session) {
+		MemberDTO member = (MemberDTO) session.getAttribute("user");
+		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
+		List<OrderDetailDTO> list = mapper.menumonthchart(memId); // mapper에 있는 menuchart() 실행시킨걸 list에 넣음
+		
+		return list;
+	}
+	
 	
 	@RequestMapping("/drinkchart")
 	public List<OrderDetailDTO> drinkchart(HttpSession session) {
