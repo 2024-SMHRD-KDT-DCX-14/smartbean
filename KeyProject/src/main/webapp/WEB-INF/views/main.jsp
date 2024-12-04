@@ -12,20 +12,20 @@
         <title>메인화면</title>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link href="assets/css/styles.css" rel="stylesheet" />
-
+        <link href="assets/css/dashboard.css" rel="stylesheet" />
         <!-- 필요한 외부 CSS/JS 주석 -->
         <style>
-		body {
-   				margin-left: 225px;
-   				height: 150vh;
-		}
-		</style>
+      body {
+               margin-left: 225px;
+               height: 150vh;
+      }
+      </style>
         
         
         
     </head>
     <body class="sb-nav-fixed">
-    	<%@ include file="index.jsp"%>
+       <%@ include file="index.jsp"%>
     
     
         <div id="layoutSidenav_content">
@@ -39,32 +39,41 @@
                     </ol>
                     <div class="row"> <!-- 최고 매출 카드 -->
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body">일주일 간 최고 매출</div>
-									 <h3 align="center">${maxSales.orderMasterTotal}원</h3>
+                             <div class="card bg-primary mb-4 " style=" background-image: url('11.jpg'); background-size: cover; background-position: center;">
+                                <br><br>
+                                <div class="card-body neon-black" align="center" >
+                               일주일 간 최고 매출
+                           </div>
+                           <h3 align="center" class="neon-black" >
+                               ${maxSales.orderMasterTotal}원
+                           </h3><br><br>
                                  <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="/perioddashboard">상세보기</a>
+                                    <a class="small stretched-link" href="/perioddashboard">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
-                        </div>  <!-- 최저 매출 카드 -->
+                        </div> 
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-warning text-white mb-4">
-                                <div class="card-body">일주일 간 최저 매출</div>
-									<h3 align="center">${minSales.orderMasterTotal}원</h3>
+                            <div class="card bg-primary mb-4" style=" background-image: url('12.jpg'); background-size: cover; background-position: center;">
+                            <br><br>
+                                <div class="card-body neon-blue " align="center" >일주일 간 최저 매출</div>
+                           <h3 align="center" class="neon-blue" >
+                           ${minSales.orderMasterTotal}원</h3>
+                           <br><br>
                                  <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="/perioddashboard">상세보기</a>
+                                    <a class="small stretched-link" href="/perioddashboard">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
-                        </div>  <!-- 인기 메뉴 카드 -->
+                        </div> 
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-success text-white mb-4">
-                                <div class="card-body">인기 메뉴</div>
-									<h3 align="center">${maxMenu.menuName}</h3>
+                           <div class="card bg-primary mb-4" style=" background-image: url('13.jpg'); background-size: cover; background-position: center;">
+                               <br><br>
+                               <div class="card-body neon-green " align="center" >인기 메뉴</div>
+                           <h3 align="center" class="neon-green" >${maxMenu.menuName}</h3><br><br>
                                  <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="/menudashboard">상세보기</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    <a class="small stretched-link "" href="/menudashboard">상세보기</a>
+                                    <div class="small"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div> 
@@ -72,43 +81,56 @@
                                 
                                 
                         
-                        <div class="col-xl-3 col-md-6"> <!-- 재고 부족 카드 -->
-                            <div class="card bg-danger text-white mb-4">
-                                <div class="card-body" id="tableCheck">재고 현황</div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-primary mb-4" style=" background-image: url('14.jpg'); background-size: cover; background-position: center;">
+                              <br><br>
+                              <div class="card-body neon-red" align="center" >재고 부족</div>
+                            <!-- 재고 총수량 조회 로직  -->
+                           <!-- 빨대 -->
+                              <c:if test="${count[0].mrStock<500}">
+                              <span class="neon-red">
+                              ${count[0].mrName} : ${count[0].mrStock}${count[0].mrCodeUnit} / 500  <!--  500개미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                           
+                             <!-- 우유 -->
+                              <c:if test="${count[1].mrStock<20000}">
+                              <span class="neon-red">
+                              ${count[1].mrName} : ${count[1].mrStock}${count[1].mrCodeUnit} / 20L   <!--   20L미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                           
+                             <!-- 원두 -->
+                              <c:if test="${count[2].mrStock<20000}">
+                              <span class="neon-red">
+                              ${count[2].mrName} : ${count[2].mrStock}${count[2].mrCodeUnit} / 20kg   <!--   20kg미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                              
+                             <!-- 치즈케익 -->
+                              <c:if test="${count[3].mrStock<50}">
+                              <span class="neon-red">
+                              ${count[3].mrName} : ${count[3].mrStock}${count[3].mrCodeUnit} / 50개    <!--  50개미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                              
+                             <!-- 컵 -->
+                              <c:if test="${count[4].mrStock<500}">
+                              <span class="neon-red">
+                              ${count[4].mrName} : ${count[4].mrStock}${count[4].mrCodeUnit} /500개   <!-- 500개미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                              
+                             <!-- 티라미수 -->
+                              <c:if test="${count[5].mrStock<50}">
+                              <span class="neon-red">
+                              ${count[5].mrName} : ${count[5].mrStock}${count[5].mrCodeUnit}/50개   <!-- 50개미만 재고 부족 -->
+                              </span>
+                              </c:if>
                                 
-                              <!-- 재고 총수량 조회 로직  -->
-									<!-- 빨대 -->
-										<c:if test="${count[0].mrStock<500}">
-										<h4 align="center">${count[0].mrName} : ${count[0].mrStock}${count[0].mrCodeUnit},	   500개미만 재고 부족</h4>
-										</c:if>
-									
-								     <!-- 우유 -->
-										<c:if test="${count[1].mrStock<20000}">
-									   <h4 align="center">${count[1].mrName} : ${count[1].mrStock}${count[1].mrCodeUnit},	   20L미만 재고 부족</h4>
-										</c:if>
-									
-								     <!-- 원두 -->
-										<c:if test="${count[2].mrStock<20000}">
-										<h4 align="center">${count[2].mrName} : ${count[2].mrStock}${count[2].mrCodeUnit},	   20kg미만 재고 부족</h4>
-										</c:if>
-										
-								     <!-- 치즈케익 -->
-										<c:if test="${count[3].mrStock<50}">
-										<h4 align="center">${count[3].mrName} : ${count[3].mrStock}${count[3].mrCodeUnit},	   50개미만 재고 부족</h4>
-										</c:if>
-										
-								     <!-- 컵 -->
-										<c:if test="${count[4].mrStock<500}">
-								   		<h4 align="center">${count[4].mrName} : ${count[4].mrStock}${count[4].mrCodeUnit},    500개미만 재고 부족</h4>
-										</c:if>
-										
-								     <!-- 티라미수 -->
-										<c:if test="${count[5].mrStock<50}">
-										<h4 align="center">${count[5].mrName} : ${count[5].mrStock}${count[5].mrCodeUnit},   50개미만 재고 부족</h4>
-										</c:if>
-                                
+                            <br><br>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="/table">상세보기</a>
+                                    <a class="small stretched-link " href="/table">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -121,10 +143,11 @@
                                     <i class="fas fa-chart-area me-1"></i>
                                     일일 매출
                                 </div>
-                                <div class="card-body">
-                                    <!-- 데이터 바인딩 -->
-                                    <canvas id="mainDayChart" width="100%" height="40"></canvas>
-                                </div>
+                                    <div class="top_section">
+                          <div> <!-- 일별 매출 -->
+                                 <canvas id="mainDayChart" width="100%" heingt="50%"></canvas>
+                         </div>
+                              </div>
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -133,20 +156,33 @@
                                     <i class="fas fa-chart-bar me-1"></i>
                                     메뉴별 매출
                                 </div>
-                                <div class="card-body">
-                                    <!-- 데이터 바인딩 -->
-                                    <canvas id="mainMenuChart" width="100%" height="40"></canvas>
-                                </div>
+                                <div class="top_section">
+                             <div> <!-- 일별 메뉴 매출 -->
+                                 <canvas id="mainMenuChart" width="100%" height="50%"></canvas>
+                             </div>
+                           </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
+            <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid px-4">
+         <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright &copy; SmartCoffeeBean 2024</div>
+         </div>
+      </div>
+         </footer>
         </div>
+           
+        
         <!-- Chart.js 라이브러리 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <!-- Chart 데이터 관련 스크립트 -->
         <script src="assets/js/mainDayChart.js"></script>
         <script src="assets/js/mainMenuChart.js"></script>
+          <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </body>
 </html>

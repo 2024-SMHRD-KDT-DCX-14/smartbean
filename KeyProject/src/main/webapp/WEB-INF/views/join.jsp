@@ -13,9 +13,9 @@
 <body class="d-flex flex-column vh-100">
     <!-- Main Content -->
     <main class="flex-grow-1 d-flex justify-content-center align-items-center">
-        <div class="card shadow-lg border-2 rounded-lg" style="width: 400px;">
-            <div class="card-body">
-           
+        <div class="card shadow-lg border-2 rounded-lg card-body" style="width: 400px;">
+            <div>
+           <br>
                 <form action="/joinProcess" method="post">
                     <h3 class="text-center text-secondary mb-4">회원가입</h3>
 
@@ -69,7 +69,7 @@
                 </form>
             </div>
             <div class="card-footer text-center py-3">
-                <a href="login" class="small">이미 계정이 있습니까? 로그인</a>
+                <a href="login" class="small h3">이미 계정이 있습니까? 로그인</a>
             </div>
         </div>
     </main>

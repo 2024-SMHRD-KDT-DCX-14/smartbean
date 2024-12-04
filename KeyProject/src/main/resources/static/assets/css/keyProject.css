@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* 공통 설정 */
 body {
+	font-family: 'GmarketSansMedium';
   margin: 0;
   padding: 0;
   height: 100vh; /* 화면 전체 높이 */
@@ -8,6 +16,17 @@ body {
   align-items: center; /* 수직 가운데 정렬 */
   background-color: #f8f9fa; /* 배경 색상 */
 }
+
+.card-body {
+	margin: 10px !important;
+	padding: 15px !important;
+	border-radius: 8px !important; /* 모서리를 둥글게 */
+	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2), /* 안쪽 그림자 */
+        5px 5px 15px rgba(0, 0, 0, 0.1) !important; /* 바깥쪽 그림자 */
+	transition: box-shadow 0.3s ease !important;
+	display: inline-block;
+	position: relative !important;
+} 
 
 header {
   position: fixed;

@@ -13,8 +13,9 @@
 <body class="d-flex flex-column vh-100">
     <!-- Main Content -->
     <main class="flex-grow-1 d-flex justify-content-center align-items-center">
-        <div class="card shadow-lg border-2 rounded-lg" style="width: 400px;">
-            <div class="card-body">
+        <div class="card shadow-lg border-2 rounded-lg card-body" style="width: 400px;">
+            <div>
+            <br>
                 <form action="loginProcess" method="post">
                     <h3 class="text-center text-secondary mb-4">로그인</h3>
 
@@ -40,12 +41,12 @@
 					
                     <!-- Submit -->
                     <div class="text-center">
-                        <button type="submit" class="btn btn-outline-secondary w-100">로그인</button>
+                        <button type="submit" class="btn btn-outline-secondary w-100 ">로그인</button>
                     </div>
                 </form>
             </div>
             <div class="card-footer text-center py-3">
-                <a href="join" class="small">회원정보가 없습니까? 회원가입 하기</a>
+                <a href="join" class="small h3">회원정보가 없습니까? 회원가입 하기</a>
             </div>
         </div>
     </main>
