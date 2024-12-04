@@ -49,25 +49,24 @@
 	</update>
 
 	<!-- 상품 조회 쿼리문 -->
-	<select id="productlist"
-		resultType="com.bean.entity.MaterialDTO">
-		select MENU_NAME as menuName
-		,MENU_PRICE as menuPrice
+	<select id="productlist" resultType="com.bean.entity.MaterialDTO">
+		select MENU_NAME as menuName,
+		MENU_PRICE as menuPrice
 		from
 		TB_MENU
 	</select>
 
 	<!-- 원자재 총수량 조회 쿼리문 -->
-<select id="count" resultType="com.bean.entity.MaterialDTO">
-	select
-	Mr_Name as mrName,
-	SUM(Mr_Stock) as mrStock,
-	Mr_Code_Unit as mrCodeUnit
-	from TB_MATERIAL
-	where MEM_ID=#{memId}
-	group by Mr_Name,Mr_Code_Unit
-	ORDER BY Mr_Name, Mr_Code_Unit
-</select>
+	<select id="count" resultType="com.bean.entity.MaterialDTO">
+		select
+		Mr_Name as mrName,
+		SUM(Mr_Stock) as mrStock,
+		Mr_Code_Unit as mrCodeUnit
+		from TB_MATERIAL
+		where MEM_ID=#{memId}
+		group by Mr_Name,Mr_Code_Unit
+		ORDER BY Mr_Name, Mr_Code_Unit
+	</select>
 
 
 
