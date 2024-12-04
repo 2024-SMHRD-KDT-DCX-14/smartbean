@@ -69,7 +69,7 @@
                 </form>
             </div>
             <div class="card-footer text-center py-3">
-                <a href="login" class="small">이미 계정이 있습니까? 로그인</a>
+                <a href="login" class="small h3">이미 계정이 있습니까? 로그인</a>
             </div>
         </div>
     </main>

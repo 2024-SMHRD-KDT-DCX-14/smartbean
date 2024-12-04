@@ -90,7 +90,7 @@ body {
 </head>
 <body>
 	<%@ include file="index.jsp"%>
-
+	<div class="container mt-5">
 	<table class="table text-center">
 		<br>
 		<br>
@@ -162,7 +162,7 @@ body {
 		</tbody>
 
 	</table>
-
+	</div>
 
 	<div class="container mt-5">
 		<h4>주문조회</h4>
@@ -322,7 +322,7 @@ body {
 		        },
 		        error: function(xhr, status, error) {
 		            // Handle error response here
-		            alert('Error processing checkout. Please try again.');
+		            alert('주문 처리 중 에러가 발생했습니다.');
 		            console.error('Error: ' + error);
 		        }  
 			 })

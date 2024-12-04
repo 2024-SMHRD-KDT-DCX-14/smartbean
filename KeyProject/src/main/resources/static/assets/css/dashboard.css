@@ -55,6 +55,8 @@ h2 {
     padding-left: 700px;
 }
 
+
+
 .sidenav_menu_heading {
   color: #1d1d1f; /* 애플 텍스트 색상 */
   padding: 20px;
@@ -120,7 +122,6 @@ samp {
     body { /* 인덱스때문에 줘야함 */
      margin-left: 225px !important;
      font-family: 'GmarketSansMedium';
-
      height: 90vh !important;
 }
 
@@ -150,4 +151,8 @@ samp {
       color: white;
       border-radius: 8px;
       font-family: 'GmarketSansMedium';
+    }
+    
+    #timeChart{
+    font-family: 'GmarketSansMedium';
     }

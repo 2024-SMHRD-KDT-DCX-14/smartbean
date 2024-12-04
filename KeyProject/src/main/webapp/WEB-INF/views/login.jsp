@@ -40,12 +40,12 @@
 					
                     <!-- Submit -->
                     <div class="text-center">
-                        <button type="submit" class="btn btn-outline-secondary w-100">로그인</button>
+                        <button type="submit" class="btn btn-outline-secondary w-100 ">로그인</button>
                     </div>
                 </form>
             </div>
             <div class="card-footer text-center py-3">
-                <a href="join" class="small">회원정보가 없습니까? 회원가입 하기</a>
+                <a href="join" class="small h3">회원정보가 없습니까? 회원가입 하기</a>
             </div>
         </div>
     </main>

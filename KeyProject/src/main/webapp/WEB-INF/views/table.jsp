@@ -116,6 +116,7 @@
                 <tr>
 					<th>원자재코드</th>
 					<th>원자재명</th>
+					<th>제조사</th>
 					<th>입고일자</th>
 					<th>만료일자</th>
 					<th>재고수량</th>
@@ -128,7 +129,14 @@
 							       <c:forEach var="MaterialDTO" items="${list}">
 									<tr>
 										<td>${MaterialDTO.mrCode}</td>
-										<td>${MaterialDTO.mrName}</a></td>
+										<td>${MaterialDTO.mrName}</td>
+										<c:choose>
+											<c:when test="${MaterialDTO.mrName eq '원두'}"><td>맥심</td></c:when>
+											<c:when test="${MaterialDTO.mrName eq '우유'}"><td>서울우유</td></c:when>
+											<c:when test="${MaterialDTO.mrName eq '빨대'}"><td>쿠팡</td></c:when>
+											<c:when test="${MaterialDTO.mrName eq '컵'}"><td>쿠팡</td></c:when>
+											<c:otherwise><td>뚜레주르</td></c:otherwise>
+										</c:choose>
 										<td>${MaterialDTO.mrInboundDate}</td>
 										<td>${MaterialDTO.mrExpiredDate}</td>
 										<td>${MaterialDTO.mrStock}</td>

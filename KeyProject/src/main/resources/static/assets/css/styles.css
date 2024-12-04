@@ -88,7 +88,7 @@
 
 
 .transparent-bg {
-    background-color: rgba(255, 255, 255, 0.5); /* 흰색 배경 + 70% 투명도 */
+    background-color: rgba(255, 255, 255); /* 흰색 배경 + 30% 투명도 */
     padding: 10px 20px; /* 텍스트 주변 여백 */
     border-radius: 60px; /* 모서리를 부드럽게 */
     font-weight: bold; /* 텍스트 굵게 */
@@ -110,7 +110,7 @@
 .neon-blue {
     color: black; /* 기본 텍스트 색상 */
     text-shadow: 
-        0 0 5px rgba(135, 206, 250, 0.8),  /* 첫 번째 하늘색 빛 */
+       0 0 5px rgba(255, 255, 255, 0.8), /* 흰색 빛 */
         0 0 10px rgba(135, 206, 250, 0.6), /* 두 번째 빛 */
         0 0 20px rgba(135, 206, 250, 0.8); /* 세 번째 빛 */
     font-weight: bold; /* 텍스트 굵게 */
@@ -120,11 +120,11 @@
 .neon-red {
     color: black; /* 기본 텍스트 색상 */
     text-shadow: 
-        0 0 5px rgba(255, 0, 0, 0.8), /* 퍼지는 빨간빛 */
+        0 0 5px rgba(255, 255, 255, 0.8), /* 흰색 빛 */
         0 0 10px rgba(255, 0, 0, 0.6), /* 두 번째 빛 */
         0 0 20px rgba(255, 0, 0, 0.8); /* 세 번째 빛 */
     font-weight: bold; /* 텍스트 강조 */
-    font-size: 1.5rem; /* 글씨 크기 */
+    font-size: 1rem; /* 글씨 크기 */
     text-align: center; /* 중앙 정렬 */
 }
 
@@ -2222,14 +2222,14 @@ textarea.form-control-lg {
 .form-select, .datatable-selector {
   display: block;
   width: 100%;
-  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  padding: 0.5rem 2.25rem 0.375rem 0.75rem;
   -moz-padding-start: calc(0.75rem - 3px);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
   background-color: #fff;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 25 20'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
@@ -2251,7 +2251,7 @@ textarea.form-control-lg {
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-select[multiple], [multiple].datatable-selector, .form-select[size]:not([size="1"]), [size].datatable-selector:not([size="1"]) {
-  padding-right: 0.75rem;
+  padding-right: 2rem;
   background-image: none;
 }
 .form-select:disabled, .datatable-selector:disabled {
@@ -2266,14 +2266,14 @@ textarea.form-control-lg {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
-  font-size: 0.875rem;
-  border-radius: 0.25rem;
+  font-size: 1rem;
+  border-radius: 1	rem;
 }
 
 .form-select-lg {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
   font-size: 1.25rem;
   border-radius: 0.5rem;
 }
@@ -2287,6 +2287,7 @@ textarea.form-control-lg {
 .form-check .form-check-input {
   float: left;
   margin-left: -1.5em;
+  width: 100%;
 }
 
 .form-check-reverse {
@@ -2502,6 +2503,7 @@ textarea.form-control-lg {
 .form-floating > .datatable-selector {
   height: calc(3.5rem + 2px);
   line-height: 1.25;
+  
 }
 .form-floating > label {
   position: absolute;
@@ -4081,6 +4083,7 @@ textarea.form-control-lg {
     border: 0 !important;
     transform: none !important;
     transition: none;
+    font-family: 'GmarketSansMedium';
   }
   .navbar-expand-lg .offcanvas .offcanvas-header {
     display: none;
@@ -4296,10 +4299,17 @@ textarea.form-control-lg {
 }
 
 .card-body {
-  flex: 1 1 auto;
-  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-  color: var(--bs-card-color);
-}
+	margin: 10px !important;
+	padding: 15px !important;
+	border-radius: 50px !important; /* 모서리를 둥글게 */
+	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2), /* 안쪽 그림자 */
+        5px 5px 15px rgba(0, 0, 0, 0.1) !important; /* 바깥쪽 그림자 */
+	transition: box-shadow 0.3s ease !important;
+	display: inline-block;
+	position: relative !important;
+} 
+
+
 
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
@@ -11189,11 +11199,12 @@ body {
 }
 
 .datatable-selector {
-  width: auto;
+  width: 60px;
   display: inline-block;
   padding-left: 1.125rem;
   padding-right: 2.125rem;
   margin-right: 0.25rem;
+ 
 }
 
 .datatable-info {
