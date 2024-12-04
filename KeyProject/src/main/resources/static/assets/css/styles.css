@@ -86,10 +86,81 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+
+.transparent-bg {
+    background-color: rgba(255, 255, 255, 0.5); /* 흰색 배경 + 70% 투명도 */
+    padding: 10px 20px; /* 텍스트 주변 여백 */
+    border-radius: 60px; /* 모서리를 부드럽게 */
+    font-weight: bold; /* 텍스트 굵게 */
+    display: inline-block; /* 텍스트 크기만큼 배경 제한 */
+}
+
+.neon-black {
+    color: black; /* 텍스트 색상 */
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8), /* 흰색 빛 */
+        0 0 10px rgba(255, 255, 0, 0.6), 
+        0 0 20px rgba(255, 255, 0, 0.8); /* 노란색 빛 */
+    font-weight: bold; /* 텍스트를 굵게 */
+    font-size: 2rem; /* 글자 크기 */
+    text-align: center; /* 중앙 정렬 */
+}
+
+
+.neon-blue {
+    color: black; /* 기본 텍스트 색상 */
+    text-shadow: 
+        0 0 5px rgba(135, 206, 250, 0.8),  /* 첫 번째 하늘색 빛 */
+        0 0 10px rgba(135, 206, 250, 0.6), /* 두 번째 빛 */
+        0 0 20px rgba(135, 206, 250, 0.8); /* 세 번째 빛 */
+    font-weight: bold; /* 텍스트 굵게 */
+    font-size: 2rem; /* 글씨 크기 */
+}
+
+.neon-red {
+    color: black; /* 기본 텍스트 색상 */
+    text-shadow: 
+        0 0 5px rgba(255, 0, 0, 0.8), /* 퍼지는 빨간빛 */
+        0 0 10px rgba(255, 0, 0, 0.6), /* 두 번째 빛 */
+        0 0 20px rgba(255, 0, 0, 0.8); /* 세 번째 빛 */
+    font-weight: bold; /* 텍스트 강조 */
+    font-size: 1.5rem; /* 글씨 크기 */
+    text-align: center; /* 중앙 정렬 */
+}
+
+
+.neon-green {
+    color: black; /* 텍스트 색상 */
+    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8), /* 퍼지는 초록빛 */
+        0 0 10px rgba(255, 255, 255, 0.6), 
+        0 0 20px rgba(0, 255, 0, 0.8); /* 흰색 빛 */
+    font-weight: bold; /* 텍스트를 굵게 */
+    font-size: 2rem; /* 글자 크기 */
+    text-align: center; /* 중앙 정렬 */
+}
+
+
+@keyframes neon-blink {
+    from {
+        text-shadow: 0 0 5px rgba(255, 0, 255, 1), 0 0 15px rgba(255, 0, 255, 0.8);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 0, 255, 1), 0 0 30px rgba(255, 0, 255, 0.8);
+    }
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.col-xl-3 col-md-1{
+	background-image: url('2.jpg'); /* 배경 이미지 경로 */
+    background-size: cover; /* 이미지를 카드 크기에 맞게 조정 */
+    background-position: center; /* 이미지의 중앙을 카드에 맞춤 */
+    color: white; /* 텍스트가 잘 보이도록 흰색 유지 */
 }
 
 @media (prefers-reduced-motion: no-preference) {

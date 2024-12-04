@@ -1,119 +1,148 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
+
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: #f8f8f8;
-  font-weight: bold;
-  display: flex;
-  font-family: 'GmarketSansMedium';
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  z-index: 1002;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+	background: #f8f8f8;
+	font-weight: bold;
+	display: flex;
+	font-family: 'GmarketSansMedium';
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	z-index: 1002;
 }
-
-
 
 header h2 {
-  color: #1d1d1f; /* 애플 텍스트 기본 색상 */
-  font-family: 'GmarketSansMedium';
-  font-size: 24px;
-  letter-spacing: 0.5px;
+	color: #1d1d1f; /* 애플 텍스트 기본 색상 */
+	font-family: 'GmarketSansMedium';
+	font-size: 24px;
+	letter-spacing: 0.5px;
 }
 
 /* 사이드 내비게이션 스타일 */
 #side_nav {
-  position: fixed;
-  left: 0;
-  background: #f5f5f7; /* 연한 회색 */
-  z-index: 1001;
-  width: 200px;
-  height: 100vh;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
+	position: fixed;
+	left: 0;
+	background: #f5f5f7; /* 연한 회색 */
+	z-index: 1001;
+	width: 200px;
+	height: 100vh;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+	overflow-y: auto;
 }
 
-
 h1 {
-  
-  font-family: 'GmarketSansMedium';
-  font-size: 40px;
-  letter-spacing: 0.5px;
-    font-weight: bold;
-    color: #1d1d1f; /* 애플 텍스트 기본 색상 */
+	font-family: 'GmarketSansMedium';
+	font-size: 40px;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+	color: #1d1d1f; /* 애플 텍스트 기본 색상 */
 }
 
 body {
-    padding-top: 50px;
-    height: 100vh;
+	padding-top: 50px;
+	height: 100vh;
 }
 
 h2 {
-    padding-left: 700px;
+	padding-left: 700px;
 }
 
 .sidenav_menu_heading {
-  color: #1d1d1f; /* 애플 텍스트 색상 */
-  padding: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  border-bottom: 1px solid #e0e0e5; /* 연한 회색 경계선 */
+	color: #1d1d1f; /* 애플 텍스트 색상 */
+	padding: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	border-bottom: 1px solid #e0e0e5; /* 연한 회색 경계선 */
 }
 
 .side_nav_in_list a {
-  font-size: 16px;
-  margin-left: 15px;
-  padding: 10px 15px;
-  display: block;
-  color: #1d1d1f; /* 기본 텍스트 */
-  background: #f8f8f8; /* 밝은 회색 */
-  transition: background 0.3s ease, color 0.3s ease;
+	font-size: 16px;
+	margin-left: 15px;
+	padding: 10px 15px;
+	display: block;
+	color: #1d1d1f; /* 기본 텍스트 */
+	background: #f8f8f8; /* 밝은 회색 */
+	transition: background 0.3s ease, color 0.3s ease;
 }
 
 .side_nav_in_list a:hover {
-  background: #d6d6d6; /* 중간 회색 */
-  color: #000; /* 더 진한 텍스트 */
+	background: #d6d6d6; /* 중간 회색 */
+	color: #000; /* 더 진한 텍스트 */
 }
 /* 공통 링크 스타일 */
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 body {
- 
-  font-family:'GmarketSansMedium';
- 
+	font-family: 'GmarketSansMedium';
 }
 
 /* 로그아웃 버튼 */
 #logout {
-  margin-right: 20px;
-  padding: 5px 15px;
-  background: grey; /* 애플 블루 */
-  color: #fff;
-  border-radius: 4px;
-  font-size: 14px;
-  transition: background 0.3s ease, color 0.3s ease;
+	margin-right: 20px;
+	padding: 5px 15px;
+	background: grey; /* 애플 블루 */
+	color: #fff;
+	border-radius: 4px;
+	font-size: 14px;
+	transition: background 0.3s ease, color 0.3s ease;
 }
 
 #logout:hover {
-  background: lightgrey; /* 더 어두운 블루 */
-  color: white;
+	background: lightgrey; /* 더 어두운 블루 */
+	color: white;
 }
 
-div > a {
-    font-size: 15px;
-    margin-left: 20px;
-    font-family: 'GmarketSansMedium';
-    
+div>a {
+	font-size: 15px;
+	margin-left: 20px;
+	font-family: 'GmarketSansMedium';
 }
+/* /*  */ *//* /*  */ *//* /*  */ */*  */
+.card-body {
+	margin: 10px !important;
+	padding: 15px !important;
+	border-radius: 8px !important; /* 모서리를 둥글게 */
+	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2), /* 안쪽 그림자 */
+        5px 5px 15px rgba(0, 0, 0, 0.1) !important; /* 바깥쪽 그림자 */
+	transition: box-shadow 0.3s ease !important;
+	display: inline-block;
+	position: relative !important;
+} 
+
+/* .card {
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px; 모서리를 둥글게
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 부드러운 그림자
+} */
+
+
+.mainCard:hover{
+	transform: scale(1.05) ; /* 마우스를 올리면 5% 확대 */
+    transition: all 0.5s ease-in;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);/*  Hover 시 그림자 강조 */
+}
+
+
+/* .col:hover{
+	transform: scale(1.05) !important; 마우스를 올리면 5% 확대
+    transition: all 0.5s ease-in;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important; Hover 시 그림자 강조
+} */
+
