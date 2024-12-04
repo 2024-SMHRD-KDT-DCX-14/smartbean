@@ -29,8 +29,8 @@ body {
 		<div class="row bg-light">
 
 			<div class="col-sm-8">
-				<div class="card">
-					<div class="crad-body p-3">
+				<div class="card ">
+					<div class="card-body p-3 ">
 
 						<!-- 메뉴 선택 버튼 커피/디저트 -->
 						<h5>메뉴</h5>
@@ -57,7 +57,7 @@ body {
 								role="tabpanel" aria-labelledby="pills-drink-tab" tabindex="0">
 								<div class="row row-cols-1 row-cols-md-4 g-4">
 									<div class="col">
-										<div class="card" onclick="orderbasket('M001', '아메리카노(ICE)', '2000');">
+										<div class="card mainCard" onclick="orderbasket('M001', '아메리카노(ICE)', '2000');">
 											<img
 												src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[110563]_20210426095937808.jpg"
 												class="card-img-top" alt="...">
@@ -68,7 +68,7 @@ body {
 										</div>
 									</div>
 									<div class="col">
-										<div class="card" onclick="orderbasket('M002', '아메리카노(HOT)', '2000');">
+										<div class="card mainCard" onclick="orderbasket('M002', '아메리카노(HOT)', '2000');">
 											<img
 												src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[94]_20210430103337157.jpg"
 												class="card-img-top" alt="...">
@@ -79,7 +79,7 @@ body {
 										</div>
 									</div>
 									<div class="col">
-										<div class="card" onclick="orderbasket('M003', '카페라떼(ICE)', '3000');">
+										<div class="card mainCard" onclick="orderbasket('M003', '카페라떼(ICE)', '3000');">
 											<img
 												src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[110569]_20210415143035989.jpg"
 												class="card-img-top" alt="...">
@@ -90,7 +90,7 @@ body {
 										</div>
 									</div>
 									<div class="col">
-										<div class="card" onclick="orderbasket('M004', '카페라떼(HOT)', '3000');">
+										<div class="card mainCard" onclick="orderbasket('M004', '카페라떼(HOT)', '3000');">
 											<img
 												src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[41]_20210415133833725.jpg"
 												class="card-img-top" alt="...">
@@ -101,7 +101,7 @@ body {
 										</div>
 									</div>
 									<div class="col">
-										<div class="card" onclick="orderbasket('M005', '카푸치노(ICE)', '4000');">
+										<div class="card mainCard" onclick="orderbasket('M005', '카푸치노(ICE)', '4000');">
 											<img
 												src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[110601]_20210415143400773.jpg"
 												class="card-img-top" alt="...">
@@ -112,7 +112,7 @@ body {
 										</div>
 									</div>
 									<div class="col">
-										<div class="card" onclick="orderbasket('M006', '카푸치노(HOT)', '4000');">
+										<div class="card mainCard" onclick="orderbasket('M006', '카푸치노(HOT)', '4000');">
 											<img
 												src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[38]_20210415154821991.jpg"
 												class="card-img-top" alt="...">
@@ -130,7 +130,7 @@ body {
 								aria-labelledby="pills-dessert-tab" tabindex="0">
 								<div class="row row-cols-1 row-cols-md-4 g-4">
 									<div class="col">
-										<div class="card" onclick="orderbasket('M008', '치즈케익', '5000');">
+										<div class="card mainCard" onclick="orderbasket('M008', '치즈케익', '5000');">
 											<img
 												src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9300000000132]_20210422112714121.jpg"
 												class="card-img-top" alt="...">
@@ -141,7 +141,7 @@ body {
 										</div>
 									</div>
 									<div class="col">
-										<div class="card" onclick="orderbasket('M007', '티라미수', '5000');">
+										<div class="card mainCard" onclick="orderbasket('M007', '티라미수', '5000');">
 											<img
 												src="https://image.istarbucks.co.kr/upload/store/skuimg/2023/06/[9300000001907]_20230619130922058.jpg"
 												class="card-img-top" alt="...">
@@ -477,13 +477,7 @@ body {
 
 		});
 	</script>
-	<footer class="py-4 bg-light mt-auto">
-		<div class="container-fluid px-4">
-			<div class="d-flex align-items-center justify-content-between small">
-				<div class="text-muted">Copyright &copy; SmartCoffeeBean 2024</div>
-			</div>
-		</div>
-			</footer>
+	
 
 	<!--부트스트랩 scripts  -->
 	<script

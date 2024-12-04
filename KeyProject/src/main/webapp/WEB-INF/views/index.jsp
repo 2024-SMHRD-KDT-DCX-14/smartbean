@@ -36,7 +36,7 @@
 				<div class="side_nav_in_list">
 					<a href="table">재고조회</a>
 				</div>
-			</div>
+			</div><br>
 			<div class="side_nav_list">
 				<div class="sidenav_menu_heading">매출</div>
 				<div class="side_nav_in_list">
