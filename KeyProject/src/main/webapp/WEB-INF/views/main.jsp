@@ -15,17 +15,17 @@
         <link href="assets/css/dashboard.css" rel="stylesheet" />
         <!-- 필요한 외부 CSS/JS 주석 -->
         <style>
-		body {
-   				margin-left: 225px;
-   				height: 150vh;
-		}
-		</style>
+      body {
+               margin-left: 225px;
+               height: 150vh;
+      }
+      </style>
         
         
         
     </head>
     <body class="sb-nav-fixed">
-    	<%@ include file="index.jsp"%>
+       <%@ include file="index.jsp"%>
     
     
         <div id="layoutSidenav_content">
@@ -42,11 +42,11 @@
                              <div class="card bg-primary mb-4 mainCard" style=" background-image: url('11.jpg'); background-size: cover; background-position: center;">
                                 <br><br>
                                 <div class="card-body neon-black" align="center" >
-									    일주일 간 최고 매출
-									</div>
-									<h3 align="center" class="neon-black" >
-									    ${maxSales.orderMasterTotal}원
-									</h3><br><br>
+                               일주일 간 최고 매출
+                           </div>
+                           <h3 align="center" class="neon-black" >
+                               ${maxSales.orderMasterTotal}원
+                           </h3><br><br>
                                  <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small stretched-link" href="/perioddashboard">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -57,9 +57,9 @@
                             <div class="card bg-primary mb-4 mainCard" style=" background-image: url('12.jpg'); background-size: cover; background-position: center;">
                             <br><br>
                                 <div class="card-body neon-blue " align="center" >일주일 간 최저 매출</div>
-									<h3 align="center" class="neon-blue" >
-									${minSales.orderMasterTotal}원</h3>
-									<br><br>
+                           <h3 align="center" class="neon-blue" >
+                           ${minSales.orderMasterTotal}원</h3>
+                           <br><br>
                                  <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small stretched-link" href="/perioddashboard">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -67,10 +67,14 @@
                             </div>
                         </div> 
                         <div class="col-xl-3 col-md-6">
+
                         	<div class="card bg-primary mb-4 mainCard" style=" background-image: url('13.jpg'); background-size: cover; background-position: center;">
+ 
+                           <div class="card bg-primary mb-4" style=" background-image: url('13.jpg'); background-size: cover; background-position: center;">
+
                                <br><br>
                                <div class="card-body neon-green " align="center" >인기 메뉴</div>
-									<h3 align="center" class="neon-green" >${maxMenu.menuName}</h3><br><br>
+                           <h3 align="center" class="neon-green" >${maxMenu.menuName}</h3><br><br>
                                  <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small stretched-link "" href="/menudashboard">상세보기</a>
                                     <div class="small"><i class="fas fa-angle-right"></i></div>
@@ -78,10 +82,7 @@
                             </div>
                         </div> 
                                 
-                                
-                                
-                        
-                        <div class="col-xl-3 col-md-6">
+                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary mb-4 mainCard" style=" background-image: url('14.jpg'); background-size: cover; background-position: center;">
                               <br><br>
                               <div class="card-body neon-red" align="center" >재고 부족</div>
@@ -128,13 +129,14 @@
                               </span>
                               </c:if>
                                 
- 									<br><br>
+                            <br><br>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small stretched-link " href="/table">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div>
                     <div class="row">
                         <div class="col-xl-6">
@@ -144,10 +146,10 @@
                                     일일 매출
                                 </div>
                                     <div class="top_section">
-						        <div> <!-- 일별 매출 -->
-							            <canvas id="dayChart" width="100%" heingt="50%"></canvas>
-							    </div>
-							   		</div>
+                          <div> <!-- 일별 매출 -->
+                                 <canvas id="mainDayChart" width="100%" heingt="50%"></canvas>
+                         </div>
+                              </div>
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -157,35 +159,32 @@
                                     메뉴별 매출
                                 </div>
                                 <div class="top_section">
-							        <div> <!-- 일별 메뉴 매출 -->
-							            <canvas id="menuWeekChart" width="100%" height="50%"></canvas>
-							        </div>
-							   	</div>
+                             <div> <!-- 일별 메뉴 매출 -->
+                                 <canvas id="mainMenuChart" width="100%" height="50%"></canvas>
+                             </div>
+                           </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
-		<div class="container-fluid px-4">
-			<div class="d-flex align-items-center justify-content-between small">
-				<div class="text-muted">Copyright &copy; SmartCoffeeBean 2024</div>
-			</div>
-		</div>
-			</footer>
+      <div class="container-fluid px-4">
+         <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright &copy; SmartCoffeeBean 2024</div>
+         </div>
+      </div>
+         </footer>
         </div>
-        	
+           
         
         <!-- Chart.js 라이브러리 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <!-- Chart 데이터 관련 스크립트 -->
-        <script src="assets/js/mainTimeChart.js"></script>
+        <script src="assets/js/mainDayChart.js"></script>
+        <script src="assets/js/mainMenuChart.js"></script>
           <!-- Scripts -->
-		  <script src="assets/js/timeDashBoard.js"></script>
-		  <script src="assets/js/dayDashBoard.js"></script>
-		  <script src="assets/js/monthDashBoard.js"></script>
-		  <script src="assets/js/quaterDashBoard.js"></script>
-		  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-		  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </body>
 </html>

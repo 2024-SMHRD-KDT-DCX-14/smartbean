@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bean.mapper.DashBoardMapper">
 
-<select id="menuchart" resultType="com.bean.entity.OrderDetailDTO">
-	SELECT MENU.MENU_NAME AS orderDetailCode, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
+<select id="menutotalchart" resultType="com.bean.entity.OrderDetailDTO">
+	SELECT MENU.MENU_NAME AS menuName, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
 	FROM TB_MENU MENU
 	INNER JOIN TB_ORDER_D D
 	ON MENU.MENU_CODE = D.ORDER_D_CODE
@@ -15,7 +15,7 @@
 </select>
 
 <select id="menudaychart" resultType="com.bean.entity.OrderDetailDTO">
-    SELECT MENU.MENU_NAME AS orderDetailCode, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
+    SELECT MENU.MENU_NAME AS menuName, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
 	FROM TB_MENU MENU
 	INNER JOIN TB_ORDER_D D
 	ON MENU.MENU_CODE = D.ORDER_D_CODE
@@ -27,7 +27,7 @@
 </select>
 
 <select id="menuweekchart" resultType="com.bean.entity.OrderDetailDTO">
-    SELECT MENU.MENU_NAME AS orderDetailCode, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
+    SELECT MENU.MENU_NAME AS menuName, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
 	FROM TB_MENU MENU
 	INNER JOIN TB_ORDER_D D
 	ON MENU.MENU_CODE = D.ORDER_D_CODE
@@ -39,7 +39,7 @@
 </select>
 
 <select id="menumonthchart" resultType="com.bean.entity.OrderDetailDTO">
-    SELECT MENU.MENU_NAME AS orderDetailCode, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
+    SELECT MENU.MENU_NAME AS menuName, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
 	FROM TB_MENU MENU
 	INNER JOIN TB_ORDER_D D
 	ON MENU.MENU_CODE = D.ORDER_D_CODE
@@ -75,7 +75,7 @@
 	ORDER BY MENU.MENU_NAME
 </select>
 
-<select id="timechart" resultType="com.bean.entity.OrderMasterDTO">
+<select id="daychart" resultType="com.bean.entity.OrderMasterDTO">
 	SELECT 
     TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD HH24') AS orderMasterDate, 
     SUM(M.ORDER_M_TOTAL) AS orderMasterTotal
@@ -89,7 +89,7 @@
     orderMasterDate
 </select>
 
-<select id="daychart" resultType="com.bean.entity.OrderMasterDTO">
+<select id="weekchart" resultType="com.bean.entity.OrderMasterDTO">
 	SELECT 
     TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD') AS orderMasterDate, 
     SUM(M.ORDER_M_TOTAL) AS orderMasterTotal

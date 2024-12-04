@@ -10,19 +10,19 @@
 
 </head>
 <body class="sb-nav-fixed">
-   	<%@ include file="index.jsp"%>
+<%@ include file="index.jsp"%>
 
-        <br><<h4>기간별 매출 조회</h4>
+ <br><<h4>기간별 매출 조회</h4>
   <div class="inner_container">
     <!-- 상단 두 구역 -->
     <div class="top_section">
-        <div> <!-- 시간별 매출 -->
-            <canvas id="timeChart" width="100%" height="50%"></canvas>
+        <div> <!-- 금일 매출 -->
+            <canvas id="dayChart" width="100%" height="50%"></canvas>
         </div>
     </div>  
     <div class="top_section">
-        <div> <!-- 일별 매출 -->
-            <canvas id="dayChart" width="100%" heingt="50%"></canvas>
+        <div> <!-- 금주 매출 -->
+            <canvas id="weekChart" width="100%" heingt="50%"></canvas>
         </div>
     </div>
 
@@ -43,10 +43,10 @@
   
   
   <!-- Scripts -->
-  <script src="assets/js/timeDashBoard.js"></script>
-  <script src="assets/js/dayDashBoard.js"></script>
-  <script src="assets/js/monthDashBoard.js"></script>
-  <script src="assets/js/quaterDashBoard.js"></script>
+  <script src="assets/js/periodDayChart.js"></script>
+  <script src="assets/js/periodWeekChart.js"></script>
+  <script src="assets/js/periodMonthChart.js"></script>
+  <script src="assets/js/periodQuaterChart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
