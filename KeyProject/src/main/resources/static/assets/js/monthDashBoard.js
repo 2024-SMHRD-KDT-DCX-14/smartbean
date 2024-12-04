@@ -20,7 +20,7 @@
                 data: {
                     labels: monthOrderDate,
                     datasets: [{
-                        label: '한달별 매출',
+                        label: '월별 매출',
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         data: monthOrderTotal,

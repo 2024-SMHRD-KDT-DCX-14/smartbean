@@ -10,18 +10,18 @@
 
 </head>
 <body class="sb-nav-fixed">
-   	<%@ include file="index.jsp"%>
+<%@ include file="index.jsp"%>
 
-        <br><<h4>기간별 매출 조회</h4>
+ <br><<h4>기간별 매출 조회</h4>
   <div class="inner_container">
     <!-- 상단 두 구역 -->
     <div class="top_section">
-        <div> <!-- 시간별 매출 -->
+        <div> <!-- 금일 매출 -->
             <canvas id="timeChart" width="100%" height="50%"></canvas>
         </div>
     </div>  
     <div class="top_section">
-        <div> <!-- 일별 매출 -->
+        <div> <!-- 금주 매출 -->
             <canvas id="dayChart" width="100%" heingt="50%"></canvas>
         </div>
     </div>

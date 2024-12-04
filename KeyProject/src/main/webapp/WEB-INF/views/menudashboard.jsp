@@ -9,30 +9,30 @@
 <link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
-	<%@ include file="index.jsp"%>
+<%@ include file="index.jsp"%>
 	
-	        <br><<h4>메뉴별 매출 조회</h4>
+ <br><<h4>메뉴별 매출 조회</h4>
   <div class="inner_container">
     <!-- 상단 두 구역 -->
     <div class="top_section">
-        <div> <!-- 시간별 매출 -->
+        <div> <!-- 메뉴별 금일 매출 -->
             <canvas id="menuDayChart" width="100%" height="50%"></canvas>
         </div>
     </div>  
     <div class="top_section">
-        <div> <!-- 일별 매출 -->
+        <div> <!-- 메뉴별 7일간 매출 -->
             <canvas id="menuWeekChart" width="100%" heingt="50%"></canvas>
         </div>
     </div>
 
     <!-- 하단 두 구역 -->
     <div class="bottom_section">
-        <div> <!-- 월별 매출 -->
+        <div> <!-- 메뉴별 30일간 매출 -->
             <canvas id="menuMonthChart" width="100%" heingt="50%"></canvas>
         </div>
     </div>
     <div class="bottom_section">
-        <div> <!-- 분기별 매출 -->
+        <div> <!-- 메뉴별 전체기간 매출 -->
             <canvas id="menuChart" width="100%" heingt="50%"></canvas>
         </div>
     </div> 

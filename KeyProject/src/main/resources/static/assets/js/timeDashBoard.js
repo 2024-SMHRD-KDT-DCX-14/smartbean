@@ -20,7 +20,7 @@
                 data: {
                     labels: timeOrderDate,
                     datasets: [{
-                        label: '시간별 매출',
+                        label: '금일 매출',
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         data: timeOrderTotal,
