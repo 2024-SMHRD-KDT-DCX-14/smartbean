@@ -33,7 +33,7 @@
     </div>
     <div class="bottom_section">
         <div> <!-- 메뉴별 전체기간 매출 -->
-            <canvas id="menuChart" width="100%" heingt="50%"></canvas>
+            <canvas id="menuTotalChart" width="100%" heingt="50%"></canvas>
         </div>
     </div> 
   </div>

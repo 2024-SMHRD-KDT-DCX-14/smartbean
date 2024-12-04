@@ -19,11 +19,11 @@ public class DashBoardRestController {
 	private DashBoardMapper mapper;
 	
 	// 메뉴별 차트
-	@RequestMapping("/menuchart")
-	public List<OrderDetailDTO> menuchart(HttpSession session) {
+	@RequestMapping("/menutotalchart")
+	public List<OrderDetailDTO> menutotalchart(HttpSession session) {
 		MemberDTO member = (MemberDTO) session.getAttribute("user");
 		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
-		List<OrderDetailDTO> list = mapper.menuchart(memId); // mapper에 있는 menuchart() 실행시킨걸 list에 넣음
+		List<OrderDetailDTO> list = mapper.menutotalchart(memId); // mapper에 있는 menutotalchart() 실행시킨걸 list에 넣음
 		
 		return list;
 	}
@@ -32,7 +32,7 @@ public class DashBoardRestController {
 	public List<OrderDetailDTO> menudaychart(HttpSession session) {
 		MemberDTO member = (MemberDTO) session.getAttribute("user");
 		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
-		List<OrderDetailDTO> list = mapper.menudaychart(memId); // mapper에 있는 menuchart() 실행시킨걸 list에 넣음
+		List<OrderDetailDTO> list = mapper.menudaychart(memId); // mapper에 있는 menudaychart() 실행시킨걸 list에 넣음
 		
 		return list;
 	}
@@ -41,7 +41,7 @@ public class DashBoardRestController {
 	public List<OrderDetailDTO> menuweekchart(HttpSession session) {
 		MemberDTO member = (MemberDTO) session.getAttribute("user");
 		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
-		List<OrderDetailDTO> list = mapper.menuweekchart(memId); // mapper에 있는 menuchart() 실행시킨걸 list에 넣음
+		List<OrderDetailDTO> list = mapper.menuweekchart(memId); // mapper에 있는 menuweekchart(() 실행시킨걸 list에 넣음
 		
 		return list;
 	}
@@ -50,7 +50,7 @@ public class DashBoardRestController {
 	public List<OrderDetailDTO> menumonthchart(HttpSession session) {
 		MemberDTO member = (MemberDTO) session.getAttribute("user");
 		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
-		List<OrderDetailDTO> list = mapper.menumonthchart(memId); // mapper에 있는 menuchart() 실행시킨걸 list에 넣음
+		List<OrderDetailDTO> list = mapper.menumonthchart(memId); // mapper에 있는 menumonthchart() 실행시킨걸 list에 넣음
 		
 		return list;
 	}
@@ -74,20 +74,20 @@ public class DashBoardRestController {
 		return list;
 	}
 	
-	@RequestMapping("/timechart")
-	public List<OrderMasterDTO> timechart(HttpSession session) {
+	@RequestMapping("/daychart")
+	public List<OrderMasterDTO> daychart(HttpSession session) {
 		MemberDTO member = (MemberDTO) session.getAttribute("user");
-		String memId = member.getMemId();
-		List<OrderMasterDTO> list = mapper.timechart(memId);
+		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
+		List<OrderMasterDTO> list = mapper.daychart(memId); // mapper에 있는 daychart() 실행시킨걸 list에 넣음
 		
 		return list;
 	}
 	
-	@RequestMapping("/daychart")
-	public List<OrderMasterDTO> daychart(HttpSession session) {
+	@RequestMapping("/weekchart")
+	public List<OrderMasterDTO> weekchart(HttpSession session) {
 		MemberDTO member = (MemberDTO) session.getAttribute("user");
-		String memId = member.getMemId();
-		List<OrderMasterDTO> list = mapper.daychart(memId);
+		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
+		List<OrderMasterDTO> list = mapper.weekchart(memId); // mapper에 있는 weekchart() 실행시킨걸 list에 넣음
 		
 		return list;
 	}
@@ -95,8 +95,8 @@ public class DashBoardRestController {
 	@RequestMapping("/monthchart")
 	public List<OrderMasterDTO> monthchart(HttpSession session) {
 		MemberDTO member = (MemberDTO) session.getAttribute("user");
-		String memId = member.getMemId();
-		List<OrderMasterDTO> list = mapper.monthchart(memId);
+		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
+		List<OrderMasterDTO> list = mapper.monthchart(memId); // mapper에 있는 monthchart() 실행시킨걸 list에 넣음
 		
 		return list;
 	}
@@ -104,8 +104,8 @@ public class DashBoardRestController {
 	@RequestMapping("/quaterchart")
 	public List<OrderMasterDTO> quaterchart(HttpSession session) {
 		MemberDTO member = (MemberDTO) session.getAttribute("user");
-		String memId = member.getMemId();
-		List<OrderMasterDTO> list = mapper.quaterchart(memId);
+		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
+		List<OrderMasterDTO> list = mapper.quaterchart(memId); // mapper에 있는 quaterchart() 실행시킨걸 list에 넣음
 		
 		return list;
 	}

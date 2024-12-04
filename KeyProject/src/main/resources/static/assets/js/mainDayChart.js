@@ -4,28 +4,27 @@ Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Area Chart Example
 (function () {
-    const timeUrl = "/timechart";
+    const dayUrl = "/daychart";
 
-    axios.get(timeUrl)
+    axios.get(dayUrl) /* daychart로 요청 보냄 */
         .then(function (res) {
-            console.log(res.data);
 
-            const timeOrderDate = [];
-            const timeOrderTotal = [];
+            const dayOrderDate = [];
+            const dayOrderTotal = [];
 
             for (let i = 0; i < res.data.length; i++) {
-                timeOrderDate.push(res.data[i].orderMasterDate);
-                timeOrderTotal.push(res.data[i].orderMasterTotal);
+                dayOrderDate.push(res.data[i].orderMasterDate); /* 날짜데이터를 넣음 */
+                dayOrderTotal.push(res.data[i].orderMasterTotal); /* 가격데이터를 넣음 */
             }
 
-var mainTimeCtx = document.getElementById("mainTimeChart");
+var mainTimeCtx = document.getElementById("mainDayChart");
 
-var myLineChart = new Chart(mainTimeCtx, {
+var myLineChart = new Chart(mainTimeCtx, { /* mainDayChart라는 id를 갖고있는 canvas에 차트를 띄움 */
   type: 'line',
   data: {
-    labels: timeOrderDate,
+    labels: dayOrderDate, /* labels는 x축 */
     datasets: [{
-      label: "매출",
+      label: "매출", /* y축의 데이터가 뭘 뜻하는지 지정 */
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
@@ -36,7 +35,7 @@ var myLineChart = new Chart(mainTimeCtx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: timeOrderTotal,
+      data: dayOrderTotal, /* data는 y축 */
     }],
   },
   options: {
