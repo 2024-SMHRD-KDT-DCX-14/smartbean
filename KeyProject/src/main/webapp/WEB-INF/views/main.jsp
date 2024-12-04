@@ -67,11 +67,7 @@
                             </div>
                         </div> 
                         <div class="col-xl-3 col-md-6">
-
-                        	<div class="card bg-primary mb-4 mainCard" style=" background-image: url('13.jpg'); background-size: cover; background-position: center;">
- 
-                           <div class="card bg-primary mb-4" style=" background-image: url('13.jpg'); background-size: cover; background-position: center;">
-
+                           <div class="card bg-primary mb-4 mainCard" style=" background-image: url('13.jpg'); background-size: cover; background-position: center;">
                                <br><br>
                                <div class="card-body neon-green " align="center" >인기 메뉴</div>
                            <h3 align="center" class="neon-green" >${maxMenu.menuName}</h3><br><br>
@@ -82,7 +78,10 @@
                             </div>
                         </div> 
                                 
-                         <div class="col-xl-3 col-md-6">
+                                
+                                
+                        
+                        <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary mb-4 mainCard" style=" background-image: url('14.jpg'); background-size: cover; background-position: center;">
                               <br><br>
                               <div class="card-body neon-red" align="center" >재고 부족</div>
@@ -137,30 +136,29 @@
                             </div>
                         </div>
                     </div>
-                    </div>
                     <div class="row">
                         <div class="col-xl-6">
-                            <div class="card mb-4">
+                            <div class="card mb-4  mainCard">
                                 <div class="card-header"> <!-- 일일 매출 차트 --> 
                                     <i class="fas fa-chart-area me-1"></i>
                                     일일 매출
                                 </div>
                                     <div class="top_section">
                           <div> <!-- 일별 매출 -->
-                                 <canvas id="dayChart" width="100%" heingt="50%"></canvas>
+                                 <a href="/perioddashboard"><canvas id="dayChart" width="100%" heingt="50%"></canvas></a>
                          </div>
                               </div>
                             </div>
                         </div>
                         <div class="col-xl-6">
-                            <div class="card mb-4">
+                            <div class="card mb-4 mainCard">
                                 <div class="card-header"> <!-- 메뉴별 매출 차트 -->
                                     <i class="fas fa-chart-bar me-1"></i>
                                     메뉴별 매출
                                 </div>
                                 <div class="top_section">
                              <div> <!-- 일별 메뉴 매출 -->
-                                 <canvas id="menuTotalChart" width="100%" height="50%"></canvas>
+                                 <a href="/menudashboard"><canvas id="menuTotalChart" width="100%" height="50%"></canvas></a>
                              </div>
                            </div>
                             </div>
