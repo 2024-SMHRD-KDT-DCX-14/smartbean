@@ -83,132 +83,52 @@
                         
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary mb-4" style=" background-image: url('14.jpg'); background-size: cover; background-position: center;">
-                               <div class="card-body stretched-link neon-red" id="tableCheck">
-                              <br>
-                              <!-- 재고 총수량 조회 로직  -->
-									<!-- 빨대 -->
-										<c:if test="${count[0].mrStock<500}">
- 
-										<span class="neon-red">
-									${count[0].mrName} : ${count[0].mrStock}${count[0].mrCodeUnit},	   500개미만 재고 부족
-										</span>
- 
-										<h4 align="center">${count[0].mrName} : ${count[0].mrStock}${count[0].mrCodeUnit},	   500개미만 재고 부족</h4>
- 
-										</c:if>
- 
-										<c:if test="${count[0].mrStock>=500}">
-										<span class="neon-red">
-									${count[0].mrName} : ${count[0].mrStock}${count[0].mrCodeUnit},	   500개이상 재고 충분
-										</span>
-										</c:if>
-										</li>
-	
- 
-									<br>
- 
-								     <!-- 우유 -->
-										<c:if test="${count[1].mrStock<20000}">
- 
-										<span class="neon-red">
-									${count[1].mrName} : ${count[1].mrStock}${count[1].mrCodeUnit},	   20L미만 재고 부족
-										</span>
- 
-									   <h4 align="center">${count[1].mrName} : ${count[1].mrStock}${count[1].mrCodeUnit},	   20L미만 재고 부족</h4>
- 
-										</c:if>
- 
-										<c:if test="${count[1].mrStock>=20000}">
-										<span class="neon-red">
-									${count[1].mrName} : ${count[1].mrStock}${count[1].mrCodeUnit},	   20L이상 재고 충분
-										</span>
-										</c:if>
-										</li>
-	
- 
-									<br>
- 
-								     <!-- 원두 -->
-										<c:if test="${count[2].mrStock<20000}">
- 
-										<span class="neon-red">
-									${count[2].mrName} : ${count[2].mrStock}${count[2].mrCodeUnit},	   20kg미만 재고 부족
-										</span>
- 
-										<h4 align="center">${count[2].mrName} : ${count[2].mrStock}${count[2].mrCodeUnit},	   20kg미만 재고 부족</h4>
- 
-										</c:if>
- 
-										<c:if test="${count[2].mrStock>=20000}">
-										<span class="neon-red">
-									${count[2].mrName} : ${count[2].mrStock}${count[2].mrCodeUnit},	   20kg이상 재고 충분
-										</span>
-										</c:if>
-										</li>
-	
- 
-										<br>
- 
-								     <!-- 치즈케익 -->
-										<c:if test="${count[3].mrStock<50}">
- 
-										<span class="neon-red">
-									${count[3].mrName} : ${count[3].mrStock}${count[3].mrCodeUnit},	   50개미만 재고 부족
-										</span>
- 
-										<h4 align="center">${count[3].mrName} : ${count[3].mrStock}${count[3].mrCodeUnit},	   50개미만 재고 부족</h4>
- 
-										</c:if>
- 
-										<c:if test="${count[3].mrStock>=50}">
-										<span class="neon-red">
-									${count[3].mrName} : ${count[3].mrStock}${count[3].mrCodeUnit},	   50개이상 재고 충분
-										</span>
-										</c:if>
-										</li>
-	
- 
-										<br>
- 
-								     <!-- 컵 -->
-										<c:if test="${count[4].mrStock<500}">
- 
-										<span class="neon-red">
-									${count[4].mrName} : ${count[4].mrStock}${count[4].mrCodeUnit},    500개미만 재고 부족
-										</span>
- 
-								   		<h4 align="center">${count[4].mrName} : ${count[4].mrStock}${count[4].mrCodeUnit},    500개미만 재고 부족</h4>
- 
-										</c:if>
- 
-										<c:if test="${count[4].mrStock>=500}">
-										<span class="neon-red">
-									${count[4].mrName} : ${count[4].mrStock}${count[4].mrCodeUnit},	   500개이상 재고 충분
-										</span>
-										</c:if>
-										</li>
-										
-										<br>
- 
- 	
-										
-								     <!-- 티라미수 -->
-										<c:if test="${count[5].mrStock<50}">
- 
-										<span class="neon-red">
-									${count[5].mrName} : ${count[5].mrStock}${count[5].mrCodeUnit},   50개미만 재고 부족
-										</span>
-										</c:if>
- 
-										<c:if test="${count[5].mrStock>=50}">
-										<span class="neon-red">
-									${count[5].mrName} : ${count[5].mrStock}${count[5].mrCodeUnit},    50개이상 재고 충분
-										</span>
-										</c:if>
-										</li>
-									</ul>
+                              <br><br>
+                              <div class="card-body neon-red" align="center" >재고 부족</div>
+                            <!-- 재고 총수량 조회 로직  -->
+                           <!-- 빨대 -->
+                              <c:if test="${count[0].mrStock<500}">
+                              <span class="neon-red">
+                              ${count[0].mrName} : ${count[0].mrStock}${count[0].mrCodeUnit} / 500  <!--  500개미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                           
+                             <!-- 우유 -->
+                              <c:if test="${count[1].mrStock<20000}">
+                              <span class="neon-red">
+                              ${count[1].mrName} : ${count[1].mrStock}${count[1].mrCodeUnit} / 20L   <!--   20L미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                           
+                             <!-- 원두 -->
+                              <c:if test="${count[2].mrStock<20000}">
+                              <span class="neon-red">
+                              ${count[2].mrName} : ${count[2].mrStock}${count[2].mrCodeUnit} / 20kg   <!--   20kg미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                              
+                             <!-- 치즈케익 -->
+                              <c:if test="${count[3].mrStock<50}">
+                              <span class="neon-red">
+                              ${count[3].mrName} : ${count[3].mrStock}${count[3].mrCodeUnit} / 50개    <!--  50개미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                              
+                             <!-- 컵 -->
+                              <c:if test="${count[4].mrStock<500}">
+                              <span class="neon-red">
+                              ${count[4].mrName} : ${count[4].mrStock}${count[4].mrCodeUnit} /500개   <!-- 500개미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                              
+                             <!-- 티라미수 -->
+                              <c:if test="${count[5].mrStock<50}">
+                              <span class="neon-red">
+                              ${count[5].mrName} : ${count[5].mrStock}${count[5].mrCodeUnit}/50개   <!-- 50개미만 재고 부족 -->
+                              </span>
+                              </c:if>
+                                
  									<br><br>
- 									</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small stretched-link " href="/table">상세보기</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>

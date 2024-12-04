@@ -13,8 +13,9 @@
 <body class="d-flex flex-column vh-100">
     <!-- Main Content -->
     <main class="flex-grow-1 d-flex justify-content-center align-items-center">
-        <div class="card shadow-lg border-2 rounded-lg" style="width: 400px;">
-            <div class="card-body">
+        <div class="card shadow-lg border-2 rounded-lg card-body" style="width: 400px;">
+            <div>
+            <br>
                 <form action="loginProcess" method="post">
                     <h3 class="text-center text-secondary mb-4">로그인</h3>
 

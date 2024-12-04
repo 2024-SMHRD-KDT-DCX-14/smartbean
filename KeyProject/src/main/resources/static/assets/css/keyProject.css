@@ -17,6 +17,17 @@ body {
   background-color: #f8f9fa; /* 배경 색상 */
 }
 
+.card-body {
+	margin: 10px !important;
+	padding: 15px !important;
+	border-radius: 8px !important; /* 모서리를 둥글게 */
+	box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2), /* 안쪽 그림자 */
+        5px 5px 15px rgba(0, 0, 0, 0.1) !important; /* 바깥쪽 그림자 */
+	transition: box-shadow 0.3s ease !important;
+	display: inline-block;
+	position: relative !important;
+} 
+
 header {
   position: fixed;
   top: 0;
