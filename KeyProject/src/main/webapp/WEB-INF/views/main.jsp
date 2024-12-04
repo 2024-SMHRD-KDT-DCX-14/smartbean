@@ -41,9 +41,10 @@
                         <div class="col-xl-3 col-md-6">
                              <div class="card bg-primary mb-4 mainCard" style=" background-image: url('mainmain.jpg'); background-size: cover; background-position: center;">
                                 <br><br>
-                                <div class="card-body neon-black" align="center" >
+                                <div class="neon-black" align="center" >
                                일주일 간 최고 매출
                            </div>
+                           <br>
                            <h3 align="center" class="neon-black" >
                                ${maxSales.orderMasterTotal}원
                            </h3><br><br>
@@ -56,7 +57,8 @@
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary mb-4 mainCard" style=" background-image: url('mainmain.jpg'); background-size: cover; background-position: center;">
                             <br><br>
-                                <div class="card-body neon-blue " align="center" >일주일 간 최저 매출</div>
+                                <div class="neon-blue " align="center" >일주일 간 최저 매출</div>
+                                <br>
                            <h3 align="center" class="neon-blue" >
                            ${minSales.orderMasterTotal}원</h3>
                            <br><br>
@@ -69,7 +71,7 @@
                         <div class="col-xl-3 col-md-6">
                            <div class="card bg-primary mb-4 mainCard" style=" background-image: url('mainmain.jpg'); background-size: cover; background-position: center;">
                                <br><br>
-                               <div class="card-body neon-green " align="center" >인기 메뉴</div>
+                               <div class="neon-green " align="center" >인기 메뉴</div><br>
                            <h3 align="center" class="neon-green" >${maxMenu.menuName}</h3><br><br>
                                  <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small stretched-link "" href="/menudashboard">상세보기</a>
@@ -84,7 +86,8 @@
                         <div class="col-xl-3 col-md-6">
                             <div class="card bg-primary mb-4 mainCard" style=" background-image: url('mainmain.jpg'); background-size: cover; background-position: center;">
                               <br><br>
-                              <div class="card-body neon-red" align="center" >재고 부족</div>
+                              <div class="neon-red" align="center" >재고 부족</div>
+                              <br>
                             <!-- 재고 총수량 조회 로직  -->
                            <!-- 빨대 -->
                               <c:if test="${count[0].mrStock<500}">

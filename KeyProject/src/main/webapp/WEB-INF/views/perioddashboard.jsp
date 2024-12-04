@@ -8,6 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <link rel="stylesheet" href="assets/css/dashboard.css">
 
+
 </head>
 <body class="sb-nav-fixed">
 <%@ include file="index.jsp"%>
@@ -38,7 +39,13 @@
         </div>
     </div> 
   </div>
-  
+  <footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid px-4">
+         <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright &copy; SmartCoffeeBean 2024</div>
+         </div>
+      </div>
+         </footer>
   
   
   

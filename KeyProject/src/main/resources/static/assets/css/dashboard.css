@@ -55,6 +55,71 @@ h2 {
     padding-left: 700px;
 }
 
+.py-4 {
+  /* 요소에 위쪽(padding-top)과 아래쪽(padding-bottom) 여백을 각각 1.5rem로 설정 */
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.bg-light {
+  /* 배경색을 밝은 색상으로 설정 */
+  --bs-bg-opacity: 1; /* 배경 불투명도 */
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important; /* 밝은 색상을 RGBA로 정의 */
+}
+
+.mt-auto {
+  /* 요소의 위쪽 여백(margin-top)을 자동으로 설정하여 가용 공간을 채우고 아래로 정렬 */
+  margin-top: auto !important;
+}
+
+.align-items-center {
+  /* Flexbox 컨테이너에서 모든 자식 요소를 세로 방향으로 가운데 정렬 */
+  align-items: center !important;
+}
+
+.justify-content-between {
+  /* Flexbox 컨테이너에서 자식 요소를 양쪽 끝으로 정렬 */
+  justify-content: space-between !important;
+}
+
+small, .small {
+  /* 작은 크기의 텍스트를 위한 폰트 크기 설정 */
+  font-size: 0.875em;
+}
+
+.text-muted {
+  /* 텍스트를 연한 색상으로 설정 */
+  --bs-text-opacity: 1; /* 텍스트 불투명도 */
+  color: #6c757d !important; /* muted 색상 (#6c757d) 적용 */
+}
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  /* 다양한 크기의 컨테이너 클래스 */
+  --bs-gutter-x: 1.5rem; /* 가로 간격 설정 */
+  --bs-gutter-y: 0; /* 세로 간격 설정 */
+  width: 100%; /* 컨테이너 너비를 100%로 설정 */
+  padding-right: calc(var(--bs-gutter-x) * 0.5); /* 오른쪽 여백 설정 */
+  padding-left: calc(var(--bs-gutter-x) * 0.5); /* 왼쪽 여백 설정 */
+  margin-right: auto; /* 오른쪽 외부 여백을 자동으로 설정 */
+  margin-left: auto; /* 왼쪽 외부 여백을 자동으로 설정 */
+}
+
+.px-4 {
+  /* 요소의 오른쪽(padding-right)과 왼쪽(padding-left) 여백을 각각 1.5rem로 설정 */
+  padding-right: 1.5rem !important;
+  padding-left: 1.5rem !important;
+}
+
+.d-flex {
+  /* Flexbox 레이아웃 활성화 */
+  display: flex !important;
+}
 
 
 .sidenav_menu_heading {

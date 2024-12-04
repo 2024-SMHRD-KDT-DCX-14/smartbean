@@ -37,13 +37,13 @@ body {
 						<hr>
 						<ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
 							<li class="nav-item" role="presentation">
-								<button class="btn btn-outline-secondary" id="pills-drink-tab"
+								<button class="nav-link active" id="pills-drink-tab"
 									data-bs-toggle="pill" data-bs-target="#pills-drink"
 									type="button" role="tab" aria-controls="pills-drink"
 									aria-selected="true">음료</button>
 							</li>
 							<li class="nav-item" role="presentation">
-								<button class="btn btn-outline-secondary" id="pills-dessert-tab"
+								<button class="nav-link" id="pills-dessert-tab"
 									data-bs-toggle="pill" data-bs-target="#pills-dessert"
 									type="button" role="tab" aria-controls="pills-dessert"
 									aria-selected="false">디저트</button>
@@ -477,7 +477,13 @@ body {
 
 		});
 	</script>
-	
+	<footer class="py-4 bg-light mt-auto">
+      <div class="container-fluid px-4">
+         <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright &copy; SmartCoffeeBean 2024</div>
+         </div>
+      </div>
+         </footer>
 
 	<!--부트스트랩 scripts  -->
 	<script

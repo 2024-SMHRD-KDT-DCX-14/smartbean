@@ -97,10 +97,9 @@
 
 .neon-black {
     color: black; /* 텍스트 색상 */
-    text-shadow: 
-        0 0 5px rgba(255, 255, 255, 0.8), /* 흰색 빛 */
-        0 0 10px rgba(255, 255, 0, 0.6), 
-        0 0 20px rgba(255, 255, 0, 0.8); /* 노란색 빛 */
+ /*    text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8), 흰색 빛
+        0 0 20px rgba(255, 255, 0, 0.5); 노란색 빛 */
     font-weight: bold; /* 텍스트를 굵게 */
     font-size: 2rem; /* 글자 크기 */
     text-align: center; /* 중앙 정렬 */
@@ -109,20 +108,18 @@
 
 .neon-blue {
     color: black; /* 기본 텍스트 색상 */
-    text-shadow: 
-       0 0 5px rgba(255, 255, 255, 0.8), /* 흰색 빛 */
-        0 0 10px rgba(135, 206, 250, 0.6), /* 두 번째 빛 */
-        0 0 20px rgba(135, 206, 250, 0.8); /* 세 번째 빛 */
+/*     text-shadow: 
+       0 0 5px rgba(255, 255, 255, 0.8), 흰색 빛
+        0 0 20px rgba(135, 206, 250, 0.5); 세 번째 빛 */
     font-weight: bold; /* 텍스트 굵게 */
     font-size: 2rem; /* 글씨 크기 */
 }
 
 .neon-red {
     color: black; /* 기본 텍스트 색상 */
-    text-shadow: 
-        0 0 5px rgba(255, 255, 255, 0.8), /* 흰색 빛 */
-        0 0 10px rgba(255, 0, 0, 0.6), /* 두 번째 빛 */
-        0 0 20px rgba(255, 0, 0, 0.8); /* 세 번째 빛 */
+/*     text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8), 흰색 빛
+        0 0 20px rgba(255, 0, 0, 0.5); 세 번째 빛 */
     font-weight: bold; /* 텍스트 강조 */
     font-size: 2rem; /* 글씨 크기 */
     text-align: center; /* 중앙 정렬 */
@@ -131,10 +128,9 @@
 
 .neon-green {
     color: black; /* 텍스트 색상 */
-    text-shadow: 
-        0 0 5px rgba(255, 255, 255, 0.8), /* 퍼지는 초록빛 */
-        0 0 10px rgba(255, 255, 255, 0.6), 
-        0 0 20px rgba(0, 255, 0, 0.8); /* 흰색 빛 */
+/*     text-shadow: 
+        0 0 5px rgba(255, 255, 255, 0.8), 퍼지는 초록빛
+        0 0 20px rgba(0, 255, 0, 0.5); 흰색 빛 */
     font-weight: bold; /* 텍스트를 굵게 */
     font-size: 2rem; /* 글자 크기 */
     text-align: center; /* 중앙 정렬 */
