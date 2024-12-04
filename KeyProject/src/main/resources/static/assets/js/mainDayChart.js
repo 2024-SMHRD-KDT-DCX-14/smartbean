@@ -27,10 +27,10 @@ var myLineChart = new Chart(mainTimeCtx, { /* mainDayChart라는 id를 갖고있
       label: "매출", /* y축의 데이터가 뭘 뜻하는지 지정 */
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
-      borderColor: "rgba(2,117,216,1)",
+      borderColor: "rgba(2,117,216,0.3)",
       pointRadius: 5,
-      pointBackgroundColor: "rgba(2,117,216,1)",
-      pointBorderColor: "rgba(255,255,255,0.8)",
+      pointBackgroundColor: "rgba(2,117,216,0.5)",
+      pointBorderColor: "rgba(255,255,255,1)",
       pointHoverRadius: 5,
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,

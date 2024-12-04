@@ -16,7 +16,7 @@
 	<header id="upper_nav">
 		<br><a href="/main"><h1>COFFEE LOUNGE</h1></a>
 		<nav>
-			<span>${user.memAddress} 접속 중__</span>
+			<span>${user.memAddress}</span>
 			<a id="logout" href="/login">Logout</a>
 		</nav>
 	</header>

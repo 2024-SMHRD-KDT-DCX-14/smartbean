@@ -24,7 +24,15 @@ var myBarChart = new Chart(mainMenuCtx, { /* mainMenuChart라는 id를 갖고있
     labels: menu, /* labels는 x축 */
     datasets: [{
       label: "매출", /* y축의 데이터가 뭘 뜻하는지 지정 */
-      backgroundColor: "rgba(2,117,216,1)",
+      backgroundColor: ['rgba(132, 94, 194, 0.2)', 
+						'rgba(214, 93, 177, 0.2)',
+						'rgba(255, 111, 145, 0.2)',
+						'rgba(255, 150, 113, 0.2)',
+						'rgba(255, 199, 95, 0.2)',
+						'rgba(249, 248, 113, 0.2)',
+						'rgba(0, 142, 155, 0.1)',
+						'rgba(174, 93, 0, 0.1)'
+						],
       borderColor: "rgba(2,117,216,1)",
       data: price, /* data는 y축 */
     }],
