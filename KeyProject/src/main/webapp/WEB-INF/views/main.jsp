@@ -147,7 +147,7 @@
                                 </div>
                                     <div class="top_section">
                           <div> <!-- 일별 매출 -->
-                                 <canvas id="mainDayChart" width="100%" heingt="50%"></canvas>
+                                 <canvas id="dayChart" width="100%" heingt="50%"></canvas>
                          </div>
                               </div>
                             </div>
@@ -160,7 +160,7 @@
                                 </div>
                                 <div class="top_section">
                              <div> <!-- 일별 메뉴 매출 -->
-                                 <canvas id="mainMenuChart" width="100%" height="50%"></canvas>
+                                 <canvas id="menuTotalChart" width="100%" height="50%"></canvas>
                              </div>
                            </div>
                             </div>
@@ -181,8 +181,8 @@
         <!-- Chart.js 라이브러리 -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <!-- Chart 데이터 관련 스크립트 -->
-        <script src="assets/js/mainDayChart.js"></script>
-        <script src="assets/js/mainMenuChart.js"></script>
+        <script src="assets/js/periodDayChart.js"></script>
+        <script src="assets/js/menuTotalChart.js"></script>
           <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
