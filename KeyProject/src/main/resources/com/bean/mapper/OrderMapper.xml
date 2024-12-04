@@ -164,7 +164,7 @@
 
 
 
-<!-- 재고 차감 -->
+<!-- 재고 차감 성훈님-->
 
 	<!-- 주문차감할 Detail 불러오기 -->
 	<select id="orderDetailCheck"
@@ -200,11 +200,67 @@
 		WHERE ORDER_M_NUMBER = #{orderMasterNumber}
 		AND MEM_ID = #{memId}
 	</update>
+	
+	
+<!-- 재고 차감 승겸-->
 
-	<!-- (1) 원두 조회 -->
+<select id="detailNumber"
+		resultType="com.bean.entity.OrderDetailDTO">
+		SELECT A.ORDER_D_NUMBER AS orderDetailNumber,
+		C.MENU_NAME AS menuName,
+		A.ORDER_D_CODE AS orderDetailCode,
+		A.ORDER_D_AMT AS orderDetailAmt,
+		A.ORDER_D_PRICE AS orderDetailPrice
+		FROM TB_ORDER_D A INNER JOIN TB_ORDER_M B
+		ON
+		A.ORDER_D_NUMBER = B.ORDER_M_NUMBER
+		INNER JOIN TB_MENU C
+		ON
+		A.ORDER_D_CODE = C.MENU_CODE
+		WHERE A.ORDER_D_NUMBER = TO_NUMBER(#{orderDetailNumber})
+		AND B.STATUS = '준비중'
+	</select>
+
+<!--parameterType="com.bean.entity.MaterialDTO"-->
+	<!-- (1) 원두 -->
+	<update id="bean">
+		UPDATE TB_MATERIAL
+		SET MR_STOCK
+		= CASE
+		WHEN MR_STOCK >= 16 THEN MR_STOCK - 16
+		ELSE 0
+		END
+		WHERE MR_NAME
+		='원두'
+		AND MR_EXPIRED_DATE= (
+		SELECT MIN(MR_EXPIRED_DATE)
+		FROM
+		TB_MATERIAL
+		WHERE MR_NAME = '원두'
+		AND MR_STOCK > 0
+		)
+	</update>
 	<!-- (2) 우유 -->
+		<update id="milk">
+		UPDATE TB_MATERIAL
+		SET MR_STOCK
+		= CASE
+		WHEN MR_STOCK >= 200 THEN MR_STOCK - 200
+		ELSE 0
+		END
+		WHERE MR_NAME
+		='우유'
+		AND MR_EXPIRED_DATE= (
+		SELECT MIN(MR_EXPIRED_DATE)
+		FROM
+		TB_MATERIAL
+		WHERE MR_NAME = '우유'
+		AND MR_STOCK > 0
+		)
+	</update>
+	
 	<!-- (3) 치즈 케익 -->
-	<update id="cheese" parameterType="com.bean.entity.MaterialDTO">
+	<update id="cheese">
 		UPDATE TB_MATERIAL
 		SET MR_STOCK
 		= CASE
@@ -223,8 +279,7 @@
 	</update>
 
 	<!--(4) 티라미수 -->
-	<update id="tiramisu"
-		parameterType="com.bean.entity.MaterialDTO">
+	<update id="tiramisu">
 		UPDATE TB_MATERIAL
 		SET MR_STOCK = CASE
 		WHEN MR_STOCK >= 1

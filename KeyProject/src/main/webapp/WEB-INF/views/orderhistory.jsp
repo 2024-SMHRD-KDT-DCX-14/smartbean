@@ -322,7 +322,7 @@ body {
 		        },
 		        error: function(xhr, status, error) {
 		            // Handle error response here
-		            alert('Error processing checkout. Please try again.');
+		            alert('주문 처리 중 에러가 발생했습니다.');
 		            console.error('Error: ' + error);
 		        }  
 			 })
