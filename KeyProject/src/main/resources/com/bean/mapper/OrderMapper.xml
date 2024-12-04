@@ -79,7 +79,6 @@
 		resultType="com.bean.entity.OrderDetailDTO">
 		SELECT A.ORDER_D_NUMBER AS orderDetailNumber,
 		C.MENU_NAME AS menuName,
-		A.ORDER_D_CODE AS orderDetailCode,
 		A.ORDER_D_AMT AS orderDetailAmt,
 		A.ORDER_D_PRICE AS orderDetailPrice
 		FROM TB_ORDER_D A INNER JOIN TB_ORDER_M B
@@ -96,7 +95,6 @@
 	<select id="CompleteOrderDetail" resultType="com.bean.entity.OrderDetailDTO">
 		SELECT A.ORDER_D_NUMBER AS orderDetailNumber,
 		C.MENU_NAME AS menuName,
-		A.ORDER_D_CODE AS orderDetailCode,
 		A.ORDER_D_AMT AS orderDetailAmt,
 		A.ORDER_D_PRICE AS orderDetailPrice
 		FROM TB_ORDER_D A INNER JOIN TB_ORDER_M B
@@ -125,9 +123,48 @@
 	</delete>
 
 
+<!-- 페이징  -->
+<!-- 전체 data 가져오기  -->
+<select id="allCount" resultType="int">
+	SELECT COUNT(*)
+	  FROM (SELECT *
+              FROM TB_ORDER_M
+             WHERE 1=1
+               AND MEM_ID = #{memId})
+
+</select>
+
+<!-- 10개씩 페이징 처리되서 가져오기 -->
+<select id="pagingOrderList" resultType="com.bean.entity.OrderMasterDTO">
+	 SELECT RN
+     	  , orderMasterNumber
+          , orderMasterTotal
+          , orderMasterTotalAmount
+          , orderMasterDate
+          , status
+       FROM ( SELECT ROWNUM AS RN,
+              ORDER_M_NUMBER as orderMasterNumber,
+              ORDER_M_TOTAL as orderMasterTotal,
+              ORDER_M_TOTAL_AMT as orderMasterTotalAmount,
+              ORDER_M_DATE as orderMasterDate,
+              STATUS as status
+                FROM ( SELECT ORDER_M_NUMBER,
+                              ORDER_M_TOTAL,
+                              ORDER_M_TOTAL_AMT,
+                              ORDER_M_DATE,
+                              STATUS
+                         FROM TB_ORDER_M
+                        WHERE STATUS = '완료'
+                          AND MEM_ID = #{memId}
+                        ORDER BY ORDER_M_NUMBER DESC)
+            )
+      WHERE RN BETWEEN (#{pageNumber}-1) * 10+1 AND (#{pageNumber}-1+1) * 10
+	
+</select>
 
 
-	<!-- 재고 차감 -->
+
+<!-- 재고 차감 -->
 
 	<!-- 주문차감할 Detail 불러오기 -->
 	<select id="orderDetailCheck"
