@@ -39,7 +39,7 @@
                     </ol>
                     <div class="row"> <!-- 최고 매출 카드 -->
                         <div class="col-xl-3 col-md-6">
-                             <div class="card bg-primary mb-4 mainCard" style=" background-image: url('11.jpg'); background-size: cover; background-position: center;">
+                             <div class="card bg-primary mb-4 mainCard" style=" background-image: url('mainmain.jpg'); background-size: cover; background-position: center;">
                                 <br><br>
                                 <div class="card-body neon-black" align="center" >
                                일주일 간 최고 매출
@@ -54,7 +54,7 @@
                             </div>
                         </div> 
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary mb-4 mainCard" style=" background-image: url('12.jpg'); background-size: cover; background-position: center;">
+                            <div class="card bg-primary mb-4 mainCard" style=" background-image: url('mainmain.jpg'); background-size: cover; background-position: center;">
                             <br><br>
                                 <div class="card-body neon-blue " align="center" >일주일 간 최저 매출</div>
                            <h3 align="center" class="neon-blue" >
@@ -67,7 +67,7 @@
                             </div>
                         </div> 
                         <div class="col-xl-3 col-md-6">
-                           <div class="card bg-primary mb-4 mainCard" style=" background-image: url('13.jpg'); background-size: cover; background-position: center;">
+                           <div class="card bg-primary mb-4 mainCard" style=" background-image: url('mainmain.jpg'); background-size: cover; background-position: center;">
                                <br><br>
                                <div class="card-body neon-green " align="center" >인기 메뉴</div>
                            <h3 align="center" class="neon-green" >${maxMenu.menuName}</h3><br><br>
@@ -82,7 +82,7 @@
                                 
                         
                         <div class="col-xl-3 col-md-6">
-                            <div class="card bg-primary mb-4 mainCard" style=" background-image: url('14.jpg'); background-size: cover; background-position: center;">
+                            <div class="card bg-primary mb-4 mainCard" style=" background-image: url('mainmain.jpg'); background-size: cover; background-position: center;">
                               <br><br>
                               <div class="card-body neon-red" align="center" >재고 부족</div>
                             <!-- 재고 총수량 조회 로직  -->
