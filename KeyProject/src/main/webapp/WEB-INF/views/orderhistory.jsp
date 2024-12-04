@@ -92,7 +92,9 @@ body {
 	<%@ include file="index.jsp"%>
 
 	<table class="table text-center">
-	<br><br><br>
+		<br>
+		<br>
+		<br>
 		<h4>현재 주문 현황</h4>
 		<thead>
 			<tr>
@@ -119,7 +121,8 @@ body {
 						href="#order-details-${status.orderMasterNumber}" role="button"
 						aria-expanded="false" aria-controls="collapseExample"
 						class="rounded-pill">클릭</td>
-					<td onclick="orderResult('${status.orderMasterNumber}')" type="button">주문완료</td>
+					<td onclick="orderResult('${status.orderMasterNumber}')"
+						type="button">주문완료</td>
 					<td><img id=orderStatusDelete
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1n3bMMdFvjsc5IHKoYxkfjuYDxAToALBphw&s"
 						type="button" style="width: 15px"
@@ -133,7 +136,6 @@ body {
 							<thead>
 								<tr>
 									<th>주문번호</th>
-									<th>메뉴 코드</th>
 									<th>메뉴 주문수량</th>
 									<th>메뉴 총가격</th>
 									<th>메뉴 이름</th>
@@ -146,7 +148,6 @@ body {
 										test="${detail.orderDetailNumber == status.orderMasterNumber}">
 										<tr>
 											<td>${detail.orderDetailNumber}</td>
-											<td>${detail.orderDetailCode}</td>
 											<td>${detail.orderDetailAmt}</td>
 											<td>${detail.orderDetailPrice}</td>
 											<td>${detail.menuName}</td>
@@ -158,11 +159,10 @@ body {
 					</td>
 				</tr>
 			</c:forEach>
-
-
 		</tbody>
+
 	</table>
-	
+
 
 	<div class="container mt-5">
 		<h4>주문조회</h4>
@@ -177,15 +177,15 @@ body {
 					<th>상세</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody id="orderTableBody">
 				<!-- 주문 조회 로직 라는 이름에 조회 리스트 담음  -->
-				<c:forEach var="OrderMasterDTO" items="${viewOrderList}">
+				<c:forEach var="OrderMasterDTO" items="${pagingOrderList}">
 					<tr>
 						<td>${OrderMasterDTO.orderMasterNumber}</td>
 						<td>${OrderMasterDTO.orderMasterTotal}</a></td>
 						<td>${OrderMasterDTO.orderMasterDate}</td>
 						<td>${OrderMasterDTO.status}</td>
-						<td data-bs-toggle="collapse" 
+						<td data-bs-toggle="collapse"
 							href="#complete-details-${OrderMasterDTO.orderMasterNumber}"
 							role="button" aria-expanded="false"
 							aria-controls="collapseExample">보기</td>
@@ -200,7 +200,6 @@ body {
 								<thead>
 									<tr>
 										<th>주문번호</th>
-										<th>메뉴 코드</th>
 										<th>메뉴 주문수량</th>
 										<th>메뉴 총가격</th>
 										<th>메뉴 이름</th>
@@ -213,7 +212,6 @@ body {
 											test="${completeDetail.orderDetailNumber == OrderMasterDTO.orderMasterNumber}">
 											<tr>
 												<td>${completeDetail.orderDetailNumber}</td>
-												<td>${completeDetail.orderDetailCode}</td>
 												<td>${completeDetail.orderDetailAmt}</td>
 												<td>${completeDetail.orderDetailPrice}</td>
 												<td>${completeDetail.menuName}</td>
@@ -222,19 +220,6 @@ body {
 									</c:forEach>
 								</tbody>
 							</table>
-							
-							
-							<!-- 페이징 네비게이션 -->
-							<div>
-							    <c:if test="${currentPage > 1}">
-							        <a href="?page=${currentPage - 1}">이전</a>
-							    </c:if>
-							    페이지 ${currentPage} / ${totalPages}
-							    <c:if test="${currentPage < totalPages}">
-							        <a href="?page=${currentPage + 1}">다음</a>
-							    </c:if>
-							</div>
-							
 						</td>
 
 					</tr>
@@ -242,6 +227,43 @@ body {
 			</tbody>
 		</table>
 	</div>
+
+	<!-- 페이징 네비게이션 -->
+	<div style="text-align: center;">
+		<c:forEach begin="1" end="${pageTotal}" var="pageNum">
+			<a id="${pageNum}" href="?page=${pageNum}" style="width: 30px"
+				onclick="paging('${pageNum}')">${pageNum}</a>
+		</c:forEach>
+	</div>
+
+	<!-- 페이징 하기 -->
+	<script>
+	
+	function paging(pageNum){
+		
+		var pageNumber = Number(pageNum);
+		
+		var pagedata = {
+				pageNumber : pageNumber
+			};
+		
+		$.ajax({
+			url: "/pageNumber",
+			method: 'POST',
+			contentType: 'application/json', // JSON 형식 지정
+			data: JSON.stringify(pagedata),
+	        success: function(response) {
+	            
+	        },
+	        error: function(xhr, status, error) {
+	            // Handle error response here
+	            alert('Error processing checkout. Please try again.');
+	            console.error('Error: ' + error);
+			}
+		
+			})
+		}
+	</script>
 
 
 
@@ -303,9 +325,10 @@ body {
 		            alert('Error processing checkout. Please try again.');
 		            console.error('Error: ' + error);
 		        }  
-			 })  
+			 })
+			 
 
-     }
+    }
 	</script>
 
 
