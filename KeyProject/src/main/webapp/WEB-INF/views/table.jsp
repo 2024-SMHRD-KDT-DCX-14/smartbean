@@ -179,7 +179,8 @@
 								<option selected>종류</option>
 								<option value="원두">원두</option>
 								<option value="우유">우유</option>
-								<option value="케이크">케이크</option>
+								<option value="치즈케익">치즈케익</option>
+								<option value="티라미수">티라미수</option>
 								<option value="빨대">빨대</option>
 								<option value="컵">컵</option>
 						</select>
