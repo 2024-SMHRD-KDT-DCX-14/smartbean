@@ -34,8 +34,9 @@
 
 	<!--아이디 중복 체크 쿼리문-->
 	<select id="check" resultType="com.bean.entity.MemberDTO">
-		select * from TB_Member
-		where MEM_ID = #{MEM_ID}
+		select MEM_ID AS memId
+		from TB_Member
+		where MEM_ID = #{memId}
 	</select>
 
 

@@ -24,12 +24,12 @@
                         <span class="input-group-text">
                             <i class="fas fa-user"></i>
                         </span>
-                        <input type="text" class="form-control" name="memId" placeholder="아이디" required>
+                        <input id="memId" type="text" class="form-control" name="memId" placeholder="아이디" required>
                     </div>
 					
 					<!-- 중복검사 결과 -->
-					<span id="checkResult" class="text-danger small"></span>
-
+					<span id="checkResult"></span>
+<!--  class="text-danger small" -->
                     <!-- PW -->
                     <div class="input-group mb-3">
                         <span class="input-group-text">
@@ -83,6 +83,7 @@
 
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/check.js"></script>
 </body>
 </html>

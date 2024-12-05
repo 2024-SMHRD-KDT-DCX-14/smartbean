@@ -91,14 +91,14 @@
                             <!-- 재고 총수량 조회 로직  -->
                            <!-- 빨대 -->
                               <c:if test="${count[0].mrStock<500}">
-                              <span class="neon-red">
+                              <span class="neon-red-1">
                               ${count[0].mrName} : ${count[0].mrStock}${count[0].mrCodeUnit}/500개  <!--  500개미만 재고 부족 -->
                               </span>
                               </c:if>
                            
                              <!-- 우유 -->
                               <c:if test="${count[1].mrStock<20000}">
-                              <span class="neon-red">
+                              <span class="neon-red-1">
                               ${count[1].mrName} : ${count[1].mrStock}${count[1].mrCodeUnit}/20L   <!--   20L미만 재고 부족 -->
                               </span>
                               </c:if>
@@ -112,21 +112,21 @@
                               
                              <!-- 치즈케익 -->
                               <c:if test="${count[3].mrStock<50}">
-                              <span class="neon-red">
+                              <span class="neon-red-1">
                               ${count[3].mrName} : ${count[3].mrStock}${count[3].mrCodeUnit}/50개    <!--  50개미만 재고 부족 -->
                               </span>
                               </c:if>
                               
                              <!-- 컵 -->
                               <c:if test="${count[4].mrStock<500}">
-                              <span class="neon-red">
+                              <span class="neon-red-1">
                               ${count[4].mrName} : ${count[4].mrStock}${count[4].mrCodeUnit}/500개   <!-- 500개미만 재고 부족 -->
                               </span>
                               </c:if>
                               
                              <!-- 티라미수 -->
                               <c:if test="${count[5].mrStock<50}">
-                              <span class="neon-red">
+                              <span class="neon-red-1">
                               ${count[5].mrName} : ${count[5].mrStock}${count[5].mrCodeUnit}/50개   <!-- 50개미만 재고 부족 -->
                               </span>
                               </c:if>
