@@ -11,6 +11,7 @@ import com.bean.entity.OrderMasterDTO;
 @Mapper
 public interface DashBoardMapper {
 	public List<OrderDetailDTO> bymenuchart(Map<String, Object> para);
+	public List<OrderDetailDTO> bydatechart(Map<String, Object> para);
 	public List<OrderDetailDTO> menutotalchart(String memId);
 	public List<OrderDetailDTO> menudaychart(String memId);
 	public List<OrderDetailDTO> menuweekchart(String memId);

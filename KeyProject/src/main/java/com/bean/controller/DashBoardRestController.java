@@ -21,6 +21,21 @@ public class DashBoardRestController {
 	@Autowired
 	private DashBoardMapper mapper;
 	
+	// 날짜 선택 차트(하루)
+	@RequestMapping("/bydatechart")
+	public List<OrderDetailDTO> bydatechart(HttpSession session, @RequestParam("date") String date) {
+		MemberDTO member = (MemberDTO) session.getAttribute("user");
+		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
+
+        // Map에 파라미터 추가
+        Map<String, Object> para = new HashMap<>();
+        para.put("memId", memId);
+        para.put("date", date);
+
+        // Mapper 호출
+        return mapper.bydatechart(para);
+	}
+	
 	// 메뉴별 기간 차트
 	@RequestMapping("/bymenuchart")
 	public List<OrderDetailDTO> bymenuchart(HttpSession session, @RequestParam("menu") String menu) {

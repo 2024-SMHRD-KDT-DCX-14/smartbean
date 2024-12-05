@@ -11,7 +11,7 @@
 <body>
 <%@ include file="index.jsp"%>
 	
- <br><<h4>메뉴별 매출 조회 <a href="/bymenudashboard">각 메뉴 기간별 매출 조회</a></h4>
+ <br><h4>메뉴별 매출 조회 <a href="/bymenudashboard">각 메뉴 기간별 매출 조회</a></h4>
   <div class="inner_container">
     <!-- 상단 두 구역 -->
     <div class="top_section">
@@ -36,14 +36,14 @@
             <canvas id="menuTotalChart" width="100%" heingt="50%"></canvas>
         </div>
     </div> 
-  </div>
-        <footer class="py-4 bg-light mt-auto">
+      <footer class="py-4 bg-light mt-auto">
       <div class="container-fluid px-4">
          <div class="d-flex align-items-center justify-content-between small">
             <div class="text-muted">Copyright &copy; SmartCoffeeBean 2024</div>
          </div>
       </div>
          </footer>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="assets/js/menuTotalChart.js"></script>
   <script src="assets/js/menuDayChart.js"></script>

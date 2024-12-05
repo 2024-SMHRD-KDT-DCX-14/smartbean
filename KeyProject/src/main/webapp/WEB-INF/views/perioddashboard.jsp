@@ -6,14 +6,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<link rel="stylesheet" href="assets/css/dashboard.css">
-
-
+<link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
 <body class="sb-nav-fixed">
 <%@ include file="index.jsp"%>
 
- <br><<h4>기간별 매출 조회</h4>
+ <br><<h4>기간별 매출 조회 <a href="/byperioddashboard">날짜별 매출 조회</a></h4>
   <div class="inner_container">
     <!-- 상단 두 구역 -->
     <div class="top_section">
@@ -39,6 +37,8 @@
         </div>
     </div> 
   </div>
+  <br>
+  <br>
   <footer class="py-4 bg-light mt-auto">
       <div class="container-fluid px-4">
          <div class="d-flex align-items-center justify-content-between small">

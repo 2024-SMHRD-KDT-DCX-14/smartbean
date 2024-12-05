@@ -11,17 +11,17 @@
 <style>
 body { /* 인덱스때문에 줘야함 */
     margin-left: 225px !important;
+    margin-top: 50px !important;
 	height: 90vh !important;
     }
 </style>
 </head>
 <body>
 	<%@ include file="index.jsp"%>
-	
-    <br>
+
     <h4>
-    메뉴별 매출 조회
-	<div class="dropdown">
+    메뉴 기간별 매출 조회    
+	<sapn class="dropdown">
 	  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 	    메뉴선택
 	  </button>
@@ -35,7 +35,7 @@ body { /* 인덱스때문에 줘야함 */
 	    <li><button class="dropdown-item" data-menu="치즈케익" onclick="sendMenuData(this)">치즈케익</button</li>
 	    <li><button class="dropdown-item" data-menu="티라미수" onclick="sendMenuData(this)">티라미수</button</li>
 	  </ul>
-	</div>
+	</span>
 	</h4>
 
 	<div class="inner_container">

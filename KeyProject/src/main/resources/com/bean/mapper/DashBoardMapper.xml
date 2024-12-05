@@ -22,6 +22,20 @@
     orderDetailCode
 </select>
 
+<select id="bydatechart" parameterType="map" resultType="com.bean.entity.OrderMasterDTO">
+	SELECT 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD HH24') AS orderMasterDate, 
+    SUM(M.ORDER_M_TOTAL) AS orderMasterTotal
+	FROM
+    TB_ORDER_M M
+	WHERE 
+    TRUNC(M.ORDER_M_DATE) = TO_DATE(#{date}, 'YYYY-MM-DD') AND M.MEM_ID = #{memId}
+	GROUP BY 
+    TO_CHAR(M.ORDER_M_DATE, 'YYYY-MM-DD HH24')
+	ORDER BY 
+    orderMasterDate
+</select>
+
 <select id="menutotalchart" resultType="com.bean.entity.OrderDetailDTO">
 	SELECT MENU.MENU_NAME AS menuName, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
 	FROM TB_MENU MENU
