@@ -32,7 +32,7 @@ public class JoinController {
 		public String joinProcess(MemberDTO member) {
 
 		 int cnt = mapper.join(member);
-			
+			 
 			if(cnt>0) {
 				System.out.println("회원가입 성공");
 			}
