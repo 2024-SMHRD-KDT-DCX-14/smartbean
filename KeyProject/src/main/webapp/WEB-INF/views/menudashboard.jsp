@@ -7,12 +7,17 @@
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <link href="assets/css/dashboard.css" rel="stylesheet">
+<style>
+#click {
+	background-color: LightGray;
+}
+</style>
 </head>
 <body class="sb-nav-fixed">
 <%@ include file="index.jsp"%>
 	
- <br>
- <h4>메뉴별 매출 조회 <a href="/bymenudashboard">각 메뉴 기간별 매출 조회</a></h4>
+ <br><br>
+ <b>메뉴별 매출 조회 <a id="click" href="/bymenudashboard">메뉴 기간별 매출 조회</a></b>
   <div class="inner_container">
     <!-- 상단 두 구역 -->
     <div class="top_section">

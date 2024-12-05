@@ -11,20 +11,24 @@
 <style>
 body { /* 인덱스때문에 줘야함 */
     margin-left: 225px !important;
-	margin-top: 50px !important;
 	height: 90vh !important;
     }
+    
+#click {
+	background-color: LightGray;
+}
 </style>
 </head>
 <body class="sb-nav-fixed">
 	<%@ include file="index.jsp"%>
-	
-    <b>날짜별 매출 조회</b> <input type="date" class="date" onchange="sendPeriodData(this)">
-	
+	<br><br>
 	<div class="inner_container">
-		<div> <%-- 시간 차트 --%>
-		  	<canvas id="periodChart" width="100%" height="50%"></canvas>
-		</div>
+		<b>날짜별 매출 조회 <a id="click" href="/perioddashboard">기간별 매출 조회</a></b>
+		 <br>
+		 <input type="date" class="date" onchange="sendPeriodData(this)">
+			<div> <%-- 시간 차트 --%>
+		  		<canvas id="periodChart" width="100%" height="50%"></canvas>
+			</div>
 	</div>
 	      <footer class="py-4 bg-light mt-auto">
       <div class="container-fluid px-4">

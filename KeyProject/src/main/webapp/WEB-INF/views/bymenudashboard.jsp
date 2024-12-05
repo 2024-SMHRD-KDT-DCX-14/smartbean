@@ -11,16 +11,21 @@
 <style>
 body { /* 인덱스때문에 줘야함 */
     margin-left: 225px !important;
-    margin-top: 50px !important;
 	height: 90vh !important;
     }
+    
+#click{
+	background-color: LightGray;
+}
 </style>
 </head>
 <body class="sb-nav-fixed">
 	<%@ include file="index.jsp"%>
-
-    <b>메뉴 기간별 매출 조회</b>
-	<sapn class="dropdown">
+	
+<br><br>
+	<b>
+	<div class="dropdown">
+	<span>메뉴 기간별 매출 조회 <a id="click" href="/menudashboard">메뉴별 매출 조회</a></span><br>
 	  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 	    메뉴선택
 	  </button>
@@ -34,7 +39,8 @@ body { /* 인덱스때문에 줘야함 */
 	    <li><button class="dropdown-item" data-menu="치즈케익" onclick="sendMenuData(this)">치즈케익</button</li>
 	    <li><button class="dropdown-item" data-menu="티라미수" onclick="sendMenuData(this)">티라미수</button</li>
 	  </ul>
-	</span>
+	</div>
+	</b>
 
 
 
