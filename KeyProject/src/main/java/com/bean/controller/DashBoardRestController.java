@@ -1,9 +1,12 @@
 package com.bean.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bean.entity.MemberDTO;
@@ -17,6 +20,21 @@ import jakarta.servlet.http.HttpSession;
 public class DashBoardRestController {
 	@Autowired
 	private DashBoardMapper mapper;
+	
+	// 메뉴별 기간 차트
+	@RequestMapping("/bymenuchart")
+	public List<OrderDetailDTO> bymenuchart(HttpSession session, @RequestParam("menu") String menu) {
+		MemberDTO member = (MemberDTO) session.getAttribute("user");
+		String memId = member.getMemId(); // 회원별 차트를 보기위해 세션의 memId를 가져와 memId에 넣음
+
+        // Map에 파라미터 추가
+        Map<String, Object> para = new HashMap<>();
+        para.put("memId", memId);
+        para.put("menu", menu);
+
+        // Mapper 호출
+        return mapper.bymenuchart(para);
+	}
 	
 	// 메뉴별 차트
 	@RequestMapping("/menutotalchart")

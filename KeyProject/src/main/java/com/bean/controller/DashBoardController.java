@@ -16,4 +16,10 @@ public class DashBoardController {
 	public void goperioddashboard() {
 		
 	}
+	
+	// 상세 메뉴별 대시보드로 이동
+	@RequestMapping("/bymenudashboard")
+	public void gobymenudashboard() {
+		
+	}
 }

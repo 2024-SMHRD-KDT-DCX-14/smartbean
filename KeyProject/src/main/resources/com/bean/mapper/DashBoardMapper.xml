@@ -2,6 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bean.mapper.DashBoardMapper">
 
+<select id="bymenuchart" parameterType="map" resultType="com.bean.entity.OrderDetailDTO">
+	SELECT
+    TO_CHAR(TRUNC(M.ORDER_M_DATE), 'YYYY-MM-DD') AS orderDetailCode, 
+    SUM(D.ORDER_D_PRICE) AS orderDetailPrice
+	FROM 
+    TB_MENU MENU
+	INNER JOIN 
+    TB_ORDER_D D ON MENU.MENU_CODE = D.ORDER_D_CODE
+	INNER JOIN 
+    TB_ORDER_M M ON D.ORDER_D_NUMBER = M.ORDER_M_NUMBER
+	WHERE 
+    M.MEM_ID = #{memId} 
+    AND M.ORDER_M_DATE BETWEEN SYSDATE - 365 AND SYSDATE 
+    AND MENU.MENU_NAME = #{menu}
+	GROUP BY
+    TRUNC(M.ORDER_M_DATE)
+	ORDER BY 
+    orderDetailCode
+</select>
+
 <select id="menutotalchart" resultType="com.bean.entity.OrderDetailDTO">
 	SELECT MENU.MENU_NAME AS menuName, SUM(D.ORDER_D_PRICE) AS orderDetailPrice
 	FROM TB_MENU MENU

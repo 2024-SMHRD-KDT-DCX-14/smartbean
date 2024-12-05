@@ -1,6 +1,7 @@
 package com.bean.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -9,6 +10,7 @@ import com.bean.entity.OrderMasterDTO;
 
 @Mapper
 public interface DashBoardMapper {
+	public List<OrderDetailDTO> bymenuchart(Map<String, Object> para);
 	public List<OrderDetailDTO> menutotalchart(String memId);
 	public List<OrderDetailDTO> menudaychart(String memId);
 	public List<OrderDetailDTO> menuweekchart(String memId);
