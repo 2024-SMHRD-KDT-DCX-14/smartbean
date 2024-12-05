@@ -11,7 +11,8 @@
 <body class="sb-nav-fixed">
 <%@ include file="index.jsp"%>
 
- <br><<h4>기간별 매출 조회 <a href="/byperioddashboard">날짜별 매출 조회</a></h4>
+ <br>
+ <h4>기간별 매출 조회 <a href="/byperioddashboard">날짜별 매출 조회</a></h4>
   <div class="inner_container">
     <!-- 상단 두 구역 -->
     <div class="top_section">

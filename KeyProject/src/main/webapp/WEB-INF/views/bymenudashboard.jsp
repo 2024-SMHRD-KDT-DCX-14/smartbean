@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="assets/css/styles.css" rel="stylesheet">
 <style>
 body { /* 인덱스때문에 줘야함 */
@@ -16,11 +16,10 @@ body { /* 인덱스때문에 줘야함 */
     }
 </style>
 </head>
-<body>
+<body class="sb-nav-fixed">
 	<%@ include file="index.jsp"%>
 
-    <h4>
-    메뉴 기간별 매출 조회    
+    <b>메뉴 기간별 매출 조회</b>
 	<sapn class="dropdown">
 	  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 	    메뉴선택
@@ -36,7 +35,8 @@ body { /* 인덱스때문에 줘야함 */
 	    <li><button class="dropdown-item" data-menu="티라미수" onclick="sendMenuData(this)">티라미수</button</li>
 	  </ul>
 	</span>
-	</h4>
+
+
 
 	<div class="inner_container">
 		<div> <%-- 음료 차트 --%>

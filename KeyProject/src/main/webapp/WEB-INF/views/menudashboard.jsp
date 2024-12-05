@@ -8,10 +8,11 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
-<body>
+<body class="sb-nav-fixed">
 <%@ include file="index.jsp"%>
 	
- <br><h4>메뉴별 매출 조회 <a href="/bymenudashboard">각 메뉴 기간별 매출 조회</a></h4>
+ <br>
+ <h4>메뉴별 매출 조회 <a href="/bymenudashboard">각 메뉴 기간별 매출 조회</a></h4>
   <div class="inner_container">
     <!-- 상단 두 구역 -->
     <div class="top_section">

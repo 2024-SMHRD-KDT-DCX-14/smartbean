@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="assets/css/styles.css" rel="stylesheet">
 <style>
 body { /* 인덱스때문에 줘야함 */
@@ -16,13 +16,10 @@ body { /* 인덱스때문에 줘야함 */
     }
 </style>
 </head>
-<body>
+<body class="sb-nav-fixed">
 	<%@ include file="index.jsp"%>
 	
-    <br>
-    <div>
-    <h4> 날짜별 매출 조회 <input type="date" class="date" onchange="sendPeriodData(this)"> </h4>
-	</div>
+    <b>날짜별 매출 조회</b> <input type="date" class="date" onchange="sendPeriodData(this)">
 	
 	<div class="inner_container">
 		<div> <%-- 시간 차트 --%>
