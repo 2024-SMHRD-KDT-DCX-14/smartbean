@@ -42,12 +42,22 @@ public class LoginController {
 	         return "redirect:/login";
 	      }else {
 		
-		 String memId = mem.getMemId();
+		String memId = mem.getMemId();
+		// 재고 총량 session에 저장 로직.   출력은 jsp에서 session값 el문법으로 바로 접근.
 		List<MaterialDTO> count = materialMapper.count(memId);
-		System.out.println("count : "+count); // 출력되는지 이클립스 콘솔창에서 확인
 		session.setAttribute("count",count);
-		
 
+ 		// mainMapper의 maxSales에 mainMapper  //메인 카드에 들어갈 데이터 조회와 session에 저장 로직.
+ 		OrderMasterDTO maxSales = mainMapper.maxsales(memId);
+ 		session.setAttribute("maxSales", maxSales);
+         System.out.println("maxsales : "+maxSales);
+         OrderMasterDTO minSales = mainMapper.minsales(memId);
+ 		session.setAttribute("minSales", minSales);
+ 		System.out.println("minsales : "+minSales);
+
+ 		OrderDetailDTO maxMenu = mainMapper.maxmenu(memId);
+ 		session.setAttribute("maxMenu", maxMenu);
+ 		System.out.println("maxmenu : "+maxMenu);
 		
 	    return "main";}
 	    }
@@ -78,20 +88,7 @@ public class LoginController {
 	         System.out.println("login t");
 	         session.setAttribute("user", result);
 	         
-	         // memberdto의 mem에 유저 세션정보를 넣고 memId만 String값으로 memId에 넣음 
-		 		MemberDTO mem = (MemberDTO) session.getAttribute("user");
-				String memId = mem.getMemId();
-	 		// mainMapper의 maxSales에 mainMapper
-	 		OrderMasterDTO maxSales = mainMapper.maxsales(memId);
-	 		session.setAttribute("maxSales", maxSales);
-	         System.out.println("maxsales : "+maxSales);
-	         OrderMasterDTO minSales = mainMapper.minsales(memId);
-	 		session.setAttribute("minSales", minSales);
-	 		System.out.println("minsales : "+minSales);
 
-	 		OrderDetailDTO maxMenu = mainMapper.maxmenu(memId);
-	 		session.setAttribute("maxMenu", maxMenu);
-	 		System.out.println("maxmenu : "+maxMenu);
 
 	        return "redirect:/main";
 	      }
