@@ -89,8 +89,8 @@ body {
 	<%@ include file="index.jsp"%>
 	<div class="p-4">
 		<div align="center" class="p-4 m-4">
-			<div class="col-xl-9 col-md-6 card" align="center">
-				<div class=" bg-primary mb-4 mainCard"
+			<div class="col-xl-9 col-md-6 card mainCard" align="center">
+				<div class=" bg-primary mb-4 "
 					style="background-image: url('mainmain.jpg'); background-size: cover; background-position: center;">
 					<br>
 					<br>
