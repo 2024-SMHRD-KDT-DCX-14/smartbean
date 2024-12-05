@@ -16,6 +16,7 @@ body { /* 인덱스때문에 줘야함 */
     
 #click {
 	background-color: LightGray;
+	color: inherit;
 }
 </style>
 </head>

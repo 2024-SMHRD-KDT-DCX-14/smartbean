@@ -10,6 +10,7 @@
 <style>
 #click {
 	background-color: LightGray;
+	color: inherit;
 }
 </style>
 </head>
