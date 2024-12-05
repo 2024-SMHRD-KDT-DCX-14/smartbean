@@ -131,7 +131,7 @@
         0 0 5px rgba(255, 255, 255, 0.8), 흰색 빛
         0 0 20px rgba(255, 0, 0, 0.5); 세 번째 빛 */
     font-weight: bold; /* 텍스트 강조 */
-    font-size: 1.5rem; /* 글씨 크기 */
+    font-size: 1rem; /* 글씨 크기 */
     text-align: center; /* 중앙 정렬 */
 }
 
