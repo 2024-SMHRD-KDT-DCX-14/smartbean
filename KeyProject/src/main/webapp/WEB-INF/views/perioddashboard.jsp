@@ -18,7 +18,7 @@
 <%@ include file="index.jsp"%>
 
  <br><br>
- <b>기간별 매출 조회 <a id="click" href="/byperioddashboard">날짜별 매출 조회</a></b>
+ <b>기간별 매출 조회 <a id="click" href="/byperioddashboard">날짜별 매출 조회>></a></b>
   <div class="inner_container">
     <!-- 상단 두 구역 -->
     <div class="top_section">

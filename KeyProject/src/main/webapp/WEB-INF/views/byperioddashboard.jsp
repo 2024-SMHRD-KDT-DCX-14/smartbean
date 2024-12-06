@@ -24,9 +24,9 @@ body { /* 인덱스때문에 줘야함 */
 	<%@ include file="index.jsp"%>
 	<br><br>
 	<div class="inner_container">
-		<b>날짜별 매출 조회 <a id="click" href="/perioddashboard">기간별 매출 조회</a></b>
+		<b>날짜별 매출 조회 <a id="click" href="/perioddashboard">기간별 매출 조회>></a></b>
 		 <br>
-		 <input type="date" class="date" onchange="sendPeriodData(this)">
+		 <input type="date" class="date" onchange="sendPeriodData(this)" height="50%">
 			<div> <%-- 시간 차트 --%>
 		  		<canvas id="periodChart" width="100%" height="50%"></canvas>
 			</div>

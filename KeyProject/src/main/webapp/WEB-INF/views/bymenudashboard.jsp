@@ -26,7 +26,7 @@ body { /* 인덱스때문에 줘야함 */
 <br><br>
 	<b>
 	<div class="dropdown">
-	<span>메뉴 기간별 매출 조회 <a id="click" href="/menudashboard">메뉴별 매출 조회</a></span><br>
+	<span>메뉴 기간별 매출 조회 <a id="click" href="/menudashboard">메뉴별 매출 조회>></a></span><br>
 	  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 	    메뉴선택
 	  </button>
@@ -46,7 +46,7 @@ body { /* 인덱스때문에 줘야함 */
 
 
 	<div class="inner_container">
-		<div> <%-- 음료 차트 --%>
+		<div height="50%"> <%-- 메뉴 차트 --%>
 		  	<canvas id="menuChart" width="100%" height="50%"></canvas>
 		</div>
 	</div>
